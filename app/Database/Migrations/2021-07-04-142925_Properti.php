@@ -19,13 +19,13 @@ class Properti extends Migration
 				'type'			=> 'VARCHAR',
 				'constraint'	=> 100
 			],
-			'kabupaten'	=> [
-				'type'	=> 'VARCHAR',
-				'constraint'	=> 30
-			],
 			'provinsi'	=> [
 				'type'			=> 'VARCHAR',
-				'constraint'	=> 30
+				'constraint'	=> 100
+			],
+			'kabupaten'	=> [
+				'type'	=> 'VARCHAR',
+				'constraint'	=> 100
 			],
 			'luas_tanah'	=> [
 				'type'			=> 'INT',
@@ -49,7 +49,8 @@ class Properti extends Migration
 				'type'			=> 'VARCHAR',
 				'constraint'	=> 50
 			],
-			'created_at DATETIME DEFAULT CURRENT_TIMESTAMP'
+			'created_at DATETIME DEFAULT CURRENT_TIMESTAMP',
+			'updated_at DATETIME DEFAULT CURRENT_TIMESTAMP'
 		]);
 		$this->forge->addKey('id', TRUE);
 		$this->forge->createTable('properti', TRUE);

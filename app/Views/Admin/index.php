@@ -13,12 +13,12 @@
                             <div class="row">
                                 <div class="col-md-4">
                                     <div class="stats-icon purple">
-                                        <i class='iconly-boldShow'></i>
+                                        <i class="fas fa-home"></i>
                                     </div>
                                 </div>
                                 <div class="col-md-8">
-                                    <h6 class="text-muted font-semibold">Profile Views</h6>
-                                    <h6 class='font-extrabold mb-0'>112.000</h6>
+                                    <h6 class="text-muted font-semibold">Total Properti</h6>
+                                    <h6 class='font-extrabold mb-0'><?= $jumlahProperti; ?></h6>
                                 </div>
                             </div>
                         </div>
