@@ -1,4 +1,4 @@
-<?= $this->extend('Guest/layout') ?>
+<?= $this->extend('Guest/g_layout') ?>
 <?= $this->section('content'); ?>
 <section class="home-banner">
     <div class="container">
