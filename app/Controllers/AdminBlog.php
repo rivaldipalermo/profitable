@@ -16,7 +16,7 @@ class AdminBlog extends BaseController
             'title'=>"Blog Management",
     	    'adminblog'=>$this->blogModel->getAdminBlog()
         ];
-        return view('Admin/viewBlog',$data);
+        return view('Admin/Blog/viewBlog',$data);
 	}
     public function add()
 	{
@@ -24,25 +24,10 @@ class AdminBlog extends BaseController
 			'title'=>'Blog Baru',
 			'validation'=>\Config\Services::validation()
 			];
-			return view('Admin/addBlog',$data);
+			return view('Admin/Blog/addBlog',$data);
 	}
-    public function save()
+    public function simpan()
 	{
-		if(!$this->validate(
-			[
-				'judul'=>[
-					'rules'=>'required|is_unique[blog.judul]',
-					'errors'=>[
-						'required'=>'{field} Blog Tidak Boleh Kosong.',
-						'is_unique'=>'{field} Blog Tidak Boleh Sama'
-					]
-	
-					]
-			]
-			))
-			{
-				return redirect()->to('Admin/addBlog')->withInput();
-			}
 			$this->blogModel->save(
 				[
 					'judul'=>$this->request->getVar('judul'),
@@ -52,8 +37,7 @@ class AdminBlog extends BaseController
 					'updated_at'=>$this->request->getVar('updated_at'),
 				]
 			);
-			session()->setFlashdata('pesan','Data Sudah Ditambahkan');
-			return redirect()->to('/viewBlog');
+			return redirect()->to('Admin');
 	}
     public function edit()
 	{

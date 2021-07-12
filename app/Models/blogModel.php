@@ -18,8 +18,4 @@ class blogModel extends Model
         }
             return $this->where(['judul'=>$judul])->first();
     }
-    // public function search($kunci)
-    // {
-    //    return $this->table('blog')->like('judul', $kunci);
-    // }
 }
