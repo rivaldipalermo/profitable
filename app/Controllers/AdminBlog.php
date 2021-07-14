@@ -1,8 +1,10 @@
 <?php
 
 namespace App\Controllers;
+use CodeIgniter\HTTP\Response;
 use App\Models\blogModel;
 use Config\Validation;
+use CodeIgniter\Validation\Validation as ValidationValidation;
 
 class AdminBlog extends BaseController
 {
@@ -12,9 +14,18 @@ class AdminBlog extends BaseController
     }
 	public function index()
 	{
+		$currentPage = $this->request->getVar('page_blog') ? $this->request->getVar('page_blog') : 1;
+        $search = $this->request->getVar('search');
+        if ($search) {
+            $blog = $this->blogModel->search($search);
+        } else {
+            $blog = $this->blogModel;
+		}	
 		$data=[
             'title'=>"Blog Management",
-    	    'adminblog'=>$this->blogModel->getAdminBlog()
+    	    'adminblog'=>$blog->paginate(2, 'blog'),
+			'pager' => $this->blogModel->pager,
+            'currentPage' => $currentPage
         ];
         return view('Admin/Blog/viewBlog',$data);
 	}
@@ -33,18 +44,35 @@ class AdminBlog extends BaseController
 					'judul'=>$this->request->getVar('judul'),
 					'author'=>$this->request->getVar('author'),
 					'isi'=>$this->request->getVar('isi'),
-					'created_at'=>$this->request->getVar('created_at'),
-					'updated_at'=>$this->request->getVar('updated_at'),
 				]
 			);
-			return redirect()->to('Admin');
+			return redirect()->to('admin/blog');
 	}
-    public function edit()
+    public function edit($id)
 	{
-		return view('welcome_message');
+		$data=[
+			'title'=>'Edit Blog',
+			'validation'=>\Config\Services::validation(),
+			'adminblog'=>$this->blogModel->getAdminBlog($id)
+			];
+			return view('Admin/Blog/editBlog',$data);
 	}
-    public function delete()
+	public function update()
 	{
-		return view('welcome_message');
+			$this->blogModel->save(
+				[
+					'judul'=>$this->request->getVar('judul'),
+					'author'=>$this->request->getVar('author'),
+					'isi'=>$this->request->getVar('isi'),
+				]
+			);
+			return redirect()->to('/admin/blog');
+	}
+    public function delete($id)
+	{
+		$this->blogModel->delete($id);
+        session()->setFlashdata('pesan','Data Sudah Dihapus');
+
+        return redirect()->to('/admin/blog');
 	}
 }

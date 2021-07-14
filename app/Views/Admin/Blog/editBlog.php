@@ -6,7 +6,7 @@
     <h3><?= $title; ?></h3>
 </div>
         <fieldset>
-        <form action="/admin/blog/save" method="POST" enctype="multipart/form-data">
+        <form action="/admin/blog/update/<?= $adminblog['id'];?>" method="POST">
         <?= csrf_field();?>
             <div class="form-group row-mt3">
                 <label for="judul" class="col-sm-2 col-form-label">Judul </label>
@@ -30,7 +30,7 @@
                 </div>
             </div>
             </div>
-            <center><button type="submit" class="btn btn-primary">Tambah</button></center>
+            <center><button type="submit" class="btn btn-primary">Edit</button></center>
         </fieldset>
         </form>
 <?= $this->endSection(); ?>

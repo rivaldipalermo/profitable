@@ -3,6 +3,25 @@
 <div class="page-heading">
     <h3><?= $title; ?></h3>
 </div>
+<div class="row">
+    <div class="col-md-3">
+        <a href="blog/add" class="btn btn-primary">Tambah Blog</a>
+    </div>
+    <div class="row">
+        <div class="col-md-9">
+        </div>
+        <div class="col-md-2">
+            <form action="" method="GET">
+                <div class="form-group">
+                    <input type="text" class="form-control" id="basicInput" placeholder="search" name="search">
+                </div>
+        </div>
+        <div class="col-md-1" style="margin-left: -15px;">
+            <button type="submit" class="btn btn-primary" name="submit">Cari</button>
+        </div>
+        </form>
+    </div>
+</div>
 <table class="table">
             <thead>
                 <tr>
@@ -22,8 +41,8 @@
                     <td>
                         <div class="Aksi">
                             <center>
-                                <a href="/Admin/Blog/editBlog/<?= $a['id'];?>" class="btn btn-warning">Edit</a>
-                                <form action="/Admin/Blog/<?= $a['id'];?>" method="post">
+                                <a href="/admin/blog/edit/<?= $a['id'];?>" class="btn btn-warning">Edit</a>
+                                <form action="/admin/blog/<?= $a['id'];?>" method="post">
                                     <?= csrf_field();?> 
                                     <input type="hidden" name="_method" value="DELETE"> 
                                     <button type="submit" class="btn btn-danger" onclick="return confirm('Apakah Data Ingin Dihapus???')">Delete</button>
@@ -38,5 +57,5 @@
                     
             </tbody>
             </table>
-            <center><a href="blog/add" class="btn btn-success">Tambah Data</a></center>
+            <?= $pager->links('blog', 'blog_pagination'); ?>
 <?= $this->endSection(); ?>

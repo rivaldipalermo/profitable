@@ -8,14 +8,18 @@ class blogModel extends Model
 {
     protected $table      = 'blog';
     protected $useTimestamps = true;
-    protected $allowedFields=['judul','author','isi','created_at','updated_at'];
+    protected $allowedFields=['judul','author','isi'];
 
-    public function getAdminBlog($judul = false)
+    public function getAdminBlog($id = false)
     {
-        if($judul == false)
+        if($id == false)
         {
             return $this->findAll();
         }
-            return $this->where(['judul'=>$judul])->first();
+            return $this->where(['id'=>$id])->first();
+    }
+    public function search($search)
+    {
+        return $this->table('properti')->like('judul', $search)->orLike('author', $search);
     }
 }
