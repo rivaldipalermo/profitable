@@ -46,7 +46,8 @@ class AdminBlog extends BaseController
 					'isi'=>$this->request->getVar('isi'),
 				]
 			);
-			return redirect()->to('admin/blog');
+        	session()->setFlashdata('pesan', 'Blog Berhasil Ditambahkan');
+			return redirect()->to('/admin/blog');
 	}
     public function edit($id)
 	{
@@ -57,16 +58,16 @@ class AdminBlog extends BaseController
 			];
 			return view('Admin/Blog/editBlog',$data);
 	}
-	public function update()
+	public function update($id)
 	{
-			$this->blogModel->save(
-				[
-					'judul'=>$this->request->getVar('judul'),
-					'author'=>$this->request->getVar('author'),
-					'isi'=>$this->request->getVar('isi'),
-				]
-			);
-			return redirect()->to('/admin/blog');
+        $data = [
+            'judul'=>$this->request->getVar('judul'),
+			'author'=>$this->request->getVar('author'),
+			'isi'=>$this->request->getVar('isi'),
+        ];
+        $this->blogModel->update($id,$data);
+        session()->setFlashdata('pesan', 'Properti Berhasil Diubah');
+        return redirect()->to('/admin/blog');
 	}
     public function delete($id)
 	{

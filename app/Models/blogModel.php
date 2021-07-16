@@ -20,6 +20,6 @@ class blogModel extends Model
     }
     public function search($search)
     {
-        return $this->table('properti')->like('judul', $search)->orLike('author', $search);
+        return $this->table('blog')->like('judul', $search)->orLike('author', $search);
     }
 }

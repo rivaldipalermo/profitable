@@ -6,7 +6,7 @@
     <h3><?= $title; ?></h3>
 </div>
         <fieldset>
-        <form action="/admin/blog/update/<?= $adminblog['id'];?>" method="POST">
+        <form action="/admin/blog/update/<?= $adminblog['id'];?>" method="POST" enctype="multipart/form-data">
         <?= csrf_field();?>
             <div class="form-group row-mt3">
                 <label for="judul" class="col-sm-2 col-form-label">Judul </label>
