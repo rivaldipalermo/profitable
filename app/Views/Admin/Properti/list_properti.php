@@ -8,15 +8,18 @@
         <a href="/admin/properti/add" class="btn btn-primary">Tambah Properti</a>
     </div>
     <div class="row">
-        <div class="col-md-9"></div>
+        <div class="col-md-9">
+        </div>
         <div class="col-md-2">
-            <div class="form-group">
-                <input type="text" class="form-control" id="basicInput" placeholder="search">
-            </div>
+            <form action="" method="GET">
+                <div class="form-group">
+                    <input type="text" class="form-control" id="basicInput" placeholder="search" name="search">
+                </div>
         </div>
         <div class="col-md-1" style="margin-left: -15px;">
-            <button type="button" class="btn btn-primary">Cari</button>
+            <button type="submit" class="btn btn-primary" name="submit">Cari</button>
         </div>
+        </form>
     </div>
 </div>
 <!-- Basic Tables start -->
@@ -137,6 +140,7 @@
                                     <?php endforeach; ?>
                                 </tbody>
                             </table>
+                            <?= $pager->links('properti', 'properti_pagination'); ?>
                         </div>
                     </div>
                 </div>
