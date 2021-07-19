@@ -18,13 +18,24 @@ class PropertiController extends BaseController
     }
 
 	public function index()
-	{
+    {
+
+        $currentPage = $this->request->getVar('page_properti') ? $this->request->getVar('page_properti') : 1;
+        $search = $this->request->getVar('search');
+        if ($search) {
+            $properti = $this->PropertiModel->search($search);
+        } else {
+            $properti = $this->PropertiModel;
+        }
+
         $data = [
             'title' => 'Data Properti',
-            'properti' => $this->PropertiModel->findAll()
+            'properti' => $properti->paginate(2, 'properti'),
+            'pager' => $this->PropertiModel->pager,
+            'currentPage' => $currentPage
         ];
-		return view('Admin/Properti/list_properti', $data);
-	}
+        return view('Admin/Properti/list_properti', $data);
+    }
 
     public function addProperti()
     {
