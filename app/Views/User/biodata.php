@@ -110,21 +110,21 @@
 </tr></td>
     <tr><td>
     <div class="input-group mb-3">
-  <select class="form-select" id="inputGroupSelect01">
-    <option selected>Provinsi.</option>
-    <option value="1">One</option>
-    <option value="2">Two</option>
-    <option value="3">Three</option>
-  </select>
+    <select name="provinsi" id="provinsi" class="form-control input-lg">
+                                <option value="">Select provinsi</option>
+                                <?php
+                                foreach($provinsi as $row)
+                                {
+                                    echo '<option value="'.$row["provinsi_id"].'">'.$row["provinsi_name"].'</option>';
+                                }
+                                ?>
+                            </select>
 </div></td>
 <td>
 <div class="input-group mb-3">
-  <select class="form-select" id="inputGroupSelect01">
-    <option selected>Kota.</option>
-    <option value="1">One</option>
-    <option value="2">Two</option>
-    <option value="3">Three</option>
-  </select>
+<select name="kota" id="kota" class="form-control input-lg">
+                                <option value="">Select kota</option>
+                            </select>
 </div>
 </td>
 <tr><td colspan=2>
@@ -158,6 +158,81 @@
 </td>
 
 </tr>
+<script>
+
+$(document).ready(function(){
+
+    $('#provinsi').change(function(){
+
+        var provinsi_id = $('#provinsi').val();
+
+        var action = 'get_kota';
+
+        if(provinsi_id != '')
+        {
+            $.ajax({
+                url:"<?php echo base_url('/UserController/action'); ?>",
+                method:"POST",
+                data:{provinsi_id:provinsi_id, action:action},
+                dataType:"JSON",
+                success:function(data)
+                {
+                    var html = '<option value="">Select kota</option>';
+
+                    for(var count = 0; count < data.length; count++)
+                    {
+
+                        html += '<option value="'+data[count].kota_id+'">'+data[count].kota_name+'</option>';
+
+                    }
+
+                    $('#kota').html(html);
+                }
+            });
+        }
+        else
+        {
+            $('#kota').val('');
+        }
+        $('#city').val('');
+    });
+
+    $('#kota').change(function(){
+
+        var kota_id = $('#kota').val();
+
+        var action = 'get_city';
+
+        if(kota_id != '')
+        {
+            $.ajax({
+                url:"<?php echo base_url('/UserController/action'); ?>",
+                method:"POST",
+                data:{kota_id:kota_id, action:action},
+                dataType:"JSON",
+                success:function(data)
+                {
+                    var html = '<option value="">Select City</option>';
+
+                    for(var count = 0; count < data.length; count++)
+                    {
+                        html += '<option value="'+data[count].city_id+'">'+data[count].city_name+'</option>';
+                    }
+
+                    $('#city').html(html);
+                }
+            });
+        }
+        else
+        {
+            $('#city').val('');
+        }
+
+    });
+
+});
+
+</script>
 <!-- 
 
   <span class="input-group-text" id="basic-addon3">https://example.com/users/</span>
