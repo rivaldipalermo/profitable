@@ -52,6 +52,13 @@
                                 <span>Properti</span>
                             </a>
                         </li>
+
+                        <li class="sidebar-item  <?= ($request->uri->getSegment(2) == 'blog') ? 'active' : '' ?>"">
+                            <a href="/admin/blog" class='sidebar-link'>
+                                <i class="bi bi-collection-fill"></i>
+                                <span>Blog</span>
+                            </a>
+                        </li>
                         
                         <li class="sidebar-item  has-sub">
                             <a href="#" class='sidebar-link'>
@@ -126,13 +133,8 @@
                                     <li>
                                         <hr class="dropdown-divider">
                                     </li>
-                                    <li><a class='dropdown-item' href="#"><i
+                                    <li><a class='dropdown-item' href="/logout"><i
                                                 class="icon-mid bi bi-box-arrow-left me-2"></i> Logout</a></li>
-                                    <?php /* if(logged_in()) : ?>
-                                        <a class='dropdown-item' href="/logout"><i class="icon-mid bi bi-box-arrow-left me-2"></i> Logout</a>
-                                    <?php else : ?>
-                                        <a class='dropdown-item' href="/login"><i class="icon-mid bi bi-box-arrow-left me-2"></i> Login </a></li>
-                                    <?php endif; */?>
                                 </ul>
                             </div>
                         </div>

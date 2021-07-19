@@ -45,6 +45,10 @@ $routes->add('admin/properti/update', 'PropertiController::updateProperti');
 // Blog
 $routes->get('/admin/blog/', 'AdminBlog::index');
 $routes->get('/admin/blog/add', 'AdminBlog::add');
+$routes->add('/admin/blog/save', 'AdminBlog::simpan');
+$routes->get('/admin/blog/edit/(:any)', 'AdminBlog::edit/$1');
+$routes->add('/admin/blog/update/(:segment)', 'AdminBlog::update/$1');
+$routes->delete('/admin/blog/(:num)', 'AdminBlog::delete/$1');
 
 // Topup
 $routes->get('/user/invoices/(:any)', 'UserController::getInvoice/$1');
