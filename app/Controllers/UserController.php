@@ -11,4 +11,11 @@ class UserController extends BaseController
         ];
 		return view('user/u_index', $data);
 	}
+	public function topup()
+	{
+        $data = [
+            'title' => 'topup'
+        ];
+		return view('user/topup', $data);
+	}
 }
