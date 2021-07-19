@@ -70,4 +70,11 @@ class UserController extends BaseController
 		];
 		return view('User/invoice', $data);
 	}
+	public function resiko()
+	{
+        $data = [
+            'title' => 'Resiko'
+        ];
+		return view('User/u_resiko', $data);
+	}
 }

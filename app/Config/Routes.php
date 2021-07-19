@@ -50,6 +50,10 @@ $routes->get('/admin/blog/add', 'AdminBlog::add');
 $routes->get('/user/invoices/(:any)', 'UserController::getInvoice/$1');
 $routes->get('/user/biodata', 'UserController::biodata');
 
+// Resiko
+$routes->get('/user/u_resiko/', 'UserController::resiko');
+$routes->get('/guest/g_resiko/', 'GuestController::resiko');
+
 if (file_exists(APPPATH . 'Config/' . ENVIRONMENT . '/Routes.php'))
 {
 	require APPPATH . 'Config/' . ENVIRONMENT . '/Routes.php';
