@@ -10,7 +10,7 @@ class UserController extends BaseController
         $data = [
             'title' => 'Dashboard'
         ];
-		return view('user/u_index', $data);
+		return view('User/u_index', $data);
 	}
 
 	public function biodata()
@@ -18,7 +18,7 @@ class UserController extends BaseController
         $data = [
             'title' => 'Dashboard'
         ];
-		return view('user/biodata', $data);
+		return view('User/biodata', $data);
 	}
 	
 	public function riwayat_tu()
@@ -26,7 +26,7 @@ class UserController extends BaseController
         $data = [
             'title' => 'Transaksi'
         ];
-		return view('user/u_riwayat_trans', $data);
+		return view('User/u_riwayat_trans', $data);
 	}
 	public function __construct(){
 		$this->transaksiModel = new TransaksiModel();
