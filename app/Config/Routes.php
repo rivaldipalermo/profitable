@@ -33,21 +33,27 @@ $routes->setAutoRoute(true);
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
 $routes->get('/', 'Home::index');
-$routes->get('/admin/', 'AdminController::index');
+$routes->get('/admin', 'AdminController::index');
 
-/*
- * --------------------------------------------------------------------
- * Additional Routing
- * --------------------------------------------------------------------
- *
- * There will often be times that you need additional routing and you
- * need it to be able to override any defaults in this file. Environment
- * based routes is one such time. require() additional route files here
- * to make that happen.
- *
- * You will have access to the $routes object within that file without
- * needing to reload it.
- */
+// Properti
+$routes->get('/admin/properti', 'PropertiController::index');
+$routes->get('admin/properti/add', 'PropertiController::addProperti');
+$routes->add('admin/properti/store', 'PropertiController::storeProperti');
+$routes->get('admin/properti/edit/(:any)', 'PropertiController::editProperti/$1');
+$routes->add('admin/properti/update', 'PropertiController::updateProperti');
+
+// Blog
+$routes->get('/admin/blog/', 'AdminBlog::index');
+$routes->get('/admin/blog/add', 'AdminBlog::add');
+
+// Topup
+$routes->get('/user/invoices/(:any)', 'UserController::getInvoice/$1');
+$routes->get('/user/biodata', 'UserController::biodata');
+
+// Resiko
+$routes->get('/user/u_resiko/', 'UserController::resiko');
+$routes->get('/guest/g_resiko/', 'GuestController::resiko');
+
 if (file_exists(APPPATH . 'Config/' . ENVIRONMENT . '/Routes.php'))
 {
 	require APPPATH . 'Config/' . ENVIRONMENT . '/Routes.php';

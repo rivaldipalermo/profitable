@@ -16,6 +16,8 @@
     <link rel="stylesheet" href="<?= base_url();?>/assets/vendors/bootstrap-icons/bootstrap-icons.css">
     <link rel="stylesheet" href="<?= base_url();?>/assets/css/app.css">
     <link rel="shortcut icon" href="<?= base_url();?>/assets/images/favicon.svg" type="image/x-icon">
+    <script src="https://kit.fontawesome.com/8a210de33c.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -37,7 +39,7 @@
                     <ul class="menu">
                         <li class='sidebar-title'>Menu</li>
 
-                        <li class="sidebar-item <?= ($request->uri->getSegment(1) == 'admin') ? 'active' : '' ?>">
+                        <li class="sidebar-item <?= ($request->uri->getSegment(1) == 'admin' && $request->uri->getSegment(2) == '') ? 'active' : '' ?>">
                             <a href="/admin" class='sidebar-link'>
                                 <i class="bi bi-grid-fill"></i>
                                 <span>Dashboard</span>
@@ -45,9 +47,9 @@
                         </li>
 
                         <li class="sidebar-item  <?= ($request->uri->getSegment(2) == 'properti') ? 'active' : '' ?>"">
-                            <a href="#" class='sidebar-link'>
+                            <a href="/admin/properti" class='sidebar-link'>
                                 <i class="bi bi-collection-fill"></i>
-                                <span>Data Properti</span>
+                                <span>Properti</span>
                             </a>
                         </li>
                         
@@ -108,7 +110,7 @@
                                         </div>
                                         <div class="user-img d-flex align-items-center">
                                             <div class="avatar avatar-md">
-                                                <img src="assets/images/faces/1.jpg">
+                                                <img src="<?= base_url()?>/assets/images/faces/1.jpg">
                                             </div>
                                         </div>
                                     </div>
@@ -126,6 +128,11 @@
                                     </li>
                                     <li><a class='dropdown-item' href="#"><i
                                                 class="icon-mid bi bi-box-arrow-left me-2"></i> Logout</a></li>
+                                    <?php /* if(logged_in()) : ?>
+                                        <a class='dropdown-item' href="/logout"><i class="icon-mid bi bi-box-arrow-left me-2"></i> Logout</a>
+                                    <?php else : ?>
+                                        <a class='dropdown-item' href="/login"><i class="icon-mid bi bi-box-arrow-left me-2"></i> Login </a></li>
+                                    <?php endif; */?>
                                 </ul>
                             </div>
                         </div>
@@ -147,9 +154,6 @@
         </div>
         <script src="<?= base_url();?>/assets/vendors/perfect-scrollbar/perfect-scrollbar.min.js"></script>
         <script src="<?= base_url();?>/assets/js/bootstrap.bundle.min.js"></script>
-
-        <script src="<?= base_url();?>/assets/vendors/apexcharts/apexcharts.js"></script>
-        <script src="<?= base_url();?>/assets/js/pages/dashboard.js"></script>
 
         <script src="<?= base_url();?>/assets/js/main.js"></script>
 </body>
