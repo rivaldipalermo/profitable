@@ -1,0 +1,229 @@
+@media (max-width: 1199px) {
+  /* Main Menu Area css
+	============================================================================================ */
+  .header_area .navbar .nav .nav-item {
+    margin-right: 28px;
+  }
+  /* End Main Menu Area css
+	============================================================================================ */
+
+  /* Element Area css
+	============================================================================================ */
+  .area-padding {
+    padding: 80px 0;
+  }
+
+  .area-heading {
+    margin-bottom: 50px;
+  }
+
+  /* End Element Area css
+	============================================================================================ */
+}
+
+@media (max-width: 991px) {
+  /* Main Menu Area css
+	============================================================================================ */
+  .navbar-toggler {
+    border: none;
+    border-radius: 0px;
+    padding: 0px;
+    cursor: pointer;
+    margin-top: 27px;
+    margin-bottom: 23px;
+  }
+
+  .header_area .navbar {
+    background: linear-gradient(
+      90deg,
+      #e9f0f9 0.95%,
+      #ecf2fa 50.61%,
+      #eef3fa 100%
+    );
+  }
+
+  .navbar_fixed.header_area .navbar {
+    background: #072054;
+  }
+
+  .navbar-toggler[aria-expanded="false"] span:nth-child(2) {
+    opacity: 1;
+  }
+
+  .navbar-toggler[aria-expanded="true"] span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .navbar-toggler[aria-expanded="true"] span:first-child {
+    transform: rotate(-45deg);
+    position: relative;
+    top: 7.5px;
+  }
+
+  .navbar-toggler[aria-expanded="true"] span:last-child {
+    transform: rotate(45deg);
+    bottom: 6px;
+    position: relative;
+  }
+
+  .navbar-toggler span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background: #2b237c;
+    margin: auto;
+    margin-bottom: 4px;
+    transition: all 400ms linear;
+    cursor: pointer;
+  }
+
+  .navbar_fixed .navbar-toggler span {
+    background: #fff;
+  }
+
+  .navbar .container {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  .nav {
+    padding-bottom: 30px;
+  }
+
+  .header_area + section,
+  .header_area + row,
+  .header_area + div {
+    margin-top: 117px;
+  }
+
+  .header_top .nav {
+    padding: 0px;
+  }
+
+  .header_area .navbar .nav .nav-item .nav-link {
+    line-height: 40px;
+    margin-right: 0px;
+    display: block;
+    border-bottom: 1px solid #ededed33;
+    border-radius: 0px;
+  }
+
+  .header_area.navbar_fixed .main_menu .navbar .nav .nav-item .nav-link {
+    line-height: 40px;
+  }
+
+  .header_area .navbar .search {
+    margin-left: 0px;
+  }
+
+  .header_area .navbar-collapse {
+    max-height: 340px;
+    overflow-y: scroll;
+  }
+
+  .header_area .navbar .nav .nav-item.submenu ul .nav-item .nav-link {
+    padding: 0px 15px;
+  }
+
+  .header_area .navbar .nav .nav-item {
+    margin-right: 0px;
+  }
+
+  .header_area + section,
+  .header_area + row,
+  .header_area + div {
+    margin-top: 78px;
+  }
+  /* End Main Menu Area css
+
+  /* Footer Area css
+	============================================================================================ */
+  .footer-area .col-sm-6 {
+    margin-bottom: 30px;
+  }
+  /* End End Footer Area css
+	============================================================================================ */
+
+  .area-padding {
+    padding: 80px 0;
+  }
+}
+
+@media (max-width: 767px) {
+  .header_area + section,
+  .header_area + row,
+  .header_area + div {
+    margin-top: 80px;
+  }
+
+  /* Footer Area css
+	============================================================================================ */
+  .footer-bottom {
+    text-align: center;
+  }
+
+  .footer-area .footer-bottom {
+    margin-top: 15px;
+  }
+
+  /* End End Footer Area css
+	============================================================================================ */
+}
+
+@media (max-width: 575px) {
+  .header_area + section,
+  .header_area + row,
+  .header_area + div {
+    margin-top: 71px;
+  }
+
+  /* Footer Area css
+	============================================================================================ */
+  .footer-area {
+    padding: 70px 0 0;
+  }
+  /* End End Footer Area css
+	============================================================================================ */
+
+  .footer-bottom {
+    padding-top: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Main Menu Area css
+	============================================================================================ */
+  .header_area .navbar-collapse {
+    max-height: 280px;
+  }
+  /* End Main Menu Area css
+	============================================================================================ */
+}
+
+@media (max-width: 374px) {
+  /* Main Menu Area css
+	============================================================================================ */
+  .header_area {
+    width: 102%;
+  }
+
+  .footer-area {
+    width: 102%;
+  }
+  /* End Main Menu Area css
+	============================================================================================ */
+}
+
+@media (max-width: 368px) {
+  /* Main Menu Area css
+	============================================================================================ */
+  .header_area {
+    width: 119%;
+  }
+
+  .footer-area {
+    width: 119%;
+  }
+  /* End Main Menu Area css
+	============================================================================================ */
+}
