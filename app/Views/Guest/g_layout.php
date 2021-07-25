@@ -15,6 +15,7 @@
     <!-- main css -->
     <link rel="stylesheet" href="<?= base_url(); ?>/assets/css/guest/style.css" />
     <link rel="stylesheet" href="<?= base_url(); ?>/assets/css/guest/responsive.css" />
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
 </head>
 
 <body>
@@ -147,6 +148,36 @@
     <script src="<?= base_url(); ?>/assets/js/guest/bootstrap.min.js"></script>
     <script src="<?= base_url(); ?>/assets/vendors/owl-carousel/owl.carousel.min.js"></script>
     <script src="<?= base_url(); ?>/assets/js/guest/theme.js"></script>
+    <script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script>
+        function createSlick() {
+            $(".slider")
+                .not(".slick-initialized")
+                .slick({
+                    centerMode: true,
+                    autoplay: true,
+                    dots: true,
+
+                    slidesToShow: 3,
+                    responsive: [{
+                        breakpoint: 875,
+                        settings: {
+                            dots: false,
+                            arrows: false,
+                            infinite: false,
+                            slidesToShow: 1,
+                            slidesToScroll: 1,
+                        },
+                    }, ],
+                });
+        }
+
+        createSlick();
+
+        //Will not throw error, even if called multiple times.
+        $(window).on("resize", createSlick);
+    </script>
 </body>
 
 </html>
