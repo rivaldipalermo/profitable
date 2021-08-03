@@ -25,5 +25,19 @@ class Home extends BaseController
 		];
 
 		return view('Pages/cara_kerja', $data);
+	} 
+	public function about()
+	{
+		$data = [
+			'title' => 'tentang kami' 
+		];
+		return view('Guest/About', $data);
+	}
+	public function blog()
+	{
+		$data = [
+			'title' => 'blog'
+		];
+		return view('Guest/Blog',$data);
 	}
 }
