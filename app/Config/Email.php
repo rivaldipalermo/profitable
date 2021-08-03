@@ -9,12 +9,12 @@ class Email extends BaseConfig
 	/**
 	 * @var string
 	 */
-	public $fromEmail='profitableapps21@gmail.com';
+	public $fromEmail = 'profitableapps21@gmail.com';
 
 	/**
 	 * @var string
 	 */
-	public $fromName='Profitable Apps';
+	public $fromName = 'Profitable Apps';
 
 	/**
 	 * @var string
@@ -47,21 +47,21 @@ class Email extends BaseConfig
 	 *
 	 * @var string
 	 */
-	public $SMTPHost='smtp.gmail.com';
+	public $SMTPHost = 'smtp.gmail.com';
 
 	/**
 	 * SMTP Username
 	 *
 	 * @var string
 	 */
-	public $SMTPUser='profitableapps21@gmail.com';
+	public $SMTPUser = 'profitableapps21@gmail.com';
 
 	/**
 	 * SMTP Password
 	 *
 	 * @var string
 	 */
-	public $SMTPPass='profitable123';
+	public $SMTPPass = 'profitable123';
 
 	/**
 	 * SMTP Port
@@ -167,5 +167,4 @@ class Email extends BaseConfig
 	 * @var boolean
 	 */
 	public $DSN = false;
-
 }

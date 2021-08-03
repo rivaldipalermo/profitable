@@ -19,5 +19,6 @@ class GuestController extends BaseController
             'title' => 'Resiko'
         ];
 		return view('Guest/g_resiko', $data);
-	}
+	} 
+ 
 }
