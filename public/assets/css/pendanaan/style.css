@@ -1,0 +1,145 @@
+/*!
+ * Temlate Name: Launch
+ * Version: 1.0
+ * Author: Justin Audain
+ * License: Creative Commons Attribution 3.0 License
+ * Website: http://themes.audaindesigns.com
+ */
+
+/*-Base-*/
+p {
+  color: #2b237c;
+}
+
+/*-Section Blocks-*/
+.section-block {
+  background-color: #fff;
+  border-radius: 4px;
+  padding: 30px;
+  margin-bottom: 30px;
+}
+
+.section-title {
+  color: #2b237c;
+  border-radius: 4px;
+  display: table;
+  padding: 10px 0px;
+  font-size: 25px;
+  font-weight: 700;
+}
+
+/*-Main Content-*/
+.main-content {
+  padding: 40px 0px;
+}
+
+/*-Profile Summary-*/
+
+/*-Funding Meta-*/
+
+.funding-meta h2,
+.funding-meta span.contribution {
+  display: inline-block;
+  color: #2b237c;
+}
+.funding-meta span.contribution,
+.funding-meta span.goal-progress {
+  color: #2b237c;
+}
+.funding-meta span.goal-progress {
+  text-align: right;
+  display: block;
+}
+.count-down {
+  display: block;
+  color: #2b237c;
+  text-align: right;
+  text-transform: uppercase;
+}
+.count-down strong {
+  padding-right: 5px;
+}
+.progress-bar {
+  background-color: #2b237c;
+  box-shadow: none;
+}
+.progress {
+  height: 30px;
+  background-color: #ecebeb;
+  box-shadow: none;
+  margin: 10px 0px 10px 0px;
+}
+
+/*-Rewards-*/
+
+.reward-block.last {
+  margin-bottom: 0;
+}
+.reward-block h3 {
+  background: #2b237c;
+  color: #fff;
+  font-size: 15px;
+  font-weight: 700;
+  margin: 0px 0px 10px 0px;
+  padding: 10px;
+  display: table;
+  border-radius: 4px;
+}
+.reward-block h2 {
+  font-size: 20px;
+  font-weight: 300;
+  color: #2b237c;
+  margin: 15px 0px;
+}
+.reward-block i.fa {
+  color: #2b237c;
+}
+.reward-block span {
+  margin-bottom: 10px;
+  display: block;
+  color: #2b237c;
+}
+.reward-block.popular:after {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  content: "popular";
+  background-color: #2b237c;
+  color: #fff;
+  padding: 5px;
+  border-radius: 4px;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+/*-Buttons-*/
+.btn {
+  border: 0;
+}
+.btn.btn-launch {
+  background-color: #2b237c;
+  color: #fff;
+  font-size: 17px;
+  font-weight: 600;
+  padding: 10px 25px;
+}
+.btn.btn-launch:hover,
+.btn.btn-launch:focus,
+.btn.btn-reward,
+.btn.btn-reward:hover,
+.btn.btn-reward :focus {
+  background-color: #1e40c8;
+  box-shadow: none;
+}
+.btn.btn-reward {
+  background-color: #2b237c;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 5px 15px;
+}
+
+.btn.btn-contact:hover,
+.btn.btn-contact:focus {
+  background-color: #1e40c8;
+}
