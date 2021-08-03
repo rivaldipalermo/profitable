@@ -35,6 +35,9 @@ $routes->get('/', 'Home::index');
 $routes->get('/cara-kerja', 'Home::caraKerja');
 $routes->get('/admin', 'AdminController::index');
 
+// ProyekPendanaan
+$routes->get('/pendanaan', 'PendanaanController::pendanaan');
+
 // Properti
 $routes->get('/admin/properti', 'PropertiController::index');
 $routes->get('admin/properti/add', 'PropertiController::addProperti');

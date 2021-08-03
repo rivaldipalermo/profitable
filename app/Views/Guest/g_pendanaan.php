@@ -21,74 +21,19 @@
                 </form>
             </div>
 
-            <div class="row row-cols-1 row-cols-md-3 g-4">
-                <div class="col">
-                    <div class="card h-100">
-                        <img src="\assets\images\faces\1.jpg" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">Rumah Minimalis Santiago De Latinos</h5>
-                            <div class="row row-cols-2">
-                                <div class="col">Imba Hasil :</div>
-                                <div class="col">Terkumpul :</div>
-                            </div>
-                            <div class="row row-cols-2">
-                                <div class="col">Resiko :</div>
-                                <div class="col">Minimum Investasi :</div>
-                            </div>
-                        </div>
-                        <div class="card-footer">
-                            <a href="/guest/investasi" class="btn btn-primary">Investasi</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card h-100">
-                        <img src="\assets\images\faces\2.jpg" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">Rumah Modern Hacienda</h5>
-                            <div class="row row-cols-2">
-                                <div class="col">Imba Hasil :</div>
-                                <div class="col">Terkumpul :</div>
-                            </div>
-                            <div class="row row-cols-2">
-                                <div class="col">Resiko :</div>
-                                <div class="col">Minimum Investasi :</div>
-                            </div>
-                        </div>
-                        <div class="card-footer">
-                            <a href="/guest/g_investasi" class="btn btn-primary">Investasi</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col">
-                    <div class="card h-100">
-                        <img src="\assets\images\faces\3.jpg" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">Rumah Aurora Residence</h5>
-                            <div class="row row-cols-2">
-                                <div class="col">Imba Hasil :</div>
-                                <div class="col">Terkumpul :</div>
-                            </div>
-                            <div class="row row-cols-2">
-                                <div class="col">Resiko :</div>
-                                <div class="col">Minimum Investasi :</div>
-                            </div>
-                        </div>
-                        <div class="card-footer">
-                            <a href="/guest/investasi" class="btn btn-primary">Investasi</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <br>
+            
 
             <div class="row row-cols-1 row-cols-md-3 g-4">
+                <?php foreach($properti as $row): ?>
                 <div class="col">
                     <div class="card h-100">
-                        <img src="\assets\images\faces\4.jpg" class="card-img-top" alt="...">
+                    <img src="<?= base_url()?>/assets/images/properti/<?= $row['foto_properti']; ?>" class="card-img-top">
                         <div class="card-body">
-                            <h5 class="card-title">Rumah Minimalis Santiago De Latinos</h5>
+                            <h5 class="card-title"><?= $row['lokasi_properti']; ?></h5>
+                            <div class="row row-cols-2">
+                                <div class="col">Harga : <?= $row['harga_properti']; ?></div>
+                                <div class="col">Deskripsi : <?= $row['deskripsi_properti']; ?></div>
+                            </div>
                             <div class="row row-cols-2">
                                 <div class="col">Imba Hasil :</div>
                                 <div class="col">Terkumpul :</div>
@@ -103,45 +48,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col">
-                    <div class="card h-100">
-                        <img src="\assets\images\faces\5.jpg" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">Rumah Minimalis Santiago De Latinos</h5>
-                            <div class="row row-cols-2">
-                                <div class="col">Imba Hasil :</div>
-                                <div class="col">Terkumpul :</div>
-                            </div>
-                            <div class="row row-cols-2">
-                                <div class="col">Resiko :</div>
-                                <div class="col">Minimum Investasi :</div>
-                            </div>
-                        </div>
-                        <div class="card-footer">
-                            <a href="/guest/investasi" class="btn btn-primary">Investasi</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col">
-                    <div class="card h-100">
-                        <img src="\assets\images\faces\6.jpg" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">Rumah Minimalis Santiago De Latinos</h5>
-                            <div class="row row-cols-2">
-                                <div class="col">Imba Hasil :</div>
-                                <div class="col">Terkumpul :</div>
-                            </div>
-                            <div class="row row-cols-2">
-                                <div class="col">Resiko :</div>
-                                <div class="col">Minimum Investasi :</div>
-                            </div>
-                        </div>
-                        <div class="card-footer">
-                            <a href="/guest/investasi" class="btn btn-primary">Investasi</a>
-                        </div>
-                    </div>
-                </div>
+                <?php endforeach; ?>
             </div>
             <br>
 

@@ -25,8 +25,10 @@
             <nav class="navbar navbar-expand-lg navbar-light">
                 <div class="container">
                     <!-- Brand and toggle get grouped for better mobile display -->
-                    <a class="navbar-brand logo_h" href="index.html">Profitable</a>
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <a class="navbar-brand logo_h" href="/">Profitable</a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse"
+                        data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
@@ -35,13 +37,15 @@
                     <div class="collapse navbar-collapse offset" id="navbarSupportedContent">
                         <ul class="nav navbar-nav menu_nav ml-auto">
                             <li class="nav-item">
-                                <a class="nav-link" href="#">Proyek Pendanaan</a>
+                                <a class="nav-link" href="/pendanaan">Proyek Pendanaan</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">Cara Kerja</a>
+                                <a class="nav-link" href="/cara-kerja">Cara Kerja</a>
                             </li>
                             <li class="nav-item submenu dropdown">
-                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Lainnya <i class="ml-2 fas fa-chevron-down d-none d-lg-inline"></i></span></a>
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button"
+                                    aria-haspopup="true" aria-expanded="false">Lainnya <i
+                                        class="ml-2 fas fa-chevron-down d-none d-lg-inline"></i></span></a>
                                 <ul class="dropdown-menu">
                                     <li class="nav-item">
                                         <a class="nav-link" href="#">FAQ</a>
@@ -57,18 +61,44 @@
                                     </li>
                                 </ul>
                             </li>
+                            <?php if(!logged_in()) : ?>
                             <li class="nav-item">
                                 <a href="/login" class="nav-link d-lg-none">Login</a>
                             </li>
                             <li class="nav-item">
                                 <a href="/register" class="nav-link d-lg-none">Sign Up</a>
                             </li>
+                            <?php endif; ?>
                         </ul>
 
-                        <div class="nav-item ml-auto">
-                            <a href="#" class="d-none d-lg-inline sign_in mr-2">Login</a>
-                            <a href="#" class="d-none d-lg-inline sign_up">Sign Up</a>
+                        <?php if(logged_in()) : ?>
+                        <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
+                            <div class="navbar-nav ml-auto">
+                                <img src="http://localhost:8080/home/img/12.png" alt="Image"
+                                    style="width: 40px; height: 40px; border-radius: 50px;">
+                                <div class="nav-item dropdown">
+                                    <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown"><?= user()->username ?></a>
+                                    <div class="dropdown-menu">
+                                        <a href="http://localhost:8080/Dashboard_member/index"
+                                            class="dropdown-item">Dashboard</a>
+                                        <a href="http://localhost:8080/Dashboard_member/porto"
+                                            class="dropdown-item">Portofolio</a>
+                                        <a href="http://localhost:8080/Dashboard_member/transaksi"
+                                            class="dropdown-item">Transaksi</a>
+                                        <a href="http://localhost:8080/Pengaturan" class="dropdown-item">Profil</a>
+                                        <a href="/logout" class="dropdown-item">Logout</a>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
+                        <?php endif; ?>
+
+                        <?php if(!logged_in()) : ?>
+                        <div class="nav-item ml-auto">
+                            <a href="/login" class="d-none d-lg-inline sign_in mr-2">Login</a>
+                            <a href="/register" class="d-none d-lg-inline sign_up">Sign Up</a>
+                        </div>
+                        <?php endif; ?>
                     </div>
                 </div>
             </nav>

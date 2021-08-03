@@ -191,6 +191,7 @@ class PropertiController extends BaseController
 
     public function updateProperti()
     {
+        $id = $this->request->getVar('id');
         if(!$this->validate(
             [
                 'lokasi_properti' => [
@@ -244,7 +245,7 @@ class PropertiController extends BaseController
             ]
         )){
             $validation = \Config\Services::validation();
-            return redirect()->to('/admin/properti/add')->withInput()->with('validation', $validation);
+            return redirect()->to('/admin/properti/edit/'.$id)->withInput()->with('validation', $validation);
         }
 
         $filegambar = $this->request->getFile('foto_properti');
@@ -256,7 +257,6 @@ class PropertiController extends BaseController
             unlink('assets/images/properti/'.$this->request->getVar('foto_properti_old'));
         }
 
-        $id = $this->request->getVar('id');
         $data = [
             'lokasi_properti' => $this->request->getVar('lokasi_properti'),
             'provinsi' => $this->request->getVar('provinsi'),

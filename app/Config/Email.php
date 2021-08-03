@@ -9,12 +9,12 @@ class Email extends BaseConfig
 	/**
 	 * @var string
 	 */
-	public $fromEmail='rivaldi.palermo11@gmail.com';
+	public $fromEmail='profitableapps21@gmail.com';
 
 	/**
 	 * @var string
 	 */
-	public $fromName='TPEC-1';
+	public $fromName='Profitable Apps';
 
 	/**
 	 * @var string
@@ -54,14 +54,14 @@ class Email extends BaseConfig
 	 *
 	 * @var string
 	 */
-	public $SMTPUser='rivaldi.palermo11@gmail.com';
+	public $SMTPUser='profitableapps21@gmail.com';
 
 	/**
 	 * SMTP Password
 	 *
 	 * @var string
 	 */
-	public $SMTPPass='belumdiisi';
+	public $SMTPPass='profitable123';
 
 	/**
 	 * SMTP Port
