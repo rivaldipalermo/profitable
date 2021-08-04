@@ -6,6 +6,8 @@ use App\Models\UriwayattModel;
 use App\Models\BiodataModel;
 use App\Models\BiosaveModel;
 use App\Models\KotaModel;
+use App\Models\Modeltopup;
+
 use App\Models\BuktitopupModel;
 
 
@@ -18,6 +20,8 @@ class UserController extends BaseController
 		$this->transaksiModel = new TransaksiModel();
 		$this->biodataModel = new BiodataModel();
 		$this->kotaModel = new KotaModel();
+		$this->Modeltopup = new Modeltopup();
+		
 		$this->biosaveModel = new BiosaveModel();
 		$this->buktitopupModel = new BuktitopupModel();
 
@@ -34,9 +38,28 @@ class UserController extends BaseController
 	public function topup()
 	{
         $data = [
-            'title' => 'topup'
+            'title' => 'topup',
+			// 'topup' => $this-> Modeltopup -> gettopup()
         ];
 		return view('user/topup', $data);
+	}
+	public function halamantunggu()
+	{
+        $data = [
+            'title' => 'topup'
+        ];
+		return view('user/halamantunggu', $data);
+	}
+	public function topupsave()
+	{
+		
+        $this->Modeltopup->save(
+            [
+                'nominal' => $this->request->getVar('nominal'),
+                'nama_bank' => $this->request->getVar('nama_bank'),
+                'nomor_kartu' => $this->request->getVar('nomor_kartu')
+			]);
+			return redirect()->to('/UserController/halamantunggu');
 	}
 	public function action()
 	{
