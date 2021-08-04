@@ -1,8 +1,10 @@
 <?php
 
 namespace App\Controllers;
+use CodeIgniter\HTTP\Response;
 use App\Models\blogModel;
 use Config\Validation;
+use CodeIgniter\Validation\Validation as ValidationValidation;
 
 class AdminBlog extends BaseController
 {
@@ -12,11 +14,20 @@ class AdminBlog extends BaseController
     }
 	public function index()
 	{
+		$currentPage = $this->request->getVar('page_blog') ? $this->request->getVar('page_blog') : 1;
+        $search = $this->request->getVar('search');
+        if ($search) {
+            $blog = $this->blogModel->search($search);
+        } else {
+            $blog = $this->blogModel;
+		}	
 		$data=[
             'title'=>"Blog Management",
-    	    'adminblog'=>$this->blogModel->getAdminBlog()
+    	    'adminblog'=>$blog->paginate(2, 'blog'),
+			'pager' => $this->blogModel->pager,
+            'currentPage' => $currentPage
         ];
-        return view('Admin/viewBlog',$data);
+        return view('Admin/Blog/viewBlog',$data);
 	}
     public function add()
 	{
@@ -24,43 +35,45 @@ class AdminBlog extends BaseController
 			'title'=>'Blog Baru',
 			'validation'=>\Config\Services::validation()
 			];
-			return view('Admin/addBlog',$data);
+			return view('Admin/Blog/addBlog',$data);
 	}
-    public function save()
+    public function simpan()
 	{
-		if(!$this->validate(
-			[
-				'judul'=>[
-					'rules'=>'required|is_unique[blog.judul]',
-					'errors'=>[
-						'required'=>'{field} Blog Tidak Boleh Kosong.',
-						'is_unique'=>'{field} Blog Tidak Boleh Sama'
-					]
-	
-					]
-			]
-			))
-			{
-				return redirect()->to('Admin/addBlog')->withInput();
-			}
 			$this->blogModel->save(
 				[
 					'judul'=>$this->request->getVar('judul'),
 					'author'=>$this->request->getVar('author'),
 					'isi'=>$this->request->getVar('isi'),
-					'created_at'=>$this->request->getVar('created_at'),
-					'updated_at'=>$this->request->getVar('updated_at'),
 				]
 			);
-			session()->setFlashdata('pesan','Data Sudah Ditambahkan');
-			return redirect()->to('/viewBlog');
+        	session()->setFlashdata('pesan', 'Blog Berhasil Ditambahkan');
+			return redirect()->to('/admin/blog');
 	}
-    public function edit()
+    public function edit($id)
 	{
-		return view('welcome_message');
+		$data=[
+			'title'=>'Edit Blog',
+			'validation'=>\Config\Services::validation(),
+			'adminblog'=>$this->blogModel->getAdminBlog($id)
+			];
+			return view('Admin/Blog/editBlog',$data);
 	}
-    public function delete()
+	public function update($id)
 	{
-		return view('welcome_message');
+        $data = [
+            'judul'=>$this->request->getVar('judul'),
+			'author'=>$this->request->getVar('author'),
+			'isi'=>$this->request->getVar('isi'),
+        ];
+        $this->blogModel->update($id,$data);
+        session()->setFlashdata('pesan', 'Properti Berhasil Diubah');
+        return redirect()->to('/admin/blog');
+	}
+    public function delete($id)
+	{
+		$this->blogModel->delete($id);
+        session()->setFlashdata('pesan','Data Sudah Dihapus');
+
+        return redirect()->to('/admin/blog');
 	}
 }
