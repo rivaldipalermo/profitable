@@ -151,6 +151,14 @@ class UserController extends BaseController
 		];
 		return view('User/invoice', $data);
 	}
+	public function getHelp($id){
+		$table = $this->transaksiModel->getTransaksi($id);
+		$data = [
+			'title' => 'Bantuan Topup',
+			'table' => $table,
+		];
+		return view('User/bantuan_topup', $data);
+	}
 	public function resiko()
 	{
         $data = [
