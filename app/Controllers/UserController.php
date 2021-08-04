@@ -41,14 +41,14 @@ class UserController extends BaseController
             'title' => 'topup',
 			// 'topup' => $this-> Modeltopup -> gettopup()
         ];
-		return view('user/topup', $data);
+		return view('User/topup', $data);
 	}
 	public function halamantunggu()
 	{
         $data = [
             'title' => 'topup'
         ];
-		return view('user/halamantunggu', $data);
+		return view('User/halamantunggu', $data);
 	}
 	public function topupsave()
 	{
@@ -127,7 +127,7 @@ class UserController extends BaseController
         $data = [
             'title' => 'Bukti Topup',
         ];
-		return view('user/buktitopup', $data);
+		return view('User/buktitopup', $data);
 
 		// $this->buktitopupModel->save(
 		// 	    [
@@ -184,7 +184,7 @@ class UserController extends BaseController
 			'transaksi' => $this->transaksiModel->getTransaksi($id)
         ];
         
-		return view('user/u_upload_bukti', $data);
+		return view('User/u_upload_bukti', $data);
     }
 
 	
