@@ -1,7 +1,7 @@
 <?= $this->extend('Admin/layout') ?>
 <?= $this->section('content'); ?>
 <div class="page-heading">
-    <h3><?= $title; ?></h3>
+    <h1><?= $title; ?></h1>
 </div>
 <div class="page-content">
     <section class="row">
@@ -9,7 +9,8 @@
             <div class="row">
                 <div class="col-6 col-lg-3 col-md-6">
                     <div class="card">
-                        <div class="card-body px-3 py-4-5">
+                        
+                        <!-- <div class="card-body px-3 py-4-5">
                             <div class="row">
                                 <div class="col-md-4">
                                     <div class="stats-icon purple">
@@ -70,14 +71,16 @@
                                 <div class="col-md-8">
                                     <h6 class="text-muted font-semibold">Saved Post</h6>
                                     <h6 class='font-extrabold mb-0'>112</h6>
-                                </div>
+                                </div> -->
+
+
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-8">
+                <!-- <div class="col-md-8">
                                     <h3 class="text-muted font-semibold">BIODATA</h6>
-                                </div>
+                                </div> -->
             </div>
             <div class="row">
                 <div class="col-12 col-xl-12">
@@ -91,26 +94,41 @@
                             <div class="table-responsive">
                                 <table class="table table-hover table-lg">
                                     <thead>
-                                  <!-- FORM BIODATA       -->
-                                <tr><td>
 
-  <input type="text" class="form-control" placeholder="Nama Lengkap*" >
+                                    <!-- <form action="/UserController/biodata" method="POST"> -->
+                       <!--    FORM BIODATA       -->
+                                <tr><td>
+                            <form action="/UserController/biosave" method="POST">
+
+                                                  
+  <input type="text" class="form-control" placeholder="Nama Lengkap*" id="nama" name="nama" required
+  oninvalid="this.setCustomValidity('Nama Lengkap tidak boleh kosong')"
+  oninput="this.setCustomValidity('')"/>
 </td>
   <td>
-  <input type="text" class="form-control" placeholder="Nama Panggilan" >
+  <input type="text" class="form-control" placeholder="Nama Panggilan" id="panggilan" name="panggilan">
 </td>
 </tr>
 </div>
-  <tr><td>              
-  <input type="date" class="form-control" placeholder="Tanggal Lahir*">
+  <tr><td>
+  <input placeholder="Tanggal Lahir*" type="text" class="form-control"
+  onfocus="(this.type='date')" id="tl" name="tl" required
+  oninvalid="this.setCustomValidity('Tanggal lahir tidak boleh kosong')"
+  oninput="this.setCustomValidity('')"/>              
+  <!-- <input type="date" class="form-control" placeholder="Tanggal Lahir"> -->
 </td>
 </tr>
     <tr><td colspan=2>
-    <input type="text" class="form-control" placeholder="Phone*" >
+    <!-- <input type="text" class="form-control" placeholder="Phone*" > -->
+    <input type="text" name="phone" id="phone" class="form-control" placeholder="Phone*" onkeypress="return hanyaAngka(event)" required
+  oninvalid="this.setCustomValidity('Phone tidak boleh kosong')"
+  oninput="this.setCustomValidity('')"/>
 </tr></td>
     <tr><td>
     <div class="input-group mb-3">
-    <select name="provinsi" id="provinsi" class="form-control input-lg">
+    <select name="provinsi" id="provinsi" name="provinsi" class="form-control input-lg" required
+  oninvalid="this.setCustomValidity('Provinsi tidak boleh kosong')"
+  oninput="this.setCustomValidity('')">
                                 <option value="">Select provinsi</option>
                                 <?php
                                 foreach($provinsi as $row)
@@ -122,42 +140,88 @@
 </div></td>
 <td>
 <div class="input-group mb-3">
-<select name="kota" id="kota" class="form-control input-lg">
+<select name="kota" id="kota" name="kota" class="form-control input-lg" required
+  oninvalid="this.setCustomValidity('Kota tidak boleh kosong')"
+  oninput="this.setCustomValidity('')">
                                 <option value="">Select kota</option>
                             </select>
 </div>
 </td>
 <tr><td colspan=2>
-<input type="text" class="form-control" placeholder="Address" aria-label="Recipient's username" aria-describedby="basic-addon2">
+<input type="text" class="form-control" id="alamat" name="alamat" placeholder="Alamat" aria-label="Recipient's username" aria-describedby="basic-addon2" required
+  oninvalid="this.setCustomValidity('Enter User Name Here')"
+  oninput="this.setCustomValidity('')"/>
 </td>
 </tr>
 <tr><td>
 <div class="input-group mb-3">
-  <select class="form-select" id="inputGroupSelect01">
-    <option selected>Pekerjaan*</option>
-    <option value="1">Karyawan</option>
-    <option value="2">Wiraswasta</option>
-    <option value="3">Pelajar</option>
-    <option value="4">Ibu Rumah Tangga</option>
-    <option value="5">Tidak Bekerja</option>
-    <option value="6">Pensiunan</option>
+  <select class="form-select" id="pekerjaan" name="pekerjaan" required
+  oninvalid="this.setCustomValidity('Pekerjaan tidak boleh kosong')"
+  oninput="this.setCustomValidity('')">
+    <option selected value="">Pekerjaan*</option>
+    <option value="Karyawan">Karyawan</option>
+    <option value="Wiraswasta">Wiraswasta</option>
+    <option value="Pelajar">Pelajar</option>
+    <option value="Ibu Rumah Tangga">Ibu Rumah Tangga</option>
+    <option value="Tidak Bekerja">Tidak Bekerja</option>
+    <option value="Pensiunan">Pensiunan</option>
   </select>
 </div>
 </td>
 <td>
 <div class="input-group mb-3">
-  <select class="form-select" id="inputGroupSelect01">
-    <option selected>Sumber Dana*</option>
-    <option value="1">Gaji</option>
-    <option value="2">Hasil Usaha</option>
-    <option value="3">Warisan</option>
-    <option value="4">Tabungan</option>
-    <option value="5">Lainnya</option>
+  <select class="form-select" id="sumber" name="sumber" required
+  oninvalid="this.setCustomValidity('Sumber Dana tidak boleh kosong')"
+  oninput="this.setCustomValidity('')">
+    <option selected value="">Sumber Dana*</option>
+    <option value="Gaji">Gaji</option>
+    <option value="Hasil Usaha">Hasil Usaha</option>
+    <option value="Warisan">Warisan</option>
+    <option value="Tabungan">Tabungan</option>
+    <option value="Lainnya">Lainnya</option>
   </select>
 </div>
 </td>
+<tr><Td>
+ <div class="col-md-8">
+     <h3 class="text-muted font-semibold">INFORMASI BANK</h6>
+  </div>
+  <tr><td>
+  <input type="text" class="form-control" placeholder="Nama Bank*" id="nbank" name="nbank" required
+  oninvalid="this.setCustomValidity('Nama Bank tidak boleh kosong')"
+  oninput="this.setCustomValidity('')"/>
+</td>
+  <td>
+  <input type="text" class="form-control" placeholder="Cabang*" id="cabang" name="cabang" required
+  oninvalid="this.setCustomValidity('Cabang tidak boleh kosong')"
+  oninput="this.setCustomValidity('')"/>
+</td>
+</tr>
+
+<tr><td>
+  <input type="text" class="form-control" placeholder="Atas Nama*" id="anama" name="anama" required
+  oninvalid="this.setCustomValidity('Atas Nama tidak boleh kosong')"
+  oninput="this.setCustomValidity('')"/>
+</td>
+  <td>
+  <input type="text" class="form-control" placeholder="Nomor Rekening*" id="norek" name="norek" required
+  oninvalid="this.setCustomValidity('Nomor Rekening tidak boleh kosong')"
+  oninput="this.setCustomValidity('')"/>
+</td>
+</tr>
+
+<tr>
+    <td>
+    <button type="submit" class="btn btn-primary">Submit</button>
+    </td>
+</tr>
+
+
+
+
 
 </tr>
+                            </form>
 <script>
 
 $(document).ready(function(){
@@ -231,6 +295,12 @@ $(document).ready(function(){
     });
 
 });
+function hanyaAngka(event) {
+            var angka = (event.which) ? event.which : event.keyCode
+            if (angka != 46 && angka > 31 && (angka < 48 || angka > 57))
+                return false;
+            return true;
+        }
 
 </script>
 <!-- 
