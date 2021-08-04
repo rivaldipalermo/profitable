@@ -158,12 +158,14 @@
                         <form method="GET">
                             <table>
                                 <tr>
-                                    <td></td>
+                                    
                                     <td><h5>From</h5></td>
                                     <td><input type="date" name="dt_from" required="required"></td>
                                     <td><h5>To</h5></td>
                                     <td><input type="date" name="dt_to" required="required"></td>
                                     <td><input type="submit" class="btn btn-primary" name="filter" value="Filter"></td>
+                                    
+                                    <td><a href="/UserController/riwayat_tu/" class="btn btn-primary">Clear</a></td>
                                 </tr>
                             </table>
                         </form>
@@ -190,8 +192,6 @@
                                         
                                         <?php $i = 1 + (5 * ($page_akhir - 1)); ?> 
                                         
-                                        
-
                                         <?php foreach ($transaksi as $a): ?>
                                         
                                         <td></td>

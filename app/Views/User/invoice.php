@@ -42,14 +42,14 @@
 <div class="row">
 <div class="col">
 <div class="d-flex justify-content-between">
-  <a style="color:green;text-decoration:none;" href="javascript:window.print()">
-    <span style="color:#42B549;text-decoration:none;font-size:0.83em">
-    Cetak
-    </span>
-  </a>
   <div class="logo">
     <a href="/user" style="font-size: 2rem; font-weight: 700;">Profitable</a>
   </div>
+  <a style="color:#435ebe;text-decoration:none;" href="javascript:window.print()">
+    <span style="color:#435ebe;text-decoration:none;font-size:0.83em">
+    Cetak
+    </span>
+  </a>
   <div class="toggler">
     <a href="#" class='sidebar-hide d-xl-none d-block'><i class='bi bi-x bi-middle'></i></a>
   </div>
@@ -66,7 +66,7 @@
 <tbody>                   
   <tr>
     <td style="padding:5px; padding-left: 10px; text-align: left; width: 240px;">Status</td>  
-    <td style="padding:5px; padding-left: 10px; text-align: left; width: 270px;"><?= $table['status'];?></td>
+    <td style="padding:5px; padding-left: 10px; text-align: left; width: 270px;"><?= $table['status'] == "pending" ? 'Menunggu Pembayaran' : ( $table['status'] == 'success' ? 'Pembayaran Berhasil' : 'Pembayaran Gagal' ) ;?></td>
     <td style="padding:5px; padding-left: 10px; text-align: right; width: 120px;"></td>
   </tr>
   <tr>
@@ -76,7 +76,7 @@
   </tr>
   <tr>
     <td style="padding:5px; padding-left: 10px; text-align: left; width: 240px;">Saldo</td>
-    <td style="padding:5px; padding-left: 10px; text-align: left; width: 270px;"><?= $table['saldo'];?></td>
+    <td style="padding:5px; padding-left: 10px; text-align: left; width: 270px;"><?= "Rp " . number_format($table['saldo'], 0, ",", ".");?></td>
     <td style="padding:5px; padding-left: 10px; text-align: right; width: 120px;"></td>
   </tr>
   <tr>
@@ -95,16 +95,16 @@
  <table>
     <tbody>
   <tr>
-    <td style="font-weight: 600; font-size: 14px;  color: #42B549;">Total Bayar</td>
+    <td style="font-weight: 600; font-size: 14px;  color: #435ebe;">Total Bayar</td>
   </tr>
   </tbody>
   </table>
     </td>
-    <td style="padding:5px; padding-top: 2px; padding-bottom: 2px; padding-left: 10px; text-align: right; font-size: 14px; color: #42B549; width: 120px;"><?= $table['saldo'];?><span style="color: black"> *)</span></td>
+    <td style="padding:5px; padding-top: 2px; padding-bottom: 2px; padding-left: 10px; text-align: right; font-size: 14px; color: #435ebe; width: 120px;"><?= "Rp " . number_format($table['saldo'], 0, ",", ".");?><span style="color: black"> *)</span></td>
   </tr>
   <tr>
     <td colspan="3" style="padding:5px; padding-top: 20px; padding-bottom: 2px; padding-left: 10px; text-align: left; font-size: 14px;"><i>*) Harga tercantum sudah termasuk Pajak Pertambahan Nilai (PPN) sebesar 10%</i></td>
-  </tr>                  
+  </tr>
   </tbody>
 </table>
 
