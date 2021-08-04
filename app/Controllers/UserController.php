@@ -76,7 +76,7 @@ class UserController extends BaseController
 				'norek' => $this->request->getVar('norek'),     
             ]
         );
-		return redirect()->to('/UserController/biodata');
+		return redirect()->to('/user/u_riwayat_trans');
 	}
 
 	public function biodata()
@@ -96,7 +96,7 @@ class UserController extends BaseController
 				'bukti' => $this->request->getVar('bukti'),    
 			]
 		);
-		return redirect()->to('/UserController/biodata');
+		return redirect()->to('/user/u_riwayat_trans');
 	}
 
 	public function buktitopup()
