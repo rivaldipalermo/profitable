@@ -16,4 +16,10 @@ class UriwayattModel extends Model{
         }
         return $this->where(['id'=> $id])->first();
     }
+
+    public function getRiwayatbydate($firstdate, $enddate)
+    {
+        
+        return $this->findAll();
+    }
 }

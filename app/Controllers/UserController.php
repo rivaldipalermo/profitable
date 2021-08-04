@@ -65,20 +65,95 @@ class UserController extends BaseController
 	
 	public function riwayat_tu()
 	{
-		$page_akhir = $this->request->getVar('page_artikel') ? $this->request->getVar('page_artikel') : 1;
+		$page_akhir = $this->request->getVar('page_riwayattu') ? $this->request->getVar('page_riwayattu') : 1;
+		$transaksi = null; 
 		
+		if ($this->request->getVar('dt_from')) {
+			$transaksi = $this->uriwayattModel->where('created_at BETWEEN "'. date('Y-m-d', strtotime($this->request->getVar('dt_from'))). '" and "'. date('Y-m-d', strtotime($this->request->getVar('dt_to'))).'"')->paginate(5,'riwayattu');
+			//return dd($page_akhir);
+		} else {
+			$transaksi = $this->uriwayattModel->paginate(5,'riwayattu');
+		}
+		
+
 		$data = [
             'title' => 'Transaksi',
-			'transaksi' => $this->uriwayattModel->paginate(10,'artikel'),//getRiwayattu(),
+			'transaksi' => $transaksi,//$this->uriwayattModel->where(['user_id'=>124])->paginate(5,'riwayattu'),//getRiwayattu(),
 			'pager' => $this->uriwayattModel->pager,  
             'page_akhir'=> $page_akhir
         ];
 
 		
-
 		return view('user/u_riwayat_trans', $data);
 	}
+
+	public function load_jtrans()
+	{
+		$jtrans = $_GET['jtrans'];
+		$data = $this->db->get_where('profitable', ['saldo'=>$jtrans])->result();
+		
+	}
+
+	public function add_bukti($id)
+    {
+        $data=[
+            'title' => 'Upload Bukti Pembayaran',
+			'validation'=> \Config\Services::validation(),
+			'transaksi' => $this->transaksiModel->getTransaksi($id)
+        ];
+        
+		return view('user/u_upload_bukti', $data);
+    }
+
 	
+	public function update_bukti($id)
+    {
+		
+        $active = $this->transaksiModel->getTransaksi($id);
+	
+        if (!$this->validate(
+            [
+                'bukti_pembayaran' => [
+					'rules' => 'uploaded[bukti_pembayaran]|max_size[bukti_pembayaran,1024]|is_image[bukti_pembayaran]|mime_in[bukti_pembayaran,image/jpg,image/jpeg,image/png]',
+					'errors' => [
+						'uploaded' => 'pilih gambar terlebih dahulu',
+						'max_size' => 'ukuran gambar terlalu besar',
+						'is_image' => 'pilihan anda bukan format gambar',
+						'mime_in' => ' pilihan anda bukan format gambar'
+					]
+					]
+            ]
+        )) {
+            
+            return redirect()->to('/user/u_upload_bukti/' . $this->request->getVar('user_id'))->withInput();
+        }
+
+		//$nama_gambar = $this->request->getVar('gambarLama');
+        $file_gambar = $this->request->getFile('bukti_pembayaran');
+        $nama_gambar = $file_gambar->getRandomName();
+		$file_gambar->move('assets/images/user', $nama_gambar);
+		//unlink('template/assets/img/' . $this->request->getVar('gambarLama'));
+
+        $this->transaksiModel->update(
+			$id,
+            [
+                'bukti_pembayaran' => $nama_gambar
+            ]
+        );
+
+        session()->setFlashdata('pesan', 'Data Berhasil ditambah');
+
+		$page_akhir = $this->request->getVar('page_artikel') ? $this->request->getVar('page_artikel') : 1;
+		
+		$data = [
+			'transaksi' => $this->uriwayattModel->paginate(5,'artikel'),//getRiwayattu(),
+			'pager' => $this->uriwayattModel->pager,  
+        	'page_akhir'=> $page_akhir
+        ];
+
+        return redirect()->to('/user/u_riwayat_trans');
+    }
+
 	public function getInvoice($id){
 		$table = $this->transaksiModel->getTransaksi($id);
 		$data = [
