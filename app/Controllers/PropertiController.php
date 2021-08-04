@@ -30,7 +30,7 @@ class PropertiController extends BaseController
 
         $data = [
             'title' => 'Data Properti',
-            'properti' => $properti->paginate(2, 'properti'),
+            'properti' => $properti->paginate(5, 'properti'),
             'pager' => $this->PropertiModel->pager,
             'currentPage' => $currentPage
         ];

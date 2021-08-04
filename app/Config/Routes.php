@@ -37,6 +37,8 @@ $routes->get('/admin', 'AdminController::index');
 
 // ProyekPendanaan
 $routes->get('/pendanaan', 'PendanaanController::pendanaan');
+$routes->get('/investasi/(:any)', 'PendanaanController::investasi/$1');
+
 
 // Properti
 $routes->get('/admin/properti', 'PropertiController::index');

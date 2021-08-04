@@ -73,11 +73,11 @@
 
                         <?php if(logged_in()) : ?>
                         <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
-                            <div class="navbar-nav ml-auto">
-                                <img src="http://localhost:8080/home/img/12.png" alt="Image"
-                                    style="width: 40px; height: 40px; border-radius: 50px;">
+                            <div class="nav navbar-nav ml-auto">
                                 <div class="nav-item dropdown">
-                                    <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown"><?= user()->username ?></a>
+                                <img class="mr-1" src="http://localhost:8080/home/img/12.png" alt="Image"
+                                    style="width: 40px; height: 40px; border-radius: 50px;">
+                                    <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown"><?= user()->username ?><i class="fa fa-angle-down ml-1" aria-hidden="true"></i></a>
                                     <div class="dropdown-menu">
                                         <a href="http://localhost:8080/Dashboard_member/index"
                                             class="dropdown-item">Dashboard</a>
@@ -88,6 +88,7 @@
                                         <a href="http://localhost:8080/Pengaturan" class="dropdown-item">Profil</a>
                                         <a href="/logout" class="dropdown-item">Logout</a>
                                     </div>
+                                </div>
                                 </div>
                             </div>
                         </div>
