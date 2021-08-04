@@ -24,7 +24,12 @@ class Pager extends BaseConfig
 		'default_full'   => 'CodeIgniter\Pager\Views\default_full',
 		'default_simple' => 'CodeIgniter\Pager\Views\default_simple',
 		'default_head'   => 'CodeIgniter\Pager\Views\default_head',
-		'properti_pagination' => 'App\Views\Admin\Properti\Pagers\properti_pagination'
+		'artikel_pagination' => 'App\Views\Pagers\u_riwayat_trans_pagination',
+		'topupadm_pagination' => 'App\Views\Pagers\topupadmin_pagination',
+		'properti_pagination' => 'App\Views\Admin\Properti\Pagers\properti_pagination',
+		'properti_pagination' => 'App\Views\Admin\Properti\Pagers\properti_pagination',
+		'blog_pagination' => 'App\Views\Admin\Blog\Pagers\blog_pagination',
+		'artikel_pagination' => 'App\Views\Pagers\u_riwayat_trans_pagination'
 	];
 
 	/**

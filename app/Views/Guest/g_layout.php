@@ -57,10 +57,10 @@
                                 </ul>
                             </li>
                             <li class="nav-item">
-                                <a href="#" class="nav-link d-lg-none">Login</a>
+                                <a href="/login" class="nav-link d-lg-none">Login</a>
                             </li>
                             <li class="nav-item">
-                                <a href="#" class="nav-link d-lg-none">Sign Up</a>
+                                <a href="/register" class="nav-link d-lg-none">Sign Up</a>
                             </li>
                         </ul>
 

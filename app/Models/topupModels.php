@@ -4,15 +4,22 @@ namespace App\Models;
 
 use CodeIgniter\Model;
 
-class topupModels extends Model
+class TopupModels extends Model
 {
-    function __construct()
+    protected $table = 'transaksi';
+    protected $useTimestamps = false;
+    protected $allowedFields = ['user_id', 'saldo', 'jenis_pembayaran', 'bukti_pembayaran'];
+
+    public function getRiwayat($id = false)
     {
-        $this->db = db_connect();
+        if ($id == false) {
+            return $this->findAll();
+        }
+        return $this->where(['id' => $id])->first();
     }
 
-    function tampildata()
+    public function search($keyword = 'none')
     {
-        return $this->db->table('topup')->get();
+        return $this->table('transaksi')->like('user_id', $keyword);
     }
 }
