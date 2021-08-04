@@ -76,7 +76,7 @@ class UserController extends BaseController
 
 		
 
-		return view('user/u_riwayat_trans', $data);
+		return view('User/u_riwayat_trans', $data);
 	}
 	
 	public function getInvoice($id){
