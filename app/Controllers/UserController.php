@@ -2,6 +2,7 @@
 
 namespace App\Controllers;
 use App\Models\TransaksiModel;
+use App\Models\UriwayattModel;		
 use App\Models\BiodataModel;
 use App\Models\BiosaveModel;
 use App\Models\KotaModel;
@@ -20,6 +21,7 @@ class UserController extends BaseController
 		$this->biosaveModel = new BiosaveModel();
 		$this->buktitopupModel = new BuktitopupModel();
 
+		$this->uriwayattModel = new UriwayattModel();
 	}
 
 	public function index()
@@ -27,9 +29,15 @@ class UserController extends BaseController
         $data = [
             'title' => 'Dashboard'
         ];
-		return view('user/u_index', $data);
+		return view('User/u_index', $data);
 	}
-
+	public function topup()
+	{
+        $data = [
+            'title' => 'topup'
+        ];
+		return view('user/topup', $data);
+	}
 	public function action()
 	{
 		if($this->request->getVar('action'))
@@ -78,7 +86,7 @@ class UserController extends BaseController
 			'provinsi' => $this-> biodataModel -> getBiodata(),
 			'kota' => $this -> kotaModel -> getKota()
         ];
-		return view('user/biodata', $data);
+		return view('User/biodata', $data);
 	}
 
 	public function buktisave()
@@ -121,11 +129,20 @@ class UserController extends BaseController
 	
 	public function riwayat_tu()
 	{
-        $data = [
-            'title' => 'Transaksi'
+		$page_akhir = $this->request->getVar('page_artikel') ? $this->request->getVar('page_artikel') : 1;
+		
+		$data = [
+            'title' => 'Transaksi',
+			'transaksi' => $this->uriwayattModel->paginate(10,'artikel'),//getRiwayattu(),
+			'pager' => $this->uriwayattModel->pager,  
+            'page_akhir'=> $page_akhir
         ];
+
+		
+
 		return view('user/u_riwayat_trans', $data);
 	}
+	
 	public function getInvoice($id){
 		$table = $this->transaksiModel->getTransaksi($id);
 		$data = [
