@@ -3,7 +3,9 @@
 namespace App\Controllers;
 use App\Models\TransaksiModel;
 use App\Models\BiodataModel;
+use App\Models\BiosaveModel;
 use App\Models\KotaModel;
+use App\Models\BuktitopupModel;
 
 
 class UserController extends BaseController
@@ -15,6 +17,9 @@ class UserController extends BaseController
 		$this->transaksiModel = new TransaksiModel();
 		$this->biodataModel = new BiodataModel();
 		$this->kotaModel = new KotaModel();
+		$this->biosaveModel = new BiosaveModel();
+		$this->buktitopupModel = new BuktitopupModel();
+
 	}
 
 	public function index()
@@ -44,9 +49,30 @@ class UserController extends BaseController
 		}
 	}
 
+	public function biosave()
+	{
+		$this->biosaveModel->save(
+            [
+                'nama' => $this->request->getVar('nama'),
+                'panggilan' => $this->request->getVar('panggilan'),
+                'tl' => $this->request->getVar('tl'),
+                'phone' => $this->request->getVar('phone'), 
+				'provinsi' => $this->request->getVar('provinsi'),
+                'kota' => $this->request->getVar('kota'),
+                'alamat' => $this->request->getVar('alamat'),
+                'pekerjaan' => $this->request->getVar('pekerjaan'),     
+				'sumber' => $this->request->getVar('sumber'), 
+				'nbank' => $this->request->getVar('nbank'),
+                'cabang' => $this->request->getVar('cabang'),
+                'anama' => $this->request->getVar('anama'),     
+				'norek' => $this->request->getVar('norek'),     
+            ]
+        );
+		return redirect()->to('/UserController/biodata');
+	}
+
 	public function biodata()
 	{
-
         $data = [
             'title' => 'Biodata',
 			'provinsi' => $this-> biodataModel -> getBiodata(),
@@ -54,6 +80,44 @@ class UserController extends BaseController
         ];
 		return view('user/biodata', $data);
 	}
+
+	public function buktisave()
+	{
+		$this->buktitopupModel->save(
+			[
+				'bukti' => $this->request->getVar('bukti'),    
+			]
+		);
+		return redirect()->to('/UserController/biodata');
+	}
+
+	public function buktitopup()
+	{
+        $data = [
+            'title' => 'Bukti Topup',
+        ];
+		return view('user/buktitopup', $data);
+
+		// $this->buktitopupModel->save(
+		// 	    [
+		// 	        'bukti' => $this->request->getVar('bukti'),    
+		// 	    ]
+		// 	);
+		// 	return redirect()->to('/UserController/biodata');
+		
+	}
+
+	// public function buktisave()
+    // {
+    //     $this->buktitopupModel->save(
+    //         [
+    //             'bukti' => $this->request->getVar('bukti'),      
+    //         ]
+    //     );
+    //         session()->setFlashdata('pesan','Data Berhasil Ditambahkan!');
+    //         // return redirect()->to('/UserController/biodata');
+	// 		return redirect()->to('/UserController/biodata')->withInput();
+    // }
 	
 	public function riwayat_tu()
 	{

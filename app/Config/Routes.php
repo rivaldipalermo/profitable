@@ -49,6 +49,7 @@ $routes->get('/admin/blog/add', 'AdminBlog::add');
 // Topup
 $routes->get('/user/invoices/(:any)', 'UserController::getInvoice/$1');
 $routes->get('/user/biodata', 'UserController::biodata');
+$routes->get('/user/bukti_topup', 'UserController::buktitopup');
 
 // Resiko
 $routes->get('/user/u_resiko/', 'UserController::resiko');
