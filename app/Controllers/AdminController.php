@@ -6,14 +6,14 @@ use App\Models\PropertiModel;
 
 class AdminController extends BaseController
 {
-	
+
 	public function index()
 	{
 		$this->PropertiModel = new PropertiModel();
-        $data = [
-            'title' => 'Dashboard',
+		$data = [
+			'title' => 'Dashboard',
 			'jumlahProperti' => $this->PropertiModel->countAll()
-        ];
+		];
 		return view('Admin/index', $data);
 	}
 
@@ -23,5 +23,13 @@ class AdminController extends BaseController
 			'title' => 'Top-up History'
 		];
 		return view('Admin/topupadmin', $data);
+	}
+
+	public function pengaturan()
+	{
+		$data = [
+			'title' => 'My Profile Admin'
+		];
+		return view('Admin/pengaturan', $data);
 	}
 }

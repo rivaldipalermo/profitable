@@ -40,4 +40,11 @@ class Home extends BaseController
 		];
 		return view('Guest/Blog',$data);
 	}
+	public function faq()
+	{
+		$data = [
+			'title' =>'FAQ'
+		];
+		return view('guest/faq', $data);
+	}
 }
