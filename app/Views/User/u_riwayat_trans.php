@@ -51,7 +51,7 @@
                                                 
                                                 <h4>TOP-UP Saldomu Sekarang</h4>
                                                 <p></p>
-                                                <form action="https://pulsa.tokopedia.com">
+                                                <!-- <form action="https://pulsa.tokopedia.com"> -->
                                                     <div class="input-topup-wrapper">
                                                         <div class="ct-input">
                                                             <div class="input-field-box input-normal mb-16 pt-8" id="input-nominal-topup">
@@ -146,12 +146,6 @@
                         <div class="container">
                         
                         
-                            <div class="card">
-                        
-                            </div>
-                        
-
-                       
                         <div class="card">
                         <br>
                         
@@ -172,21 +166,22 @@
                         
                         <br>
 
-                        <table class="table" id="riwayat">
-                            <thead>
+                        <table class="table" id="riwayat" >
+                            <thead align="center">
                                 <tr class="table-active">
                                     <th scope="col"></th>
                                     <th scope="col"></th>
                                     <th scope="col">Id</th>
                                     <th scope="col">Waktu Transaksi</th>
                                     <th scope="col">Saldo</th>
+                                    <th scope="col">Status Pembayaran</th>
                                     <th scope="col">Jenis Pembayaran</th>
                                     <th scope="col">Bukti Pembayaran</th>
                                     <th scope="col"></th>
                                 </tr>
                             </thead>
                             
-                                <tbody>
+                                <tbody align="center">
                                     
                                     <tr>
                                         
@@ -198,10 +193,16 @@
                                         <th scope="row"><?= $i++; ?></th>
                                             <td><?= $a['user_id'];  ?></td>
                                             <td><?= $a['created_at'];  ?></td>
-                                            <td><?= $a['saldo'];  ?></td>
+                                            
+                                            <td><?= "Rp " . number_format($a['saldo'], 0, ",", ".");?></td>
                                             <td><?= $a['jenis_pembayaran'];  ?></td>
+                                            <td><h5><?= $a['status'];  ?></h5></td>
                                             <td><img src="/assets/images/user/<?= $a['bukti_pembayaran']; ?>" width='120' height="120"></td>
-                                            <td><a href="/user/u_upload_bukti/<?= $a['id']; ?>" class="btn btn-primary">Upload</a></td>
+                                            <td>
+                                                <a href="/user/u_upload_bukti/<?= $a['id']; ?>" class="btn btn-primary">Upload</a>
+                                                <a href="/user/invoices/<?= $a['id']; ?>" class="btn btn-success">Invoice</a>
+                                                <a href="/user/help/<?= $a['id']; ?>" class="btn btn-danger">Help</a>
+                                            </td>
                                     
                                         </tr>
                                         <?php endforeach; ?>
