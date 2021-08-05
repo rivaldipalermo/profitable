@@ -10,6 +10,7 @@ use App\Models\KotaModel;
 use App\Models\Modeltopup;
 
 use App\Models\BuktitopupModel;
+use App\Models\SaldoModel;
 
 
 class UserController extends BaseController
@@ -28,6 +29,7 @@ class UserController extends BaseController
 		$this->buktitopupModel = new BuktitopupModel();
 
 		$this->uriwayattModel = new UriwayattModel();
+		$this->saldoModel = new SaldoModel();
 	}
 
 	public function index()
@@ -149,21 +151,38 @@ class UserController extends BaseController
 	// 		return redirect()->to('/UserController/biodata')->withInput();
     // }
 	
+	public function validtopup()
+	{
+		$user_id = intval(user_id());
+		$table = $this->saldoModel->getSaldo($user_id);
+
+		if ($table['is_verified']==1){
+			return redirect()->to('/UserController/topup');
+		} else { 
+		return redirect()->to('/UserController/biodata');
+		}
+	}
+	
 	public function riwayat_tu()
 	{
 		$page_akhir = $this->request->getVar('page_riwayattu') ? $this->request->getVar('page_riwayattu') : 1;
 		$transaksi = null; 
+		$user_id = intval(user_id());
+		//dd($user_id);
 		
+
 		if ($this->request->getVar('dt_from')) {
-			$transaksi = $this->uriwayattModel->where('created_at BETWEEN "'. date('Y-m-d', strtotime($this->request->getVar('dt_from'))). '" and "'. date('Y-m-d', strtotime($this->request->getVar('dt_to'))).'"')->paginate(5,'riwayattu');
+			$transaksi = $this->uriwayattModel->where('user_id='. $user_id .' and created_at BETWEEN "'. date('Y-m-d', strtotime($this->request->getVar('dt_from'))). '" and "'. date('Y-m-d', strtotime($this->request->getVar('dt_to'))).'"')->paginate(5,'riwayattu');
 			//return dd($page_akhir);
 		} else {
-			$transaksi = $this->uriwayattModel->paginate(5,'riwayattu');
+			$transaksi = $this->uriwayattModel->where(['user_id'=>$user_id])->paginate(5,'riwayattu');
 		}
 		
 
 		$data = [
+			'table' => $this->saldoModel->getSaldo($user_id),
             'title' => 'Transaksi',
+			//'saldo' => $this->saldoModel->where(['user_id'=>127]),
 			'transaksi' => $transaksi,//$this->uriwayattModel->where(['user_id'=>124])->paginate(5,'riwayattu'),//getRiwayattu(),
 			'pager' => $this->uriwayattModel->pager,  
             'page_akhir'=> $page_akhir
