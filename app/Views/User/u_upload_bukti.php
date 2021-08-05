@@ -20,7 +20,7 @@
                                                             <div class="row">
                 
                                                             <fieldset>
-                                                                <form action="/usercontroller/update_bukti/<?= $transaksi['id']; ?>" method="POST" enctype="multipart/form-data">
+                                                                <form action="/UserController/update_bukti/<?= $transaksi['id']; ?>" method="POST" enctype="multipart/form-data">
                                                                 <?= csrf_field() ?>
                                                                     
                                                                     <input type="hidden" name="gambarLama" value="<?= $transaksi['bukti_pembayaran']; ?>">

@@ -137,7 +137,7 @@
                             </div> -->
 
                             <fieldset class="row mb-3">
-                                <form action="/usercontroller/topupsave" method="POST">
+                                <form action="/UserController/topupsave" method="POST">
                                 <?= csrf_field() ?>
                                     <div class="col-md-6">
                                         <select class="form-select" id="nominal" name="nominal">

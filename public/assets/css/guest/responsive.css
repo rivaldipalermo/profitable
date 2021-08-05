@@ -1,14 +1,15 @@
 @media (max-width: 1199px) {
-  /* Main Menu Area css
-	============================================================================================ */
   .header_area .navbar .nav .nav-item {
     margin-right: 28px;
   }
-  /* End Main Menu Area css
-	============================================================================================ */
 
-  /* Element Area css
-	============================================================================================ */
+  /* SKEMA INVESTASI */
+  .skema_swipe-btn label {
+    top: 4.5px;
+    left: 6px;
+    width: 258px;
+  }
+
   .area-padding {
     padding: 80px 0;
   }
@@ -16,14 +17,10 @@
   .area-heading {
     margin-bottom: 50px;
   }
-
-  /* End Element Area css
-	============================================================================================ */
 }
 
 @media (max-width: 991px) {
-  /* Main Menu Area css
-	============================================================================================ */
+  /* NAVBAR */
   .navbar-toggler {
     border: none;
     border-radius: 0px;
@@ -134,30 +131,89 @@
   .header_area + div {
     margin-top: 78px;
   }
-  /* End Main Menu Area css
 
-  /* Footer Area css
-	============================================================================================ */
+  /* HERO CARA KERJA */
+  .hero-section {
+    height: 100vh;
+    text-align: center;
+  }
+  .hero-section .animated {
+    -webkit-animation: none;
+    animation: none;
+  }
+  .hero-section .hero-img {
+    text-align: center;
+  }
+  .hero-section .hero-img img {
+    width: 50%;
+  }
+
+  /* SKEMA INVESTASI */
+  .skema_swipe-btn label {
+    top: 5px;
+    left: 6px;
+    width: 338px;
+  }
+
+  /* TESTIMONI */
+  .team .member {
+    display: block !important;
+    text-align: center;
+  }
+
+  .team .member .pic {
+    margin: 0px auto 20px;
+    width: 100px;
+  }
+
+  .team .member span::after {
+    width: 100px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .team .member .member-info {
+    padding-left: 0px;
+  }
+
+  /* FOOTER */
   .footer-area .col-sm-6 {
     margin-bottom: 30px;
-  }
-  /* End End Footer Area css
-	============================================================================================ */
-
-  .area-padding {
-    padding: 80px 0;
   }
 }
 
 @media (max-width: 767px) {
+  /* NAVBAR */
   .header_area + section,
   .header_area + row,
   .header_area + div {
     margin-top: 80px;
   }
 
-  /* Footer Area css
-	============================================================================================ */
+  /* HERO CARA KERJA */
+  .hero-section h1 {
+    font-size: 28px;
+    line-height: 36px;
+  }
+
+  .hero-section h2 {
+    font-size: 18px;
+    line-height: 24px;
+    margin-bottom: 30px;
+  }
+
+  .hero-section .hero-img img {
+    width: 70%;
+  }
+
+  /* SKEMA INVESTASI */
+  .skema_swipe-btn label {
+    top: 4.5px;
+    left: 6px;
+    width: 248px;
+  }
+
+  /* FOOTER */
   .footer-bottom {
     text-align: center;
   }
@@ -165,25 +221,44 @@
   .footer-area .footer-bottom {
     margin-top: 15px;
   }
-
-  /* End End Footer Area css
-	============================================================================================ */
 }
 
-@media (max-width: 575px) {
+@media (max-width: 576px) {
+  /* NAVBAR */
   .header_area + section,
   .header_area + row,
   .header_area + div {
     margin-top: 71px;
   }
 
-  /* Footer Area css
-	============================================================================================ */
+  /* SKEMA INVESTASI */
+  .skema_swipe-btn {
+    border: 1px solid #4c57d6;
+    border-radius: 50px;
+    height: 60px;
+    width: 100%;
+  }
+
+  .skema_swipe-btn label {
+    top: 4.5px;
+    left: 6px;
+    width: 245px;
+  }
+
+  /* HERO CARA KERJA */
+  .hero-section .hero-img img {
+    width: 80%;
+  }
+
+  .hero-section .btn-pelajari {
+    font-size: 16px;
+    padding: 10px 24px 11px 24px;
+  }
+
+  /* FOOTER */
   .footer-area {
     padding: 70px 0 0;
   }
-  /* End End Footer Area css
-	============================================================================================ */
 
   .footer-bottom {
     padding-top: 20px;
@@ -191,39 +266,80 @@
 }
 
 @media (max-width: 480px) {
-  /* Main Menu Area css
-	============================================================================================ */
+  /* NAVBAR */
   .header_area .navbar-collapse {
     max-height: 280px;
   }
-  /* End Main Menu Area css
-	============================================================================================ */
+
+  /* SKEMA INVESTASI */
+  .skema_swipe-btn label {
+    top: 4.5px;
+    left: 7px;
+    width: 183px;
+    font-size: 12px;
+    padding: 12px 32px 12px;
+  }
+
+  .margin_plans,
+  .bagi_plans {
+    width: 105%;
+  }
+
+  .content ul i {
+    margin-left: 0px;
+  }
 }
 
-@media (max-width: 374px) {
-  /* Main Menu Area css
-	============================================================================================ */
+@media (max-width: 376px) {
+  /* HEADER */
   .header_area {
     width: 102%;
   }
 
+  /* SKEMA INVESTASI */
+  .skema_swipe-btn label {
+    top: 4.5px;
+    left: 6px;
+    width: 165px;
+    font-size: 10px;
+    padding: 12px 30px 12px;
+  }
+
+  /* FOOTER */
   .footer-area {
     width: 102%;
   }
-  /* End Main Menu Area css
-	============================================================================================ */
 }
 
 @media (max-width: 368px) {
-  /* Main Menu Area css
-	============================================================================================ */
+  /* NAVBAR */
   .header_area {
     width: 119%;
   }
 
+  /* SKEMA INVESTASI */
+  .skema_swipe-btn {
+    border: 1px solid #4c57d6;
+    border-radius: 50px;
+    height: 60px;
+    width: 120%;
+  }
+
+  .margin_plans,
+  .bagi_plans {
+    width: 130%;
+  }
+
+  .skema_swipe-btn label {
+    font-size: 8px;
+    top: 4.5px;
+    left: 6px;
+    width: 195px;
+    font-size: 10px;
+  }
+
+  /* FOOTER */
   .footer-area {
     width: 119%;
   }
-  /* End Main Menu Area css
-	============================================================================================ */
 }

@@ -1,8 +1,9 @@
 <?php
 
 namespace App\Controllers;
+
 use App\Models\TransaksiModel;
-use App\Models\UriwayattModel;		
+use App\Models\UriwayattModel;
 use App\Models\BiodataModel;
 use App\Models\BiosaveModel;
 use App\Models\KotaModel;
@@ -13,10 +14,11 @@ use App\Models\BuktitopupModel;
 
 class UserController extends BaseController
 {
-	
-	
-	
-	public function __construct(){
+
+
+
+	public function __construct()
+	{
 		$this->transaksiModel = new TransaksiModel();
 		$this->biodataModel = new BiodataModel();
 		$this->kotaModel = new KotaModel();
@@ -30,9 +32,9 @@ class UserController extends BaseController
 
 	public function index()
 	{
-        $data = [
-            'title' => 'Dashboard'
-        ];
+		$data = [
+			'title' => 'Dashboard'
+		];
 		return view('User/u_index', $data);
 	}
 	public function topup()
@@ -41,14 +43,14 @@ class UserController extends BaseController
             'title' => 'topup',
 			// 'topup' => $this-> Modeltopup -> gettopup()
         ];
-		return view('user/topup', $data);
+		return view('User/topup', $data);
 	}
 	public function halamantunggu()
 	{
         $data = [
             'title' => 'topup'
         ];
-		return view('user/halamantunggu', $data);
+		return view('User/HalamanTunggu', $data);
 	}
 	public function topupsave()
 	{
@@ -63,20 +65,16 @@ class UserController extends BaseController
 	}
 	public function action()
 	{
-		if($this->request->getVar('action'))
-		{
+		if ($this->request->getVar('action')) {
 			$action = $this->request->getVar('action');
 
-			if($action == 'get_kota')
-			{
+			if ($action == 'get_kota') {
 				$kotaModel = new kotaModel();
 
 				$kotadata = $kotaModel->where('provinsi_id', $this->request->getVar('provinsi_id'))->findAll();
 
 				echo json_encode($kotadata);
 			}
-
-			
 		}
 	}
 
@@ -101,6 +99,7 @@ class UserController extends BaseController
         );
 		return redirect()->to('/UserController/riwayat_tu');
 	}
+
 
 	public function biodata()
 	{
@@ -127,7 +126,7 @@ class UserController extends BaseController
         $data = [
             'title' => 'Bukti Topup',
         ];
-		return view('user/buktitopup', $data);
+		return view('User/buktitopup', $data);
 
 		// $this->buktitopupModel->save(
 		// 	    [
@@ -170,11 +169,9 @@ class UserController extends BaseController
             'page_akhir'=> $page_akhir
         ];
 
-		
 
 		return view('User/u_riwayat_trans', $data);
 	}
-
 
 	public function add_bukti($id)
     {
@@ -184,7 +181,7 @@ class UserController extends BaseController
 			'transaksi' => $this->transaksiModel->getTransaksi($id)
         ];
         
-		return view('user/u_upload_bukti', $data);
+		return view('User/u_upload_bukti', $data);
     }
 
 	
@@ -254,9 +251,9 @@ class UserController extends BaseController
 	}
 	public function resiko()
 	{
-        $data = [
-            'title' => 'Resiko'
-        ];
+		$data = [
+			'title' => 'Resiko'
+		];
 		return view('User/u_resiko', $data);
 	}
 }
