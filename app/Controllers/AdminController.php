@@ -3,18 +3,18 @@
 namespace App\Controllers;
 
 use App\Models\PropertiModel;
-use App\Models\TopupModels;
+use App\Models\topupModels;
 
 class AdminController extends BaseController
 {
+
 	public function __construct()
 	{
-
 		$this->TopupModels = new TopupModels();
 	}
 
-	/*	public function index()
-	{
+  public function index()
+  {
 		$this->PropertiModel = new PropertiModel();
 		$data = [
 			'title' => 'Dashboard',
@@ -22,7 +22,6 @@ class AdminController extends BaseController
 		];
 		return view('Admin/index', $data);
 	}
-*/
 
 	public function riwayatopup()
 	{
@@ -43,10 +42,19 @@ class AdminController extends BaseController
 
 		return view('Admin/topupadmin', $data);
 	}
+
+	public function pengaturan()
+	{
+		$data = [
+			'title' => 'My Profile Admin'
+		];
+		return view('Admin/pengaturan', $data);
+  }
 	public function delete($id)
 	{
 		$this->TopupModels->delete($id);
 		session()->setFlashdata('pesan', 'Data berhasil dihapus!');
 		return redirect()->to('AdminController/riwayatopup');
+
 	}
 }

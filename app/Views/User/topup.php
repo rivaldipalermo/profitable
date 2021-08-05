@@ -96,7 +96,7 @@
                                             <td class='col-3 '>
                                                 <div class="d-flex align-items-center">
                                                     <div class="avatar avatar-md">
-                                                        <img src="<?= base_url();?>/assets/images/faces/5.jpg">
+                                                        <img src="<?= base_url(); ?>/assets/images/faces/5.jpg">
                                                     </div>
                                                     <p class='font-bold ms-3 mb-0'>Si Cantik</p>
                                                 </div>
@@ -109,7 +109,7 @@
                                             <td class='col-3 '>
                                                 <div class="d-flex align-items-center">
                                                     <div class="avatar avatar-md">
-                                                        <img src="<?= base_url();?>/assets/images/faces/2.jpg">
+                                                        <img src="<?= base_url(); ?>/assets/images/faces/2.jpg">
                                                     </div>
                                                     <p class='font-bold ms-3 mb-0'>Si Ganteng</p>
                                                 </div>
@@ -122,50 +122,64 @@
                                     </tbody>
                                 </table>
                             </div> -->
+                            <!-- <div class="col-6">
+    <label class="visually-hidden" for="inlineFormInputGroupUsername">Username</label>
+    <div class="input-group">
+      <div class="input-group-text">@</div>
+      <input type="text" class="form-control" id="inlineFormInputGroupUsername" placeholder="Username">
+    </div>
+  </div>
                             <form class="">
                             <div class="col-md-6">
-                                <label for="inputEmail4" class="form-label">Email</label>
-                                <input type="email" class="form-control" id="inputEmail4">
+                                <label for="inputEmail" class="form-label">Email:</label>
+                                <input type="email" class="form-control" id="inputEmail">
                             </div>
-                            <div class="col-md-6">
-                                <label for="inputNo.Telpon14" class="form-label">No.Telpon</label>
-                                <input type="no.telpon" class="form-control" id="inputNo.Telpon14">
-                            </div>
+                            </div> -->
 
-                            <div class="col-md-4">
-                              <label for="inputState" class="form-label">Nominal</label>
-                              <select id="inputState" class="form-select">
-                              <option selected>Choose...</option>
-                              <option>Rp.1000000</option>
-                              <option>Rp.1500000</option>
-                              <option>Rp.2000000</option>
-                              <option>Rp.2500000</option>
-                              <option>Rp.3000000</option>
-                              </select>
-                          </div>
+                            <fieldset class="row mb-3">
+                                <form action="/UserController/topupsave" method="POST">
+                                <?= csrf_field() ?>
+                                    <div class="col-md-6">
+                                        <select class="form-select" id="nominal" name="nominal">
+                                            <option selected value="">Nominal:</option>
+                                            <option value="1002500">1002500</option>
+                                            <option value="1502500">1502500</option>
+                                            <option value="2002500">2002500</option>
+                                            <option value="2502500">2502500</option>
+                                            <option value="3002500">3002500</option>
+                                        </select>
+                                    </div>
 
-                            <div class="col-md-4">
-                                <label for="inputState" class="form-label">Pilih Bank</label>
-                                <select id="inputState" class="form-select">
-                                <option selected>Choose...</option>
-                                <option>Bank BCA</option>
-                                <option>Bank Mandiri</option>
-                                <option>Bank BRI</option>
-                                <option>Bank Niaga</option>
-                                <option>Bank BNI</option>
-                                </select>
-                            <div class="col-12">
-                                <div class="form-check">
-                                <input class="form-check-input" type="checkbox" id="gridCheck">
-                                <label class="form-check-label" for="gridCheck">
-                                    Apakah Sudah Benar?
-                                </label>
-                                </div>
-                            </div>
-                            <div class="col-12">
-                                <button type="submit" class="btn btn-primary">Submit</button>
-                            </div>
-                            </form>
+                                    <div class="col-md-6">
+                                        <label for="inputState" class="form-label">Pilih Bank:</label>
+                                        <select id="nama_bank" class="form-select" name="nama_bank">
+                                            <option selected>Choose...</option>
+                                            <option>Bank BCA</option>
+                                            <option>Bank Mandiri</option>
+                                            <option>Bank BRI</option>
+                                            <option>Bank Niaga</option>
+                                            <option>Bank BNI</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <label for="inputNomor Kartu" class="form-label">Nomor Kartu:</label>
+                                        <input type="text" class="form-control" id="nomor_kartu" placeholder="Masukan Nomor Kartu Anda" name="nomor_kartu">
+                                    </div>
+
+                                    <div class="col-md-12">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="gridCheck">
+                                            <label class="form-check-label" for="gridCheck">
+                                                Apakah Sudah Benar?
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <button type="submit" class="btn btn-primary">Submit</button>
+                                    </div>
+                                </form>
+                            </fieldset>
                         </div>
                     </div>
                 </div>

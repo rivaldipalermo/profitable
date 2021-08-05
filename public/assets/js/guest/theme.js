@@ -17,4 +17,17 @@
     }
   }
   navbarFixed();
+
+  $(".skema_swipe-btn label").on("click", function (e) {
+    $(".skema_swipe-btn label").removeClass("active");
+    $(this).addClass("active");
+
+    if (e.target.htmlFor == "margin") {
+      $(".margin_plans").addClass("active");
+      $(".bagi_plans").removeClass("active");
+    } else if (e.target.htmlFor == "bagi") {
+      $(".margin_plans").removeClass("active");
+      $(".bagi_plans").addClass("active");
+    }
+  });
 })(jQuery);

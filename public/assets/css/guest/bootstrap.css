@@ -7724,6 +7724,10 @@ button.bg-dark:hover {
   box-shadow: none !important;
 }
 
+.w-10 {
+  width: 10% !important;
+}
+
 .w-25 {
   width: 25% !important;
 }
