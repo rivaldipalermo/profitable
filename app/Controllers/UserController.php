@@ -50,7 +50,7 @@ class UserController extends BaseController
         $data = [
             'title' => 'topup'
         ];
-		return view('User/halamantunggu', $data);
+		return view('User/HalamanTunggu', $data);
 	}
 	public function topupsave()
 	{
