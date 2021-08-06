@@ -24,7 +24,6 @@ class AdminController extends BaseController
 	}
 
 
-
 	/* RIWAYAT TOPUP ADMIN */
 	public function riwayatopup()
 	{
@@ -42,13 +41,21 @@ class AdminController extends BaseController
 			'pager' => $this->TopupModels->pager,
 			'page_akhir' => $page_akhir
 		];
-
 		return view('Admin/topupadmin', $data);
 	}
+	public function pengaturan()
+	{
+		$data = [
+			'title' => 'My Profile Admin'
+		];
+		return view('Admin/pengaturan', $data);
+	}
+
+
 	public function reject($id)
 	{
 		$sql = "INSERT INTO transaksi (approval)
-VALUES ('1')";
+	VALUES ('1')";
 		$this->TopupModels->approval($id);
 		return redirect()->to('AdminController/riwayatopup');
 	}
@@ -56,9 +63,8 @@ VALUES ('1')";
 	public function approve($id)
 	{
 		$sql = "INSERT INTO transaksi (approval)
-VALUES ('2')";
+	VALUES ('2')";
 		$this->TopupModels->approval($id);
-		session()->setFlashdata('pesan', 'Data berhasil');
 		return redirect()->to('AdminController/riwayatopup');
 	}
 }

@@ -1,0 +1,569 @@
+<?= $this->extend('Guest/g_layout') ?>
+<?= $this->section('content'); ?>
+<div class="page-heading">
+ 
+</div>
+<link rel="stylesheet" href="//cdn.materialdesignicons.com/3.7.95/css/materialdesignicons.min.css">
+<div class="container">
+          <div class="row">
+            <div class="col-15 grid-margin">
+              
+                <div class="card-body">
+                <h1>FAQ</h1>
+                </div>
+              
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-12 col-md-6">
+              <div class="row">
+                <div class="col-12 grid-margin">
+                  <div class="card">
+                    <div class="faq-block card-body">
+                      <div class="container-fluid py-2">
+                        <h5 class="mb-0">Tentang Profitable</h5>
+                      </div>
+                      <div id="accordion-1" class="accordion">
+                        <div class="card">
+                          <div class="card-header" id="headingOne">
+                            <h5 class="mb-0">
+                              <a data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                Apa itu Profitable?
+                              </a>
+                            </h5>
+                          </div>
+                          <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion-1">
+                            <div class="card-body">
+                              <p class="mb-0">Profitable adalah platform crowdfunding peer-to-peer pertama di Indonesia untuk investasi di sektor properti. Saat ini Provesty fokus di investasi jangka pendek dengan skema Flipping (beli-renovasi-jual) bekerja sama dengan Flipper lokal.</p><p>
+                            </p></div>
+                          </div>
+                        </div>
+                        <div class="card">
+                          <div class="card-header" id="headingTwo">
+                            <h5 class="mb-0">
+                              <a data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                               Bagaimana cara kerja Profitable?
+                              </a>
+                            </h5>
+                          </div>
+                          <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion-1">
+                            <div class="card-body">
+                              <p class="mb-0">Profitable menghubungkan crowd investor dengan flipper lokal (perorangan atau badan hukum). Flipper mencari properti dengan harga di bawah pasar, merenovasinya untuk meningkatkan harga jual, kemudian menjualnya kepada pembeli baru. Keuntungan dari penjualan digunakan untuk mengembalikan dana investor.</p><p>
+                            </p></div>
+                          </div>
+                        </div>
+                        <div class="card">
+                          <div class="card-header" id="headingThree">
+                            <h5 class="mb-0">
+                              <a data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                               Bagaimana cara menjadi investor Profitable?
+                              </a>
+                            </h5>
+                          </div>
+                          <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion-1">
+                            <div class="card-body">
+                              <p class="mb-0">Anda cukup register/login dengan menggunakan email ataupun menghubungkan ke akun facebook/gmail.</p><p>
+                            </p></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-12 grid-margin grid-margin-md-0">
+                  <div class="card">
+                    <div class="faq-block card-body">
+                      <div class="container-fluid py-2">
+                        <h5 class="mb-0">Tentang Investasi</h5>
+                      </div>
+                      <div id="accordion-4" class="accordion">
+                        <div class="card">
+                          <div class="card-header" id="headingOne-4">
+                            <h5 class="mb-0">
+                              <a data-toggle="collapse" data-target="#collapseOne-4" aria-expanded="true" aria-controls="collapseOne-4">
+                               Apa saja jenis investasi properti yang ada di Profitable ?
+                              </a>
+                            </h5>
+                          </div>
+                          <div id="collapseOne-4" class="collapse show" aria-labelledby="headingOne-4" data-parent="#accordion-4">
+                            <div class="card-body">
+                              <p class="mb-0">Untuk saat ini Profitable berfokus di investasi Flipping jangka pendek karena resiko nya lebih kecil daripada pembiayaan proyek pembangunan ataupun pemberian dana talangan ke pemilik rumah.</p><p>
+                            </p></div>
+                          </div>
+                        </div>
+                        <div class="card">
+                          <div class="card-header" id="headingTwo-4">
+                            <h5 class="mb-0">
+                              <a data-toggle="collapse" data-target="#collapseTwo-4" aria-expanded="false" aria-controls="collapseTwo-4">
+                                Apa saja tipe properti yang ada di Profitable ?
+                              </a>
+                            </h5>
+                          </div>
+                          <div id="collapseTwo-4" class="collapse" aria-labelledby="headingTwo-4" data-parent="#accordion-4">
+                            <div class="card-body">
+                              <p class="mb-0">Properti yang di Flip bisa residensial (rumah, apartemen dll), komersial (ruko, toko, kos-kosan, dll) ataupun tanah untuk dibangun dan dijuali kembali.</p><p>
+                            </p></div>
+                          </div>
+                        </div>
+                        <div class="card">
+                          <div class="card-header" id="headingThree-4">
+                            <h5 class="mb-0">
+                              <a data-toggle="collapse" data-target="#collapseThree-4" aria-expanded="false" aria-controls="collapseThree-4">
+                                Bagaimana dengan kepemilikan properti ?
+                              </a>
+                            </h5>
+                          </div>
+                          <div id="collapseThree-4" class="collapse" aria-labelledby="headingThree-4" data-parent="#accordion-4">
+                            <div class="card-body">
+                              <p class="mb-0">Tujuan pembelian properti melalui Profitable ini adalah untuk investasi bukan untuk ditempati, karena akan dijual kembali (Flip) dan mendapat margin. Sehingga kepemilikan secara intrinsik adalah kepemilikan bersama seluruh investor. Namun secara legal, sertifikat rumah akan atas nama badan hukum Profitable atau Flipper sebagai kuasa/wakil dari para investor. 
+                                Namun sertifikat properti akan dipegang oleh Tim Profitable melalui Notaris rekanan sehingga Flipper tidak memungkinkan untuk menjual secara sepihak tanpa persetujuan Tim Profitable.</p><p>
+                            </p></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div> <!-- sub col -->
+            <div class="col-12 col-md-6">
+              <div class="row">
+                <div class="col-12 grid-margin">
+                  <div class="card">
+                    <div class="faq-block card-body">
+                      <div class="container-fluid py-2">
+                        <h5 class="mb-0">Tentang Skema Investasi</h5>
+                      </div>
+                      <div id="accordion-3" class="accordion">
+                        <div class="card">
+                          <div class="card-header" id="headingOne-3">
+                            <h5 class="mb-0">
+                              <a data-toggle="collapse" data-target="#collapseOne-3" aria-expanded="true" aria-controls="collapseOne-3">
+                                Bagaimana skema pembagian keuntungan ?
+                              </a>
+                            </h5>
+                          </div>
+                          <div id="collapseOne-3" class="collapse show" aria-labelledby="headingOne-3" data-parent="#accordion-3">
+                            <div class="card-body">
+                              <p class="mb-0">Setiap proyek Flipping memiliki skema pembagian tersendiri yang biasanya tergantung jenis dan Flipper yang mengerjakan. Untuk detailnya bisa dilihat di detail masing-masing proyek.</p><p>
+                            </p></div>
+                          </div>
+                        </div>
+                        <div class="card">
+                          <div class="card-header" id="headingTwo-3">
+                            <h5 class="mb-0">
+                              <a data-toggle="collapse" data-target="#collapseTwo-3" aria-expanded="false" aria-controls="collapseTwo-3">
+                               Apakah imbal hasil yang didapatkan investor berasal dari bunga ?
+                              </a>
+                            </h5>
+                          </div>
+                          <div id="collapseTwo-3" class="collapse" aria-labelledby="headingTwo-3" data-parent="#accordion-3">
+                            <div class="card-body">
+                              <p class="mb-0">Tidak, Profitable menggunakan sistem bagi hasil atau jual beli/sewa sehingga imbal hasil yang didapatkan investor bukan berasal dari bunga. Setiap penyertaan modal dari investor akan digunakan untuk mengerjakan proyek Flipping yang mempunyai keuntungan dan tingkat resiko tertentu.</p><p>
+                            </p></div>
+                          </div>
+                        </div>
+                        <div class="card">
+                          <div class="card-header" id="headingThree-3">
+                            <h5 class="mb-0">
+                              <a data-toggle="collapse" data-target="#collapseThree-3" aria-expanded="false" aria-controls="collapseThree-3">
+                               Apakah akan ada surat perjanjian ketika saya menyertakan uang saya ke investasi ?
+                              </a>
+                            </h5>
+                          </div>
+                          <div id="collapseThree-3" class="collapse" aria-labelledby="headingThree-3" data-parent="#accordion-3">
+                            <div class="card-body">
+                              <p class="mb-0">Akan ada MOU yang templatenya juga bisa ditemui di masing-masing halaman proyek di bagian dokumen. Setelah anda turut dalam investasi maka akan ada MOU yang digenerate secara otomatis khusus untuk Anda yang bisa anda temukan di halaman porfolio Anda.</p><p>
+                            </p></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-12">
+                  <div class="card">
+                    <div class="faq-block card-body">
+                      <div class="container-fluid py-2">
+                        <h5 class="mb-0">Tentang Biaya</h5>
+                      </div>
+                      <div id="accordion-2" class="accordion">
+                        <div class="card">
+                          <div class="card-header" id="headingOne-2">
+                            <h5 class="mb-0">
+                              <a data-toggle="collapse" data-target="#collapseOne-2" aria-expanded="true" aria-controls="collapseOne-2">
+                                Apakah ada biaya dari Profitable?
+                              </a>
+                            </h5>
+                          </div>
+                          <div id="collapseOne-2" class="collapse show" aria-labelledby="headingOne-2" data-parent="#accordion-2">
+                            <div class="card-body">
+                              <p class="mb-0">Saat ini Profitable akan men-charge operating fee sebesar 1-5% dari jumlah dana yang terkumpul dari setiap proyek yang fullfunded. 
+                                Besar persentase bergantung pada masing-masing proyek. Fee ini tidak akan dipotong dari return yang akan didapat investor. Investor tetap akan 
+                                menerima ROI sesuai dengan bagi hasil yang tertera pada masing-masing proyek. Jika suatu proyek full funded, namun karena satu dan lain hal proyek 
+                                tersebut batal, maka uang investor akan dikembalikan 100% ke saldo wallet masing-masing investor, dan Profitable sama sekali tidak akan men-charge operating fee. 
+                                Ketentuan ini dapat berubah sewaktu-waktu sesuai kebijakan Profitable.</p><p>
+                            </p></div>
+                          </div>
+                        </div>
+                        
+                        </div>
+                        
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+           </div><!-- parent row -->
+        </div>
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+
+<div id="main-content" class="blog-page">
+        <div class="container">
+            <div class="row clearfix">
+                <div class="col-12 grid-margin grid-margin-md-0">
+
+
+                        <div class="card">
+                            <div class="header">
+                                <h4>Memiliki pertanyaan lain ? <small></small></h4>
+                            </div>
+                            <div class="body">
+                                <div class="comment-form">
+                                    <form class="row clearfix">
+                                        <div class="col-sm-6">
+                                            <div class="form-group">
+                                                <input type="text" class="form-control" placeholder="Your Name">
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <div class="form-group">
+                                                <input type="text" class="form-control" placeholder="Email Address">
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-12">
+                                            <div class="form-group">
+                                                <textarea rows="4" class="form-control no-resize" placeholder="Please type what you want..."></textarea>
+                                            </div>
+                                            <button type="submit" class="btn btn-block btn-primary">SUBMIT</button>
+                                        </div>                                
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                </div>
+
+
+
+        </div>
+    </div>
+        <style>
+        body{
+    margin-top:20px;
+color: #6c7293;
+}
+.card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border: 1px solid #e7eaed;
+    border-radius: 0;
+}
+
+.accordion .card {
+    margin-bottom: .75rem;
+    box-shadow: 0px 1px 15px 1px rgba(230, 234, 236, 0.35);
+    border-radius: .25rem;
+}
+.accordion .card .card-header {
+    background-color: transparent;
+    border: none;
+    padding: 2rem;
+}
+.grid-margin {
+    margin-bottom: 0.625rem;
+}
+.accordion .card .card-header a[aria-expanded="true"]:before {
+    content: "\F374";
+}
+.accordion .card .card-header a:before {
+    font-family: "Material Design Icons";
+    position: absolute;
+    right: 7px;
+    top: 0;
+    font-size: 18px;
+    display: block;
+}
+.accordion .card .card-header a[aria-expanded="false"]:before {
+    content: "\F415";
+}   
+
+
+body{
+    background-color: #f4f7f6;
+    margin-top:20px;
+}
+.card {
+    background: #fff;
+    transition: .5s;
+    border: 0;
+    margin-bottom: 30px;
+    border-radius: .55rem;
+    position: relative;
+    width: 100%;
+    box-shadow: 0 1px 2px 0 rgb(0 0 0 / 10%);
+}
+.card .body {
+    color: #444;
+    padding: 20px;
+    font-weight: 400;
+}
+.card .header {
+    color: #444;
+    padding: 20px;
+    position: relative;
+    box-shadow: none;
+}
+.single_post {
+    -webkit-transition: all .4s ease;
+    transition: all .4s ease
+}
+
+.single_post .body {
+    padding: 30px
+}
+
+.single_post .img-post {
+    position: relative;
+    overflow: hidden;
+    max-height: 500px;
+    margin-bottom: 30px
+}
+
+.single_post .img-post>img {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+    opacity: 1;
+    -webkit-transition: -webkit-transform .4s ease, opacity .4s ease;
+    transition: transform .4s ease, opacity .4s ease;
+    max-width: 100%;
+    filter: none;
+    -webkit-filter: grayscale(0);
+    -webkit-transform: scale(1.01)
+}
+
+.single_post .img-post:hover img {
+    -webkit-transform: scale(1.02);
+    -ms-transform: scale(1.02);
+    transform: scale(1.02);
+    opacity: .7;
+    filter: gray;
+    -webkit-filter: grayscale(1);
+    -webkit-transition: all .8s ease-in-out
+}
+
+.single_post .img-post:hover .social_share {
+    display: block
+}
+
+.single_post .footer {
+    padding: 0 30px 30px 30px
+}
+
+.single_post .footer .actions {
+    display: inline-block
+}
+
+.single_post .footer .stats {
+    cursor: default;
+    list-style: none;
+    padding: 0;
+    display: inline-block;
+    float: right;
+    margin: 0;
+    line-height: 35px
+}
+
+.single_post .footer .stats li {
+    border-left: solid 1px rgba(160, 160, 160, 0.3);
+    display: inline-block;
+    font-weight: 400;
+    letter-spacing: 0.25em;
+    line-height: 1;
+    margin: 0 0 0 2em;
+    padding: 0 0 0 2em;
+    text-transform: uppercase;
+    font-size: 13px
+}
+
+.single_post .footer .stats li a {
+    color: #777
+}
+
+.single_post .footer .stats li:first-child {
+    border-left: 0;
+    margin-left: 0;
+    padding-left: 0
+}
+
+.single_post h3 {
+    font-size: 20px;
+    text-transform: uppercase
+}
+
+.single_post h3 a {
+    color: #242424;
+    text-decoration: none
+}
+
+.single_post p {
+    font-size: 16px;
+    line-height: 26px;
+    font-weight: 300;
+    margin: 0
+}
+
+.single_post .blockquote p {
+    margin-top: 0 !important
+}
+
+.single_post .meta {
+    list-style: none;
+    padding: 0;
+    margin: 0
+}
+
+.single_post .meta li {
+    display: inline-block;
+    margin-right: 15px
+}
+
+.single_post .meta li a {
+    font-style: italic;
+    color: #959595;
+    text-decoration: none;
+    font-size: 12px
+}
+
+.single_post .meta li a i {
+    margin-right: 6px;
+    font-size: 12px
+}
+
+.single_post2 {
+    overflow: hidden
+}
+
+.single_post2 .content {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    padding-left: 80px;
+    position: relative
+}
+
+.single_post2 .content .actions_sidebar {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 60px
+}
+
+.single_post2 .content .actions_sidebar a {
+    display: inline-block;
+    width: 100%;
+    height: 60px;
+    line-height: 60px;
+    margin-right: 0;
+    text-align: center;
+    border-right: 1px solid #e4eaec
+}
+
+.single_post2 .content .title {
+    font-weight: 100
+}
+
+.single_post2 .content .text {
+    font-size: 15px
+}
+
+.right-box .categories-clouds li {
+    display: inline-block;
+    margin-bottom: 5px
+}
+
+.right-box .categories-clouds li a {
+    display: block;
+    border: 1px solid;
+    padding: 6px 10px;
+    border-radius: 3px
+}
+
+.right-box .instagram-plugin {
+    overflow: hidden
+}
+
+.right-box .instagram-plugin li {
+    float: left;
+    overflow: hidden;
+    border: 1px solid #fff
+}
+
+.comment-reply li {
+    margin-bottom: 15px
+}
+
+.comment-reply li:last-child {
+    margin-bottom: none
+}
+
+.comment-reply li h5 {
+    font-size: 18px
+}
+
+.comment-reply li p {
+    margin-bottom: 0px;
+    font-size: 15px;
+    color: #777
+}
+
+.comment-reply .list-inline li {
+    display: inline-block;
+    margin: 0;
+    padding-right: 20px
+}
+
+.comment-reply .list-inline li a {
+    font-size: 13px
+}
+
+@media (max-width: 640px) {
+    .blog-page .left-box .single-comment-box>ul>li {
+        padding: 25px 0
+    }
+    .blog-page .left-box .single-comment-box ul li .icon-box {
+        display: inline-block
+    }
+    .blog-page .left-box .single-comment-box ul li .text-box {
+        display: block;
+        padding-left: 0;
+        margin-top: 10px
+    }
+    .blog-page .single_post .footer .stats {
+        float: none;
+        margin-top: 10px
+    }
+    .blog-page .single_post .body,
+    .blog-page .single_post .footer {
+        padding: 30px
+    }
+}
+
+</style>
+<?= $this->endSection(); ?>

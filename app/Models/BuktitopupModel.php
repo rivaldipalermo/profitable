@@ -6,9 +6,9 @@ use CodeIgniter\Model;
 
 class BuktitopupModel extends Model
 {
-    protected $table      = 'buktitopup';
+    protected $table      = 'transaksi';
     protected $useTimestamps = true;
-    protected $allowedFields = ['bukti'];
+    protected $allowedFields = ['user_id', 'saldo', 'jenis_pembayaran', 'status', 'bukti_pembayaran'];
 
     public function getBuktitopup($id=false)
     {
