@@ -46,6 +46,10 @@ $routes->get('/admin/investasi/add', 'InvestasiController::addInvestasi');
 $routes->add('/admin/investasi/store', 'InvestasiController::storeInvestasi');
 $routes->add('/admin/investasi/delete/(:any)', 'InvestasiController::deleteInvestasi/$1');
 
+// Verifikasi
+$routes->get('/admin/verifikasi/verifikasi_investasi', 'VerifikasiController::verifikasi_investasi');
+$routes->get('/admin/verifikasi/verifikasi_pencairan', 'VerifikasiController::verifikasi_pencairan');
+
 // Properti
 $routes->get('/admin/properti', 'PropertiController::index');
 $routes->get('/admin/properti/add', 'PropertiController::addProperti');
