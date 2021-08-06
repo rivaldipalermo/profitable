@@ -36,6 +36,7 @@
                                             <th>Status</th>
                                             <th></th>
                                             <th>Aksi</th>
+                                            <th></th>
                                         </tr>
                                     </thead>
 
@@ -45,19 +46,30 @@
                                             <?php foreach ($transaksi as $a) : ?>
                                                 <th scope="row"><?= $i++; ?></th>
                                                 <td><?= $a['user_id'];  ?></td>
-                                                <td><?= $a['saldo'];  ?></td>
+                                                <td><?= "Rp " . number_format($a['saldo'], 0, ",", "."); ?></td>
                                                 <td><?= $a['jenis_pembayaran'];  ?></td>
-                                                <td><?= $a['bukti_pembayaran'];  ?></td>
-                                                <td><?= $a['status'];  ?></td>
-                                                <td></td>
-                                                <td><a href="/AdminController/delete/<?= $a['id']; ?>" class="btn btn-danger">delete</a>
+                                                <td><a href="<?= base_url(); ?>/assets/images/user/<?= $a['bukti_pembayaran']; ?>"> <img src="<?= base_url(); ?>/assets/images/user/<?= $a['bukti_pembayaran']; ?>" width=100></a></td>
+                                                <td><?= $a['status'] == "pending" ? 'Menunggu Pembayaran' : ($a['status'] == 'success' ? 'Pembayaran Berhasil' : 'Pembayaran Gagal'); ?>
                                                 </td>
+
+                                                <td></td>
+                                                <form method="POST">
+                                                    <?php if ($a['status'] == "pending") { ?>
+                                                        <td> <a href="/admin/approve/<?= $a['id']; ?>" class="btn btn-success" value="approve">approve
+                                                        <td> <a href="/admin/reject/<?= $a['id']; ?>" class=" btn btn-danger" value="approve">reject
+                                                            <?php } else { ?>
+                                                        <td>-</td>
+                                                        <td></td>
+                                                    <?php }    ?>
+
+                                                </form>
 
                                         </tr>
                                     <?php endforeach; ?>
                                     </tbody>
                                 </table>
-
+                                </p>
+                                <?= $pager->links('artikel', 'artikel_pagination'); ?>
                             </div>
                         </div>
                     </div>

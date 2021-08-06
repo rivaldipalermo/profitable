@@ -64,6 +64,11 @@ $routes->get('/user/u_upload_bukti/(:any)', 'UserController::add_bukti/$1');
 $routes->get('/user/biodata', 'UserController::biodata');
 $routes->get('/user/bukti_topup', 'UserController::buktitopup');
 
+//Topup Admin
+$routes->get('/admin/riwayatopup', 'AdminController::riwayatopup');
+$routes->get('/admin/approve/(:any)', 'AdminController::approve/$1');
+$routes->get('/admin/reject/(:any)', 'AdminController::reject/$1');
+
 // Resiko
 $routes->get('/user/u_resiko/', 'UserController::resiko');
 $routes->get('/guest/g_resiko/', 'GuestController::resiko');

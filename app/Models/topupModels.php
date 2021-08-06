@@ -6,7 +6,7 @@ use CodeIgniter\Model;
 
 class TopupModels extends Model
 {
-    protected $table = 'Transaksi';
+    protected $table = 'transaksi';
     protected $useTimestamps = false;
     protected $allowedFields = ['user_id', 'saldo', 'jenis_pembayaran', 'bukti_pembayaran'];
 
@@ -21,5 +21,10 @@ class TopupModels extends Model
     public function search($keyword = 'none')
     {
         return $this->table('transaksi')->like('user_id', $keyword);
+    }
+
+    public function approval($approve = 'none')
+    {
+        return $this->table('transaksi')->like('approval', $approve);
     }
 }

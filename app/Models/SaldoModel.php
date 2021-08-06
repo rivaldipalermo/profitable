@@ -8,7 +8,8 @@ class SaldoModel extends Model
 {
     protected $table = 'Saldo';
     protected $useTimestamps = true;
-    protected $allowedFields = ['id', 'user_id', 'saldo', 'is_verified'];
+    protected $primaryKey = 'user_id';
+    protected $allowedFields = ['user_id', 'saldo', 'is_verified'];
     public function getSaldo($id = false)
     {
         if ($id == false) {

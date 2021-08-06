@@ -1,3 +1,6 @@
+#Ignore image file
+public/assets/images/user/
+
 #-------------------------
 # Operating Specific Junk Files
 #-------------------------

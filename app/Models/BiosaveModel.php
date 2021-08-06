@@ -8,7 +8,8 @@ class BiosaveModel extends Model
 {
     protected $table      = 'biodata';
     protected $useTimestamps = true;
-    protected $allowedFields = ['nama','panggilan','tl','phone','provinsi','kota','alamat','pekerjaan','sumber','nbank','cabang','anama','norek'];
+    protected $allowedFields = ['nama','panggilan','tl','phone','provinsi','kota','alamat','pekerjaan',
+                                'sumber','nbank','cabang','anama','norek','id','user_id'];
 
     public function getBiosave($id=false)
     {

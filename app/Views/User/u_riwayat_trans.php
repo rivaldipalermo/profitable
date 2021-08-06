@@ -6,29 +6,29 @@
 </div>
 
 <style>
-                .table-striped > tbody > tr:nth-of-type(2n+1) {
-                    background-color: #48D1CC !important;
-                    color: #F5FFFA;
-         
-                }
+    .table-striped>tbody>tr:nth-of-type(2n+1) {
+        background-color: #48D1CC !important;
+        color: #F5FFFA;
 
-                .deals-info {
-                    padding: 8px;
-                    border-radius: 4px;
-                    border: solid 1px #ecdb77;
-                    background-color: #fffbcd;
-                }
+    }
 
-                .deals-info > span {
-                    font-size: 12px;
-                    color: rgba(0, 0, 0, .54);
-                }
+    .deals-info {
+        padding: 8px;
+        border-radius: 4px;
+        border: solid 1px #ecdb77;
+        background-color: #fffbcd;
+    }
 
-                @media print {
-                    .hidden-print {
-                        display: none !important;
-                    }
-                }
+    .deals-info>span {
+        font-size: 12px;
+        color: rgba(0, 0, 0, .54);
+    }
+
+    @media print {
+        .hidden-print {
+            display: none !important;
+        }
+    }
 </style>
 
 <div class="page-content">
@@ -45,35 +45,39 @@
                                     <div class="card-body px-3 py-4-5">
                                         <div class="row">
 
-                                            
+
                                             <div class="card nopadding nolastchild content-balance">
-                                                
+
                                                 <div class="col-md-3">
-                                                <center>
-                                                <h4>Saldo Profitable</h4>
-                                                </center>
+                                                    <center>
+                                                        <h4>Saldo Profitable</h4>
+                                                    </center>
                                                 </div>
 
                                                 <div class="cb-logo col-md-3">
-                                                <center>
-                                                    <img src="/assets/images/logo/logo-profitable.png" width="100" height="100" alt="">
-                                                </center>
+                                                    <center>
+                                                        <img src="/assets/images/logo/logo-profitable.png" width="100" height="100" alt="">
+                                                    </center>
                                                 </div>
-                                                
+
 
                                                 <p></p>
                                                 <br>
                                                 <!-- <div class="cb-balance" id="cb-balance-text"><span class="currency-label">Rp </span>0</div> -->
                                                 <div class="col-md-3">
-                                                <table style="margin-left: 4px; margin-top: 8px; font-size: 20px; border-bottom:  #0000FF; border-collapse: collapse;" class="table-striped">
-                                                    <tbody>
-                                                    <tr>
-                                                        <td style="padding:5px; padding-left: 10px; text-align: left; width: 240px;"><h5>Saldo</h5></td>
-                                                        <td style="padding:5px; padding-left: 10px; text-align: left; width: 270px;"><h5><?= "Rp " . number_format($table['saldo'], 0, ",", ".");?></h5></td>
-                                                        
-                                                    </tr>
-                                                    </tbody>
-                                                </table>
+                                                    <table style="margin-left: 4px; margin-top: 8px; font-size: 20px; border-bottom:  #0000FF; border-collapse: collapse;" class="table-striped">
+                                                        <tbody>
+                                                            <tr>
+                                                                <td style="padding:5px; padding-left: 10px; text-align: left; width: 240px;">
+                                                                    <h5>Saldo</h5>
+                                                                </td>
+                                                                <td style="padding:5px; padding-left: 10px; text-align: left; width: 270px;">
+                                                                    <h5><?= "Rp " . number_format($table['saldo'], 0, ",", "."); ?></h5>
+                                                                </td>
+
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
                                                 </div>
 
                                             </div>
@@ -149,7 +153,7 @@
                                     <h5 class="text-muted font-semibold">Semua</h5>
                                 </a>
                             </li>
-                            <li class="nav-item">
+                            <!-- <li class="nav-item">
                                 <a class="nav-link " href="#" aria-current="page">
                                     <h5 class="text-muted font-semibold">Pembayaran</h5>
                                 </a>
@@ -158,7 +162,7 @@
                                 <a class="nav-link " href="#" tabindex="-5" aria-disabled="true">
                                     <h5 class="text-muted font-semibold">Penerimaan</h5>
                                 </a>
-                            </li>
+                            </li> -->
                             <!-- <li class="nav-item">
                                                     <a class="nav-link " href="#" tabindex="-5" aria-disabled="true">
                                                     <h5 class="text-muted font-semibold">Pengembalian</h5></a>
@@ -221,8 +225,8 @@
                     <!-- <th scope="col">Id</th> -->
                     <th scope="col">Waktu Transaksi</th>
                     <th scope="col">Saldo</th>
-                    <th scope="col">Status Pembayaran</th>
                     <th scope="col">Jenis Pembayaran</th>
+                    <th scope="col">Status Pembayaran</th>
                     <th scope="col">Bukti Pembayaran</th>
                     <th scope="col"></th>
                 </tr>
