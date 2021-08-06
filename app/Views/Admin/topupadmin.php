@@ -4,6 +4,19 @@
 <div class="page-heading">
     <h3><?= $title; ?></h3>
 </div>
+<?php if (session()->getFlashdata('pesan')) : ?>
+    <div class="alert alert-success" role="alert">
+        <?= session()->getFlashdata('pesan'); ?>
+    </div>
+<?php endif; ?>
+<form action="" method="POST">
+    <div class="input-group mb-3">
+        <input type="text" class="form-control" placeholder="Masukan Keyword Pencarian" name="keyword">
+        <div class="input-group-append">
+            <button class="btn btn-outline-secondary" type="submit" name="submit">Cari</button>
+        </div>
+    </div>
+</form>
 <div class="page-content">
     <section class="row">
         <div class="col-12 col-lg-12">
@@ -16,120 +29,53 @@
                                     <thead>
                                         <tr>
                                             <th>No</th>
-                                            <th>Nama</th>
-                                            <th>Nominal</th>
-                                            <th>Tanggal</th>
+                                            <th>User ID</th>
+                                            <th>Nominal Top up</th>
                                             <th>Jenis Pembayaran</th>
+                                            <th>Bukti Pembayaran</th>
+                                            <th>Status</th>
+                                            <th></th>
                                             <th>Aksi</th>
                                             <th></th>
                                         </tr>
                                     </thead>
 
-                                    ##template
                                     <tbody>
                                         <tr>
-                                            <td class='col-3 '>
-                                                <div class="d-flex align-items-center">
-                                                    <div class="avatar avatar-md">
-                                                        <img src="<?= base_url(); ?>/assets/images/faces/5.jpg">
-                                                    </div>
-                                                    <p class='font-bold ms-3 mb-0'>Fuanuddin</p>
-                                                </div>
-                                            </td>
-                                            <td class='col-auto'>
-                                                <p class=' mb-0'>Rp.3.000</p>
-                                            </td>
-                                            <td class='col-auto'>
-                                                <p class=' mb-0'>25 Juli 2021</p>
-                                            </td>
-                                            <td class='col-auto'>
-                                                <p class=' mb-0'>Bank BNI</p>
-                                            </td>
-                                            <td class='col-auto'>
-                                                <button type="button" class="btn btn-success">Approve</button>
-                                                <button type="button" class="btn btn-danger">Reject</button>
-                                            </td>
-                                            <td>
-                                                <button type="submit" class="btn btn-danger">Delete</button>
-                                            </td>
+                                            <?php $i = 1 + (25 * ($page_akhir - 1)); ?>
+                                            <?php foreach ($transaksi as $a) : ?>
+                                                <th scope="row"><?= $i++; ?></th>
+                                                <td><?= $a['user_id'];  ?></td>
+                                                <td><?= "Rp " . number_format($a['saldo'], 0, ",", "."); ?></td>
+                                                <td><?= $a['jenis_pembayaran'];  ?></td>
+                                                <td><a href="<?= base_url(); ?>/assets/images/user/<?= $a['bukti_pembayaran']; ?>"> <img src="<?= base_url(); ?>/assets/images/user/<?= $a['bukti_pembayaran']; ?>" width=100></a></td>
+                                                <td><?= $a['status'] == "pending" ? 'Menunggu Pembayaran' : ($a['status'] == 'success' ? 'Pembayaran Berhasil' : 'Pembayaran Gagal'); ?>
+                                                </td>
+
+                                                <td></td>
+                                                <form method="POST">
+                                                    <?php if ($a['status'] == "pending") { ?>
+                                                        <td> <a href="/admin/approve/<?= $a['id']; ?>" class="btn btn-success" value="approve">approve
+                                                        <td> <a href="/admin/reject/<?= $a['id']; ?>" class=" btn btn-danger" value="approve">reject
+                                                            <?php } else { ?>
+                                                        <td>-</td>
+                                                        <td></td>
+                                                    <?php }    ?>
+
+                                                </form>
 
                                         </tr>
-                                        <tr>
-                                            <td class='col-3 '>
-                                                <div class="d-flex align-items-center">
-                                                    <div class="avatar avatar-md">
-                                                        <img src="<?= base_url(); ?>/assets/images/faces/2.jpg">
-                                                    </div>
-                                                    <p class='font-bold ms-3 mb-0'>Archius</p>
-                                                </div>
-                                            </td>
-                                            <td class='col-auto'>
-                                                <p class=' mb-0'>Rp.5.000.000</p>
-                                            </td>
-                                            <td class='col-auto'>
-                                                <p class=' mb-0'>28 Juli 2021</p>
-                                            </td>
-                                            <td class='col-auto'>
-                                                <p class=' mb-0'>Bank BRI</p>
-                                            </td>
-                                            <td class='col-auto'>
-                                                <button type="button" class="btn btn-success">Approve</button>
-                                                <button type="button" class="btn btn-danger">Reject</button>
-                                            </td>
-                                            <td>
-                                                <button type="submit" class="btn btn-danger">Delete</button>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td class='col-3 '>
-                                                <div class="d-flex align-items-center">
-                                                    <div class="avatar avatar-md">
-                                                        <img src="<?= base_url(); ?>/assets/images/faces/2.jpg">
-                                                    </div>
-                                                    <p class='font-bold ms-3 mb-0'>Jordan Kumowal</p>
-                                                </div>
-                                            </td>
-                                            <td class='col-auto'>
-                                                <p class=' mb-0'>Rp.1.000.000</p>
-                                            </td>
-                                            <td class='col-auto'>
-                                                <p class=' mb-0'>21 Juli 2021</p>
-                                            </td>
-                                            <td class='col-auto'>
-                                                <p class=' mb-0'>Bank Mega</p>
-                                            </td>
-                                            <td class='col-auto'>
-                                                <button type="button" class="btn btn-success">Approve</button>
-                                                <button type="button" class="btn btn-danger">Reject</button>
-                                            </td>
-                                            <td>
-                                                <button type="submit" class="btn btn-danger">Delete</button>
-                                            </td>
-                                        </tr>
+                                    <?php endforeach; ?>
                                     </tbody>
                                 </table>
-                                <p align="center">
-                                    <button type="submit" class="btn btn-primary">Update</button>
                                 </p>
+                                <?= $pager->links('artikel', 'artikel_pagination'); ?>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <nav aria-label="Page navigation example">
-            <ul class="pagination justify-content-center">
-                <li class="page-item disabled">
-                    <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
-                </li>
-                <li class="page-item"><a class="page-link" href="#">1</a></li>
-                <li class="page-item"><a class="page-link" href="#">2</a></li>
-                <li class="page-item"><a class="page-link" href="#">3</a></li>
-                <li class="page-item">
-                    <a class="page-link" href="#">Next</a>
-                </li>
-            </ul>
-        </nav>
     </section>
 </div>
 <?= $this->endSection(); ?>

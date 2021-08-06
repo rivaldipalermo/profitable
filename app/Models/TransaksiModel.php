@@ -16,4 +16,7 @@ class TransaksiModel extends Model
         }
         return $this->where(['id' => $id])->first();
     }
+
+    
 }
+
