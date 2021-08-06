@@ -223,7 +223,8 @@ class UserController extends BaseController
             ]
         )) {
             
-            return redirect()->to('/user/u_upload_bukti/' . $this->request->getVar('user_id'))->withInput();
+            //return redirect()->to('/user/u_upload_bukti/' . $this->request->getVar('user_id'))->withInput();
+			return redirect()->to('/User/u_upload_bukti')->withInput();
         }
 
 		//$nama_gambar = $this->request->getVar('gambarLama');
@@ -239,7 +240,7 @@ class UserController extends BaseController
             ]
         );
 
-        session()->setFlashdata('pesan', 'Data Berhasil ditambah');
+        
 
 		$page_akhir = $this->request->getVar('page_artikel') ? $this->request->getVar('page_artikel') : 1;
 		
