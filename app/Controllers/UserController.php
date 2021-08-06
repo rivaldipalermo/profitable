@@ -82,6 +82,7 @@ class UserController extends BaseController
 
 	public function biosave()
 	{
+		
 		$this->biosaveModel->save(
             [
                 'nama' => $this->request->getVar('nama'),
@@ -96,14 +97,14 @@ class UserController extends BaseController
 				'nbank' => $this->request->getVar('nbank'),
                 'cabang' => $this->request->getVar('cabang'),
                 'anama' => $this->request->getVar('anama'),     
-				'norek' => $this->request->getVar('norek'),     
+				'norek' => $this->request->getVar('norek'),
+				// 'id' => 1,
+				'user_id'=> intval(user_id()),
+				      
             ]
         );
-<<<<<<< HEAD
 		return redirect()->to('/user/u_riwayat_trans');
-=======
 		return redirect()->to('/UserController/riwayat_tu');
->>>>>>> f8f1f5f4e638565231ef681765c8e5f660048829
 	}
 
 
@@ -117,19 +118,16 @@ class UserController extends BaseController
 		return view('User/biodata', $data);
 	}
 
-	public function buktisave()
-	{
-		$this->buktitopupModel->save(
-			[
-				'bukti' => $this->request->getVar('bukti'),    
-			]
-		);
-<<<<<<< HEAD
-		return redirect()->to('/user/u_riwayat_trans');
-=======
-		return redirect()->to('/UserController/riwayat_tu');
->>>>>>> f8f1f5f4e638565231ef681765c8e5f660048829
-	}
+	// public function buktisave()
+	// {
+	// 	$this->buktitopupModel->save(
+	// 		[
+	// 			'bukti_pembayaran' => $this->request->getVar('bukti'),    
+	// 		]
+	// 	);
+	// 	return redirect()->to('/user/u_riwayat_trans');
+	// 	return redirect()->to('/UserController/riwayat_tu');
+	// }
 
 	public function buktitopup()
 	{
