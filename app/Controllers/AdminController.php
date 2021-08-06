@@ -2,6 +2,7 @@
 
 namespace App\Controllers;
 
+use App\Models\TransaksiModel;
 use App\Models\PropertiModel;
 use App\Models\TopupModels;
 
@@ -9,7 +10,7 @@ class AdminController extends BaseController
 {
 	public function __construct()
 	{
-
+		$this->transaksiModel = new TransaksiModel();
 		$this->TopupModels = new TopupModels();
 	}
 
@@ -54,17 +55,23 @@ class AdminController extends BaseController
 
 	public function reject($id)
 	{
-		$sql = "INSERT INTO transaksi (approval)
-	VALUES ('1')";
-		$this->TopupModels->approval($id);
+		$this->transaksiModel->update(
+			$id,
+			[
+				'status' => 'rejected'
+			]
+		);
 		return redirect()->to('AdminController/riwayatopup');
 	}
 
 	public function approve($id)
 	{
-		$sql = "INSERT INTO transaksi (approval)
-	VALUES ('2')";
-		$this->TopupModels->approval($id);
+		$this->transaksiModel->update(
+			$id,
+			[
+				'status' => 'success'
+			]
+		);
 		return redirect()->to('AdminController/riwayatopup');
 	}
 }

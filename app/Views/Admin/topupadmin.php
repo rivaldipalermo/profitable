@@ -48,17 +48,21 @@
                                                 <td><?= $a['user_id'];  ?></td>
                                                 <td><?= "Rp " . number_format($a['saldo'], 0, ",", "."); ?></td>
                                                 <td><?= $a['jenis_pembayaran'];  ?></td>
-                                                <td><img src="<?= base_url(); ?>/assets/images/bukti_topup/<?= $a['bukti_pembayaran']; ?>" width=100></td>
-                                                <td> <?php if ($a['approval'] == '1') { ?> rejected
-                                                    <?php } elseif ($a['approval'] == '2') { ?> approved
-                                                    <?php } else { ?> pending
+                                                <td><a href="<?= base_url(); ?>/assets/images/user/<?= $a['bukti_pembayaran']; ?>"> <img src="<?= base_url(); ?>/assets/images/bukti_topup/<?= $a['bukti_pembayaran']; ?>" width=100></a></td>
+                                                <td><?= $a['status'] == "pending" ? 'Menunggu Pembayaran' : ($a['status'] == 'success' ? 'Pembayaran Berhasil' : 'Pembayaran Gagal'); ?>
                                                 </td>
-                                            <?php } ?>
-                                            <td></td>
-                                            <form method="POST">
-                                                <td><a href=/AdminController/approve class="btn btn-success" value="approve">approve
-                                                <td><a href=/AdminController/reject class="btn btn-danger" value="approve">reject
-                                            </form>
+
+                                                <td></td>
+                                                <form method="POST">
+                                                    <?php if ($a['status'] == "pending") { ?>
+                                                        <td> <a href="/admin/approve/<?= $a['id']; ?>" class="btn btn-success" value="approve">approve
+                                                        <td> <a href="/admin/reject/<?= $a['id']; ?>" class=" btn btn-danger" value="approve">reject
+                                                            <?php } else { ?>
+                                                        <td>-</td>
+                                                        <td></td>
+                                                    <?php }    ?>
+
+                                                </form>
 
                                         </tr>
                                     <?php endforeach; ?>
