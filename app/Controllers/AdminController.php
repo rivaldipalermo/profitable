@@ -13,7 +13,7 @@ class AdminController extends BaseController
 		$this->TopupModels = new TopupModels();
 	}
 
-	/*	public function index()
+	public function index()
 	{
 		$this->PropertiModel = new PropertiModel();
 		$data = [
@@ -22,8 +22,10 @@ class AdminController extends BaseController
 		];
 		return view('Admin/index', $data);
 	}
-*/
 
+
+
+	/* RIWAYAT TOPUP ADMIN */
 	public function riwayatopup()
 	{
 		$keyword = $this->request->getVar('keyword');
@@ -43,10 +45,20 @@ class AdminController extends BaseController
 
 		return view('Admin/topupadmin', $data);
 	}
-	public function delete($id)
+	public function reject($id)
 	{
-		$this->TopupModels->delete($id);
-		session()->setFlashdata('pesan', 'Data berhasil dihapus!');
+		$sql = "INSERT INTO transaksi (approval)
+VALUES ('1')";
+		$this->TopupModels->approval($id);
+		return redirect()->to('AdminController/riwayatopup');
+	}
+
+	public function approve($id)
+	{
+		$sql = "INSERT INTO transaksi (approval)
+VALUES ('2')";
+		$this->TopupModels->approval($id);
+		session()->setFlashdata('pesan', 'Data berhasil');
 		return redirect()->to('AdminController/riwayatopup');
 	}
 }

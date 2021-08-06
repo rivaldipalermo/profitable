@@ -36,6 +36,7 @@
                                             <th>Status</th>
                                             <th></th>
                                             <th>Aksi</th>
+                                            <th></th>
                                         </tr>
                                     </thead>
 
@@ -45,19 +46,26 @@
                                             <?php foreach ($transaksi as $a) : ?>
                                                 <th scope="row"><?= $i++; ?></th>
                                                 <td><?= $a['user_id'];  ?></td>
-                                                <td><?= $a['saldo'];  ?></td>
+                                                <td><?= "Rp " . number_format($a['saldo'], 0, ",", "."); ?></td>
                                                 <td><?= $a['jenis_pembayaran'];  ?></td>
-                                                <td><?= $a['bukti_pembayaran'];  ?></td>
-                                                <td><?= $a['status'];  ?></td>
-                                                <td></td>
-                                                <td><a href="/AdminController/delete/<?= $a['id']; ?>" class="btn btn-danger">delete</a>
+                                                <td><img src="<?= base_url(); ?>/assets/images/bukti_topup/<?= $a['bukti_pembayaran']; ?>" width=100></td>
+                                                <td> <?php if ($a['approval'] == '1') { ?> rejected
+                                                    <?php } elseif ($a['approval'] == '2') { ?> approved
+                                                    <?php } else { ?> pending
                                                 </td>
+                                            <?php } ?>
+                                            <td></td>
+                                            <form method="POST">
+                                                <td><a href=/AdminController/approve class="btn btn-success" value="approve">approve
+                                                <td><a href=/AdminController/reject class="btn btn-danger" value="approve">reject
+                                            </form>
 
                                         </tr>
                                     <?php endforeach; ?>
                                     </tbody>
                                 </table>
-
+                                </p>
+                                <?= $pager->links('artikel', 'artikel_pagination'); ?>
                             </div>
                         </div>
                     </div>
