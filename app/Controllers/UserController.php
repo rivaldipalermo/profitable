@@ -235,8 +235,8 @@ class UserController extends BaseController
             ]
         )) {
             
-            //return redirect()->to('/user/u_upload_bukti/' . $this->request->getVar('user_id'))->withInput();
-			return redirect()->to('/User/u_upload_bukti')->withInput();
+            return redirect()->to('/user/u_upload_bukti/' .($id))->withInput();
+			//return redirect()->to('/User/u_upload_bukti')->withInput();
         }
 		
 
@@ -254,9 +254,9 @@ class UserController extends BaseController
 		);
 
         
-		session()->setFlashdata('pesan', 'Data Berhasil ditambah');
+		//session()->setFlashdata('pesan', 'Data Berhasil ditambah');
 
-		$page_akhir = $this->request->getVar('page_artikel') ? $this->request->getVar('page_artikel') : 1;
+		$page_akhir = $this->request->getVar('page_riwayattu') ? $this->request->getVar('page_riwayattu') : 1;
 
 		$data = [
 			'transaksi' => $this->uriwayattModel->paginate(5, 'artikel'), //getRiwayattu(),
