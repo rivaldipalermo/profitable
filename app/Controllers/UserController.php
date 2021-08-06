@@ -82,7 +82,12 @@ class UserController extends BaseController
 
 	public function biosave()
 	{
-		
+		$this->saldoModel->update(
+			intval(user_id()),
+            [
+                'is_verified' => '1'
+            ]
+        );
 		$this->biosaveModel->save(
             [
                 'nama' => $this->request->getVar('nama'),
@@ -194,7 +199,7 @@ class UserController extends BaseController
             'page_akhir'=> $page_akhir
         ];
 
-
+		
 		return view('User/u_riwayat_trans', $data);
 	}
 
