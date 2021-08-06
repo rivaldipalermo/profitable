@@ -48,7 +48,7 @@
                                                 <td><?= $a['user_id'];  ?></td>
                                                 <td><?= "Rp " . number_format($a['saldo'], 0, ",", "."); ?></td>
                                                 <td><?= $a['jenis_pembayaran'];  ?></td>
-                                                <td><a href="<?= base_url(); ?>/assets/images/user/<?= $a['bukti_pembayaran']; ?>"> <img src="<?= base_url(); ?>/assets/images/bukti_topup/<?= $a['bukti_pembayaran']; ?>" width=100></a></td>
+                                                <td><a href="<?= base_url(); ?>/assets/images/user/<?= $a['bukti_pembayaran']; ?>"> <img src="<?= base_url(); ?>/assets/images/user/<?= $a['bukti_pembayaran']; ?>" width=100></a></td>
                                                 <td><?= $a['status'] == "pending" ? 'Menunggu Pembayaran' : ($a['status'] == 'success' ? 'Pembayaran Berhasil' : 'Pembayaran Gagal'); ?>
                                                 </td>
 

@@ -3,6 +3,7 @@
 namespace App\Controllers;
 
 use App\Models\TransaksiModel;
+use App\Models\SaldoModel;
 use App\Models\PropertiModel;
 use App\Models\TopupModels;
 
@@ -11,6 +12,7 @@ class AdminController extends BaseController
 	public function __construct()
 	{
 		$this->transaksiModel = new TransaksiModel();
+		$this->saldoModel = new SaldoModel();
 		$this->TopupModels = new TopupModels();
 	}
 
@@ -66,6 +68,21 @@ class AdminController extends BaseController
 
 	public function approve($id)
 	{
+		$user_id = intval(user_id());
+		$table = $this->saldoModel->getSaldo($user_id);
+		$saldoadd = $table['saldo'];
+		$tra = $this->transaksiModel->getTransaksi($id);
+		$saldotrans = $tra['saldo'];
+
+		$saldobaru = $saldoadd + $saldotrans;
+
+		$this->saldoModel->update(
+			intval(user_id()),
+			[
+				'saldo' => $saldobaru
+			]
+		);
+
 		$this->transaksiModel->update(
 			$id,
 			[
