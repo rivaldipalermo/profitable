@@ -19,7 +19,6 @@ class PropertiController extends BaseController
 
 	public function index()
     {
-
         $currentPage = $this->request->getVar('page_properti') ? $this->request->getVar('page_properti') : 1;
         $search = $this->request->getVar('search');
         if ($search) {
@@ -30,7 +29,7 @@ class PropertiController extends BaseController
 
         $data = [
             'title' => 'Data Properti',
-            'properti' => $properti->paginate(5, 'properti'),
+            'properti' => $properti->paginate(2, 'properti'),
             'pager' => $this->PropertiModel->pager,
             'currentPage' => $currentPage
         ];

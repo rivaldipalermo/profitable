@@ -46,35 +46,19 @@
                             </a>
                         </li>
 
-                        <li class="sidebar-item  <?= ($request->uri->getSegment(2) == 'properti') ? 'active' : '' ?>"">
-                            <a href=" /admin/properti" class='sidebar-link'>
-                            <i class="bi bi-collection-fill"></i>
+                        <li class="sidebar-item  <?= ($request->uri->getSegment(2) == 'properti') ? 'active' : '' ?>">
+                            <a href="/admin/properti" class='sidebar-link'>
+                            <i class="fa fa-home"></i>
                             <span>Properti</span>
                             </a>
                         </li>
 
-                        <li class="sidebar-item  <?= ($request->uri->getSegment(2) == 'blog') ? 'active' : '' ?>"">
-                            <a href=" /admin/blog" class='sidebar-link'>
-                            <i class="bi bi-collection-fill"></i>
-                            <span>Blog</span>
-                            </a>
-                        </li>
-
-                        <li class="sidebar-item  has-sub">
-                            <a href="#" class='sidebar-link'>
+                        <li class="sidebar-item  <?= ($request->uri->getSegment(2) == 'investasi') ? 'active' : '' ?>">
+                            <a href="/admin/investasi" class='sidebar-link'>
                                 <i class="bi bi-collection-fill"></i>
-                                <span>Data Master</span>
+                                <span>Investasi</span>
                             </a>
-                            <ul class="submenu ">
-                                <li>
-                                    <a href="extra-component-avatar.html">Avatar</a>
-                                </li>
-                                <li>
-                                    <a href="extra-component-sweetalert.html">Sweet Alert</a>
-                                </li>
-                            </ul>
                         </li>
-
                     </ul>
                 </div>
                 <button class="sidebar-toggler btn x"><i data-feather="x"></i></button>
@@ -125,8 +109,6 @@
                                     </li>
                                     <li><a class='dropdown-item' href="#"><i class="icon-mid bi bi-person me-2"></i> My
                                             Profile</a></li>
-                                    <li><a class='dropdown-item' href="#"><i class="icon-mid bi bi-wallet me-2"></i>
-                                            Wallet</a></li>
                                     <li>
                                         <hr class="dropdown-divider">
                                     </li>

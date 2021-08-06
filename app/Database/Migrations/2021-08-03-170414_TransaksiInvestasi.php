@@ -4,6 +4,7 @@ namespace App\Database\Migrations;
 
 use CodeIgniter\Database\Migration;
 
+
 class TransaksiInvestasi extends Migration
 {
 	public function up()
@@ -25,6 +26,12 @@ class TransaksiInvestasi extends Migration
 				'constraint' => 200,
 				'unsigned' => true,
 			],
+			'is_verified' => [
+				'type' => 'TINYINT',
+				'constraint' => 1,
+				'null' => false,
+				'default' => 0,
+			],
 			'id_properti'       => [
 				'type'       => 'INT',
 				'constraint' => 11,
@@ -33,6 +40,11 @@ class TransaksiInvestasi extends Migration
 			'id_investasi' => [
 				'type' => 'VARCHAR',
 				'constraint' => 7,
+			],
+			'id_user' => [
+				'type' => 'INT',
+				'constraint' => 7,
+				'unsigned' => true,
 			],
 			'created_at' => [
 			  'type' => 'DATETIME',
@@ -46,6 +58,7 @@ class TransaksiInvestasi extends Migration
 		$this->forge->addKey('id_transaksi_investasi', true);
         $this->forge->addForeignKey('id_properti', 'properti', 'id', 'CASCADE', 'CASCADE');
         $this->forge->addForeignKey('id_investasi', 'investasi', 'id_investasi', 'CASCADE', 'CASCADE');
+		$this->forge->addForeignKey('id_user', 'users', 'id', 'CASCADE', 'CASCADE');
 		$this->forge->createTable('transaksi_investasi', TRUE);
 	}
 

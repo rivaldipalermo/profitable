@@ -45,6 +45,6 @@ class Home extends BaseController
 		$data = [
 			'title' =>'FAQ'
 		];
-		return view('guest/faq', $data);
+		return view('Guest/faq', $data);
 	}
 }
