@@ -20,7 +20,7 @@
     </div>
 </div>
 <!-- Basic Tables start -->
-<section class="section">s
+<section class="section">
     <div class="row" id="basic-table">
         <div class="col-12 col-md-12">
             <?php if (session()->getFlashdata('pesan')) : ?>
