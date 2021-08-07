@@ -56,15 +56,17 @@ class UserController extends BaseController
 	}
 	public function topupsave()
 	{
+		
+        $this->Modeltopup->save(
+            [
+                'user_id' => $this->request->getVar('user_id'),
+                'nominal' => $this->request->getVar('saldo'),
+				'nama_bank' => $this->request->getVar('jenis_pembayaran'),
+				'bukti_pembayaran' => $this->request->getVar('bukti_pembayaran'),
+				
+			]);
+			return redirect()->to('/UserController/halamantunggu');
 
-		$this->Modeltopup->save(
-			[
-				'nominal' => $this->request->getVar('nominal'),
-				'nama_bank' => $this->request->getVar('nama_bank'),
-				'nomor_kartu' => $this->request->getVar('nomor_kartu')
-			]
-		);
-		return redirect()->to('/UserController/halamantunggu');
 	}
 	public function action()
 	{
