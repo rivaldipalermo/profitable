@@ -12,8 +12,8 @@ class PendanaanController extends BaseController
 {
     public function __construct()
     {
-        $this->PropertiModel = new PropertiModel();  
-        $this->InvestasiModel = new InvestasiModel() ;
+        $this->PropertiModel = new PropertiModel();
+        $this->InvestasiModel = new InvestasiModel();
         $this->TransaksiInvestasiModel = new TransaksiInvestasiModel();
         $this->UserModel = new UserModel();
     }

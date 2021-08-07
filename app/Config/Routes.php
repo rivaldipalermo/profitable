@@ -33,6 +33,7 @@ $routes->setAutoRoute(true);
 // route since we don't have to scan directories.
 $routes->get('/', 'Home::index');
 $routes->get('/cara-kerja', 'Home::caraKerja');
+$routes->get('/faq', 'Home::faq');
 $routes->get('/admin', 'AdminController::index');
 
 // ProyekPendanaan
@@ -46,6 +47,13 @@ $routes->get('admin/properti/add', 'PropertiController::addProperti');
 $routes->add('admin/properti/store', 'PropertiController::storeProperti');
 $routes->get('admin/properti/edit/(:any)', 'PropertiController::editProperti/$1');
 $routes->add('admin/properti/update', 'PropertiController::updateProperti');
+
+// FAQ
+$routes->get('/admin/faq', 'FAQController::index');
+$routes->get('admin/faq/add', 'FAQController::addFAQ');
+$routes->add('admin/faq/store', 'FAQController::storeFAQ');
+$routes->get('admin/faq/edit/(:any)', 'FAQController::editFAQ/$1');
+$routes->add('admin/faq/update/(:segment)', 'FAQController::updateFAQ/$1');
 
 // Blog
 $routes->get('/admin/blog/', 'AdminBlog::index');

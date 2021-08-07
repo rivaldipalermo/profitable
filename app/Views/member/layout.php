@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8">
     <title>Profitable</title>
@@ -11,7 +12,7 @@
     <link href="img/favicon.ico" rel="icon">
 
     <!-- Google Font -->
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400|Nunito:600,700" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400|Nunito:600,700" rel="stylesheet">
 
     <!-- CSS Libraries -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
@@ -20,7 +21,7 @@
     <link href="<?= base_url(); ?>/home/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
     <link href="<?= base_url(); ?>/home/lib/flaticon/font/flaticon.css" rel="stylesheet">
     <link href="<?= base_url(); ?>/home/lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
-    <link href=”<?= base_url(); ?>/home/css/font-awesome.css” rel=”stylesheet”/>
+    <link href=”<?= base_url(); ?>/home/css/font-awesome.css” rel=”stylesheet” />
 
     <!-- Template Stylesheet -->
     <link href="<?= base_url(); ?>/home/css/style.css" rel="stylesheet">
@@ -37,7 +38,7 @@
 
             <div class="collapse navbar-collapse justify-content-center" id="navbarCollapse">
                 <div class="navbar-nav ml-auto ">
-                    <a href="/pendanaan" class="nav-item nav-link">Proyek Pendanaan</a>  
+                    <a href="/pendanaan" class="nav-item nav-link">Proyek Pendanaan</a>
                     <a href="/cara-kerja" class="nav-item nav-link">Cara Kerja</a>
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Lainnya</a>
@@ -53,14 +54,14 @@
             </div>
             <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                 <div class="navbar-nav ml-auto">
-                    <img  src="<?= base_url(); ?>/home/img/12.png" alt="Image" style="width: 40px; height: 40px; border-radius: 50px;">
+                    <img src="<?= base_url(); ?>/home/img/12.png" alt="Image" style="width: 40px; height: 40px; border-radius: 50px;">
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown"><?= user()->username ?></a>
                         <div class="dropdown-menu">
                             <a href="<?= base_url('Dashboard_member/index'); ?>" class="dropdown-item">Dashboard</a>
                             <a href="<?= base_url('Dashboard_member/porto'); ?>" class="dropdown-item">Portofolio</a>
                             <a href="<?= base_url('Dashboard_member/transaksi'); ?>" class="dropdown-item">Transaksi</a>
-                            <a href="<?= base_url('Pengaturan');?>" class="dropdown-item">Profil</a>
+                            <a href="<?= base_url('Pengaturan'); ?>" class="dropdown-item">Profil</a>
                             <a href="/logout" class="dropdown-item">Logout</a>
                         </div>
                     </div>
@@ -68,25 +69,25 @@
             </div>
         </div>
     </div>
-</div>
-</div>
-<!-- Nav Bar End -->
-<!-- Feature Start -->
-<div class="feature">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-2">
-                <div class="feature-text">
-                    <a class="btn custom-btn text-center" href="#">Investasi</a>
-                    <a class="btn cs-btn" href="<?= base_url('Pengaturan'); ?>">Pengaturan</a>
-                </div>
-            </div>
+    </div>
+    </div>
+    <!-- Nav Bar End -->
+    <!-- Feature Start -->
+    <div class="feature">
+        <div class="container">
             <div class="row">
-                <div class="col-xl jss255 jss109 jss105 mx-2 my-3 ">
+                <div class="col-lg-2">
                     <div class="feature-text">
-                        <div class="box4 ">
-                            <a class="col-md-9" href="<?= base_url('Dashboard_member/index'); ?>"> Dashboard </a>
-                            <a class="col-md-9" href="<?= base_url('Dashboard_member/porto'); ?>"> Portofolio </a>
-                            <a class="col-md-9" href="<?= base_url('Dashboard_member/transaksi'); ?>"> Transaksi </a>
-                        </div>
-                        <?= $this->renderSection('member'); ?>
+                        <a class="btn custom-btn text-center" href="#">Investasi</a>
+                        <a class="btn cs-btn" href="<?= base_url('Pengaturan'); ?>">Pengaturan</a>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xl jss255 jss109 jss105 mx-2 my-3 ">
+                        <div class="feature-text">
+                            <div class="box4 ">
+                                <a class="col-md-9" href="<?= base_url('Dashboard_member/index'); ?>"> Dashboard </a>
+                                <a class="col-md-9" href="<?= base_url('Dashboard_member/porto'); ?>"> Portofolio </a>
+                                <a class="col-md-9" href="<?= base_url('Dashboard_member/transaksi'); ?>"> Transaksi </a>
+                            </div>
+                            <?= $this->renderSection('member'); ?>

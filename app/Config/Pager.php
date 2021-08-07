@@ -30,7 +30,8 @@ class Pager extends BaseConfig
 		'properti_pagination' => 'App\Views\Admin\Properti\Pagers\properti_pagination',
 		'properti_pagination' => 'App\Views\Admin\Properti\Pagers\properti_pagination',
 		'blog_pagination' => 'App\Views\Admin\Blog\Pagers\blog_pagination',
-		'artikel_pagination' => 'App\Views\Pagers\u_riwayat_trans_pagination'
+		'artikel_pagination' => 'App\Views\Pagers\u_riwayat_trans_pagination',
+		'faq_pagination' => 'App\Views\Admin\Faq\Pagers\faq_pagination'
 	];
 
 	/**
