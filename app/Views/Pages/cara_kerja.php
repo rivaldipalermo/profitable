@@ -27,6 +27,47 @@
     </div>
 </section>
 
+<section class="step-flipping">
+    <div class="header">
+        <center>
+            <h3>Apa itu Flipping?</h3>
+            <p>Flipping adalah jenis investasi jangka pendek di sektor Properti dengan 3 pendekatan : Beli, Renovasi, Jual</p>
+        </center>
+    </div>
+
+    <div class="container">
+        <div class="card-group">
+            <div class="card text-center h-100" style="width: 18rem;">
+                <br>
+                <center><img src="<?= base_url() ?>/assets/images/logo/beli.png" class="card-img-top" style="width: 5rem"></center>
+                <div class="card-body">
+                    <h5 class="card-title">Beli</h5>
+                    <p class="card-text">Partner Flipper Profitable mencari properti di daerah sekitar mereka, dengan lokasi yang bagus dan market yang tumbuh, diutamakan dengan harga di bawah pasar</p>
+                </div>
+            </div>
+
+
+            <div class="card text-center h-100" style="width: 18rem;">
+                <br>
+                <center><img src="<?= base_url() ?>/assets/images/logo/renov.png" class="card-img-top" style="width: 5rem"></center>
+                <div class="card-body">
+                    <h5 class="card-title">Renovasi</h5>
+                    <p class="card-text">Untuk meningkatkan harga jual, Flipper merenovasi bangunan tersebut, seperti mengecat ulang, memperbaiki atap atau menaikan bangunan menjadi 2 lantai</p>
+                </div>
+            </div>
+
+            <div class="card text-center h-100" style="width: 18rem;">
+                <br>
+                <center><img src="<?= base_url() ?>/assets/images/logo/jual.png" class="card-img-top" style="width: 5rem"></center>
+                <div class="card-body">
+                    <h5 class="card-title">Jual</h5>
+                    <p class="card-text">Setelah direnovasi, Flipper langsung menjual properti dengan harga lebih tinggi kepada pembeli baru (end user) dalam waktu singkat dan mengembalikan dana investor</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
 <section class="skema-section">
     <div class="container">
         <div class="row">
@@ -136,6 +177,208 @@
     </div>
 </section>
 
+
+<section class="struktur-section">
+    <div class="container">
+        <div class="row">
+            <h3 class="px-3">Struktur Hukum Provesty</h3>
+        </div>
+        <div class="row mt-5">
+            <div class="col-lg-7">
+                <div class="row">
+                    <div class="col-lg-1">
+                        <h1>
+                            1
+                        </h1>
+                    </div>
+                    <div class="col-lg-11">
+                        <h4>
+                            Investor Crowdfunding
+                        </h4>
+                        <p>
+                            Investor mengumpulkan dana & memberi kuasa pada Provesty
+                        </p>
+                    </div>
+
+                </div>
+                <div class="row mt-2">
+                    <div class="col-lg-1">
+                        <h1>
+                            2
+                        </h1>
+                    </div>
+                    <div class="col-lg-11">
+                        <h4>
+                            Penandatangan Perjanjian
+                        </h4>
+                        <p>
+                            Pemilik Rumah & Provesty menandatangani perjanjian pinjaman atau bagi hasil
+                        </p>
+                    </div>
+
+                </div>
+                <div class="row mt-2">
+                    <div class="col-lg-1">
+                        <h1>
+                            3
+                        </h1>
+                    </div>
+                    <div class="col-lg-11">
+                        <h4>
+                            Beli, Renovasi & Jual Properti
+                        </h4>
+                        <p>
+                            Dengan dana investor, Provesty membeli & merenovasi Properti untuk dijual dengan harga lebih tinggi
+                        </p>
+                    </div>
+
+                </div>
+                <div class="row mt-2">
+                    <div class="col-lg-1">
+                        <h1>
+                            4
+                        </h1>
+                    </div>
+                    <div class="col-lg-11">
+                        <h4>
+                            Notaris Mengikat Sertifikat
+                        </h4>
+                        <p>
+                            Untuk proteksi investor, tim legal Provesty mengikat sertifikat Properti melalui notaris rekanan
+                        </p>
+                    </div>
+
+                </div>
+                <div class="row mt-2">
+                    <div class="col-lg-1">
+                        <h1>
+                            5
+                        </h1>
+                    </div>
+                    <div class="col-lg-11">
+                        <h4>
+                            Sertifikat disimpan Provesty
+                        </h4>
+                        <p>
+                            Sertifikat yang sudah dijaminkan melalui badan hukum Provesty disimpan dalam deposit box yang aman
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+            <div class="col-lg-5 col-md-12">
+                <img src="<?= base_url() ?>/assets/images/illustration/skema1.png" class="img-fluid ml-5">
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<section class="invest-section mt-5">
+    <div class="container">
+        <div class="row">
+            <h3 class="px-3">Mengapa Berinvestasi di Provitable?</h3>
+        </div>
+        <div class="row mt-5">
+            <div class="col-lg-12">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="row">
+                            <div class="col-lg-2">
+                                <img src="<?= base_url() ?>/assets/images/illustration/1.png" height="50" width="50">
+                            </div>
+                            <div class="col-lg-10">
+                                <h4>
+                                    Terjangkau
+                                </h4>
+                                <p>
+                                    Dengan hanya 1 juta rupiah, kamu sudah bisa investasi di Properti dan menikmati keuntungan dan keamanan dari instrumen ini.
+                                </p>
+                            </div>
+
+                        </div>
+                        <div class="row mt-3">
+                            <div class="col-lg-2">
+                                <img src="<?= base_url() ?>/assets/images/illustration/2.png" height="50" width="50">
+                            </div>
+                            <div class="col-lg-10">
+                                <h4>
+                                    Return yang Menarik
+                                </h4>
+                                <p>
+                                    Dengan skema Flipping Provesty (Beli-Renovasi-Jual), kamu dapat menikmati keuntungan investasi Properti jangka pendek 12-30% per tahun.
+                                </p>
+                            </div>
+
+                        </div>
+                        <div class="row mt-3">
+                            <div class="col-lg-2">
+                                <img src="<?= base_url() ?>/assets/images/illustration/3.png" height="50" width="50">
+                            </div>
+                            <div class="col-lg-10">
+                                <h4>
+                                    Diversifikasi Hanya dengan Sekali Klik
+                                </h4>
+                                <p>
+                                    Untuk mengurangi Resiko, kamu bisa dengan mudah mendiversifikasi aset di berbagai Properti melalui platform kami. The eggs are safe in many baskets
+                                </p>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="row">
+                            <div class="col-lg-2">
+                                <img src="<?= base_url() ?>/assets/images/illustration/4.png" height="50" width="50">
+                            </div>
+                            <div class="col-lg-10">
+                                <h4>
+                                    Aman & Terpercaya
+                                </h4>
+                                <p>
+                                    Kami melakukan due diligence ketat pada Properti dan partner flipper. Urusan legal, notaris dll juga ditangani tim kami yang berpengalaman
+                                </p>
+                            </div>
+
+                        </div>
+                        <div class="row mt-3">
+                            <div class="col-lg-2">
+                                <img src="<?= base_url() ?>/assets/images/illustration/5.png" height="50" width="50">
+                            </div>
+                            <div class="col-lg-10">
+                                <h4>
+                                    Di Ikat dengan Aset riil
+                                </h4>
+                                <p>
+                                    Semua investasi diikat dengan asset riil properti tanah atau bangunan (tangible asset) sehingga resiko capital lost sangat kecil.
+                                </p>
+                            </div>
+
+                        </div>
+                        <div class="row mt-3">
+                            <div class="col-lg-2">
+                                <img src="<?= base_url() ?>/assets/images/illustration/6.png" height="50" width="50">
+                            </div>
+                            <div class="col-lg-10">
+                                <h4>
+                                    Berkontribusi di Sektor Rill
+                                </h4>
+                                <p>
+                                    Investor mengumpulkan dana & memberi kuasa pada Provesty
+                                </p>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</section>
+
 <section id="faq" class="faq section-bg mt-5">
     <div class="container" data-aos="fade-up">
         <div class="section-title text-center">
@@ -199,5 +442,4 @@
     </div>
     </div>
 </section>
-
 <?= $this->endSection(); ?>
