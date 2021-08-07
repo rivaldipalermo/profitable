@@ -60,7 +60,7 @@
                   <div class="card">
                     <div class="card-header" id="heading<?= $i ?>-4">
                       <h5 class="mb-0">
-                        <a data-toggle="collapse" data-target="#collapse_<?= $i ?>-4" aria-expanded="true" aria-controls="collapse<?= $i ?>-4">
+                        <a data-toggle="collapse" data-target="#collapse<?= $i ?>-4" aria-expanded="true" aria-controls="collapse<?= $i ?>-4">
                           <?= $f['pertanyaan']; ?>
                         </a>
                       </h5>
