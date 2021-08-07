@@ -101,8 +101,8 @@
                                                     <div class="input-field-box input-normal mb-16 pt-8" id="input-nominal-topup">
                                                         <div class="input-field-wrapper">
 
-                                                            <div class="currency">Rp
-                                                                <input class="input-field" placeholder="0" name="nominal-topup-input" id="nominal-topup-input" type="number" value="" autocomplete="off">
+                                                            <div class="currency">
+                                                                <!-- Rp<input class="input-field" placeholder="0" name="nominal-topup-input" id="nominal-topup-input" type="number" value="" autocomplete="off"> -->
                                                                 <i class="sprite-small sprite-remove input-text-remove"></i>
 
 
