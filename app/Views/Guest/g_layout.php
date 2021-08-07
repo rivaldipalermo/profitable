@@ -84,7 +84,7 @@
                                             class="dropdown-item">Dashboard</a>
                                         <a href="http://localhost:8080/Dashboard_member/porto"
                                             class="dropdown-item">Portofolio</a>
-                                        <a href="http://localhost:8080/Dashboard_member/transaksi"
+                                        <a href="http://localhost:8080/user/u_riwayat_trans"
                                             class="dropdown-item">Transaksi</a>
                                         <a href="http://localhost:8080/Pengaturan" class="dropdown-item">Profil</a>
                                         <a href="/logout" class="dropdown-item">Logout</a>

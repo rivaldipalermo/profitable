@@ -9,7 +9,7 @@ class BiosaveModel extends Model
     protected $table      = 'biodata';
     protected $useTimestamps = true;
     protected $allowedFields = ['nama','panggilan','tl','phone','provinsi','kota','alamat','pekerjaan',
-                                'sumber','nbank','cabang','anama','norek','id','user_id'];
+                                'sumber','nbank','cabang','anama','norek','id','user_id','image'];
 
     public function getBiosave($id=false)
     {
@@ -17,6 +17,12 @@ class BiosaveModel extends Model
                 return $this->findAll();
         }
         return $this->where(['id'=> $id])->first();
+    }
+    public function mbBiosave()
+    {
+        return $this->db->table('users')
+         ->join('biodata','biodata.user_id=users.id')
+         ->get()->getRowArray();
     }
 
 }	
