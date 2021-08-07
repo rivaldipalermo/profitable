@@ -59,8 +59,6 @@
                                 <span>Investasi</span>
                             </a>
                         </li>
-
-<<<<<<< HEAD
                         <li class="sidebar-item  <?= ($request->uri->getSegment(2) == 'faq') ? 'active' : '' ?>"">
                             <a href=" /admin/faq" class='sidebar-link'>
                             <i class="bi bi-collection-fill"></i>
@@ -70,10 +68,8 @@
 
                         <li class="sidebar-item  has-sub">
                             <a href="#" class='sidebar-link'>
-=======
                         <li class="sidebar-item  <?= ($request->uri->getSegment(2) == 'verifikasi_investasi') ? 'active' : '' ?>">
                             <a href="/admin/verifikasi/verifikasi_investasi" class='sidebar-link'>
->>>>>>> 9dd0d5b2dd7e55ee53602e214068707f396d227b
                                 <i class="bi bi-collection-fill"></i>
                                 <span>Verifikasi Investasi</span>
                             </a>
