@@ -26,8 +26,12 @@ body {
   font-size: 14px;
   font-family: "Poppins", sans-serif;
   font-weight: normal;
-  color: #0a0b4d;
+  color: #2b237c;
   background: linear-gradient(166.89deg, #e9f0f9 0%, #ffffff 90.56%);
+}
+
+.section-bg {
+  background-color: #f3f5fa;
 }
 
 .page-content {
@@ -44,6 +48,11 @@ h6 {
   font-weight: bold;
 }
 
+.spad {
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+
 button:focus {
   outline: none;
   box-shadow: none;
@@ -51,6 +60,328 @@ button:focus {
 
 .page-home .home-banner {
   margin-top: 150px;
+}
+
+/* HERO */
+.hero-section {
+  width: 100%;
+  height: 80vh;
+}
+
+.hero-section .container {
+  padding-top: 72px;
+}
+
+.hero-section h3 {
+  margin: 0 0 10px 0;
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 50px;
+  color: rgb(11, 9, 82);
+}
+
+.hero-section h2 {
+  color: rgb(11, 9, 82, 0.6);
+  margin-bottom: 50px;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 25px;
+  text-align: justify;
+}
+
+.hero-section .btn-pelajari,
+.btn-mulai {
+  font-weight: 500;
+  font-size: 16px;
+  letter-spacing: 1px;
+  display: inline-block;
+  padding: 10px 28px 11px 28px;
+  border-radius: 50px;
+  transition: 0.5s;
+  margin: 10px 0 0 0;
+}
+
+.hero-section .btn-pelajari {
+  color: #fff;
+  background: #1e40c8;
+}
+
+.hero-section .btn-pelajari:hover {
+  background: #1632a1;
+}
+
+.hero-section .btn-mulai {
+  color: #1e40c8;
+  border: 1px solid #1e40c8;
+}
+
+.hero-section .btn-mulai:hover {
+  color: #47b2e4;
+}
+
+.hero-section .animated {
+  animation: up-down 2s ease-in-out infinite alternate-reverse both;
+}
+
+@-webkit-keyframes up-down {
+  0% {
+    transform: translateY(10px);
+  }
+  100% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes up-down {
+  0% {
+    transform: translateY(10px);
+  }
+  100% {
+    transform: translateY(-10px);
+  }
+}
+
+/* SKEMA INVESTASI */
+.skema-section {
+  margin-top: 100px;
+  padding-bottom: 60px;
+}
+
+.skema_swipe-btn {
+  border: 1px solid #4c57d6;
+  border-radius: 50px;
+  height: 60px;
+  width: 100%;
+}
+
+.skema_swipe-btn label {
+  font-size: 15px;
+  color: #1c1919;
+  font-weight: 700;
+  display: inline-block;
+  padding: 12px 30px 12px;
+  border-radius: 50px;
+  margin-right: -4px;
+  position: relative;
+  top: 4.5px;
+  left: 5px;
+  width: 320px;
+  cursor: pointer;
+  text-align: center;
+}
+
+.skema_swipe-btn label.active {
+  background: #1e40c8;
+  color: #ffffff;
+}
+
+.skema_swipe-btn label input {
+  position: absolute;
+  visibility: hidden;
+}
+
+.margin_plans,
+.bagi_plans {
+  display: none;
+  text-align: justify;
+}
+
+.margin_plans.active,
+.bagi_plans.active {
+  display: inline-block;
+}
+
+/* SKEMA CONTENT */
+.content {
+  margin-top: 10px;
+}
+
+.content ul i {
+  font-size: 12px;
+  color: #1acc8d;
+  margin-left: 20px;
+}
+
+/* FAQ */
+.faq .faq-list ul {
+  padding: 0;
+  list-style: none;
+  text-align: justify;
+}
+
+.faq .faq-list li + li {
+  margin-top: 15px;
+}
+
+.faq .faq-list li {
+  padding: 20px;
+  background: #fff;
+  border-radius: 4px;
+  position: relative;
+}
+
+.faq .faq-list a {
+  display: block;
+  position: relative;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 500;
+  outline: none;
+}
+
+.faq .faq-list .icon-show,
+.faq .faq-list .icon-close {
+  font-size: 15px;
+  position: absolute;
+  right: 0;
+  top: 18px;
+}
+
+.faq .faq-list .question {
+  width: 90%;
+}
+
+.faq .faq-list p {
+  margin-bottom: 0;
+  padding: 10px 0 0 0;
+}
+
+.faq .faq-list .icon-show {
+  display: none;
+}
+
+.faq .faq-list a.collapsed {
+  color: #37517e;
+  transition: 0.3s;
+}
+
+.faq .faq-list a.collapsed:hover {
+  color: #47b2e4;
+}
+
+.faq .faq-list a.collapsed .icon-show {
+  display: inline-block;
+}
+
+.faq .faq-list a.collapsed .icon-close {
+  display: none;
+}
+
+/* TESTIMONI */
+.team .member {
+  position: relative;
+  box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  border-radius: 5px;
+  background: #fff;
+  transition: 0.5s;
+  margin-right: 50px;
+}
+
+.team .member .pic {
+  overflow: hidden;
+  width: 180px;
+  border-radius: 50%;
+}
+
+.team .member .pic img {
+  transition: ease-in-out 0.3s;
+}
+
+.team .member:hover {
+  transform: translateY(-10px);
+}
+
+.team .member .member-info {
+  padding-left: 20px;
+}
+
+.team .member h4 {
+  font-weight: 700;
+  margin-bottom: 5px;
+  font-size: 15px;
+  color: #37517e;
+}
+
+.team .member span {
+  display: block;
+  font-size: 12px;
+  padding-bottom: 10px;
+  position: relative;
+  font-weight: 500;
+}
+
+.team .member span::after {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 50px;
+  height: 1px;
+  background: #cbd6e9;
+  bottom: 0;
+  left: 0;
+}
+
+.team .member p {
+  margin: 10px 0 0 0;
+  font-size: 12px;
+}
+
+/* SLIDER TESTIMONI */
+.slider {
+  max-width: 1700px;
+  width: 100%;
+  margin: 15px 20px;
+  border-radius: 5px;
+}
+
+.slick-slider button {
+  display: none !important;
+}
+
+.slick-slide {
+  color: rgb(24, 22, 22);
+  padding: 40px 0;
+  font-size: 1.25em;
+  text-align: left;
+  pointer-events: none;
+}
+
+.slick-slide img {
+  width: 100%;
+}
+
+.slick-prev:before,
+.slick-next:before {
+  color: black;
+}
+
+.slick-dots {
+  text-align: center;
+  margin-left: -60px;
+}
+
+.slick-dots li {
+  display: inline-block;
+  padding: 1px;
+  background: #ccc;
+  margin: 35px 10px;
+  width: 40px;
+  height: 5px;
+}
+
+.slick-dots li.slick-active {
+  background: #37517e;
+}
+
+.slick-slide {
+  opacity: 0.2;
+  transition: all 300ms ease;
+}
+
+.slick-current {
+  opacity: 1;
+  transform: scale(1.1);
 }
 
 @media (min-width: 1200px) {

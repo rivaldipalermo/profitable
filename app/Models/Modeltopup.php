@@ -8,11 +8,11 @@ use CodeIgniter\Model;
 
 class Modeltopup extends Model{
 
-	protected $table = 'topup';
+	protected $table = 'transaksi';
 
 	protected $primaryKey = 'id';
 
-	protected $allowedFields = ['nominal','nama_bank'];
+	protected $allowedFields = ['user_id','saldo','jenis_pembayaran','bukti_pembayaran','status'];
 
 	public function gettopup($id=false)
     {

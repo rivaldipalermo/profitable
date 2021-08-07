@@ -15,6 +15,8 @@
     <!-- main css -->
     <link rel="stylesheet" href="<?= base_url(); ?>/assets/css/guest/style.css" />
     <link rel="stylesheet" href="<?= base_url(); ?>/assets/css/guest/responsive.css" />
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -24,8 +26,10 @@
             <nav class="navbar navbar-expand-lg navbar-light">
                 <div class="container">
                     <!-- Brand and toggle get grouped for better mobile display -->
-                    <a class="navbar-brand logo_h" href="index.html">Profitable</a>
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <a class="navbar-brand logo_h" href="/">Profitable</a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse"
+                        data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
@@ -34,13 +38,15 @@
                     <div class="collapse navbar-collapse offset" id="navbarSupportedContent">
                         <ul class="nav navbar-nav menu_nav ml-auto">
                             <li class="nav-item">
-                                <a class="nav-link" href="#">Proyek Pendanaan</a>
+                                <a class="nav-link" href="/pendanaan">Proyek Pendanaan</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">Cara Kerja</a>
+                                <a class="nav-link" href="/cara-kerja">Cara Kerja</a>
                             </li>
                             <li class="nav-item submenu dropdown">
-                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Lainnya <i class="ml-2 fas fa-chevron-down d-none d-lg-inline"></i></span></a>
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button"
+                                    aria-haspopup="true" aria-expanded="false">Lainnya <i
+                                        class="ml-2 fas fa-chevron-down d-none d-lg-inline"></i></span></a>
                                 <ul class="dropdown-menu">
                                     <li class="nav-item">
                                         <a class="nav-link" href="#">FAQ</a>
@@ -49,25 +55,52 @@
                                         <a class="nav-link" href="#">Resiko</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" href="#">Blog</a>
+                                        <a class="nav-link" href="/blog">Blog</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" href="#">Tentang Kami</a>
+                                        <a class="nav-link" href="/tentang-kami">Tentang Kami</a>
                                     </li>
                                 </ul>
                             </li>
+                            <?php if(!logged_in()) : ?>
                             <li class="nav-item">
                                 <a href="/login" class="nav-link d-lg-none">Login</a>
                             </li>
                             <li class="nav-item">
                                 <a href="/register" class="nav-link d-lg-none">Sign Up</a>
                             </li>
+                            <?php endif; ?>
                         </ul>
 
-                        <div class="nav-item ml-auto">
-                            <a href="#" class="d-none d-lg-inline sign_in mr-2">Login</a>
-                            <a href="#" class="d-none d-lg-inline sign_up">Sign Up</a>
+                        <?php if(logged_in()) : ?>
+                        <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
+                            <div class="nav navbar-nav ml-auto">
+                                <div class="nav-item dropdown">
+                                <img class="mr-1" src="http://localhost:8080/home/img/12.png" alt="Image"
+                                    style="width: 40px; height: 40px; border-radius: 50px;">
+                                    <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown"><?= user()->username ?><i class="fa fa-angle-down ml-1" aria-hidden="true"></i></a>
+                                    <div class="dropdown-menu">
+                                        <a href="http://localhost:8080/Dashboard_member/index"
+                                            class="dropdown-item">Dashboard</a>
+                                        <a href="http://localhost:8080/Dashboard_member/porto"
+                                            class="dropdown-item">Portofolio</a>
+                                        <a href="http://localhost:8080/Dashboard_member/transaksi"
+                                            class="dropdown-item">Transaksi</a>
+                                        <a href="http://localhost:8080/Pengaturan" class="dropdown-item">Profil</a>
+                                        <a href="/logout" class="dropdown-item">Logout</a>
+                                    </div>
+                                </div>
+                                </div>
+                            </div>
                         </div>
+                        <?php endif; ?>
+
+                        <?php if(!logged_in()) : ?>
+                        <div class="nav-item ml-auto">
+                            <a href="/login" class="d-none d-lg-inline sign_in mr-2">Login</a>
+                            <a href="/register" class="d-none d-lg-inline sign_up">Sign Up</a>
+                        </div>
+                        <?php endif; ?>
                     </div>
                 </div>
             </nav>
@@ -147,6 +180,36 @@
     <script src="<?= base_url(); ?>/assets/js/guest/bootstrap.min.js"></script>
     <script src="<?= base_url(); ?>/assets/vendors/owl-carousel/owl.carousel.min.js"></script>
     <script src="<?= base_url(); ?>/assets/js/guest/theme.js"></script>
+    <script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script>
+        function createSlick() {
+            $(".slider")
+                .not(".slick-initialized")
+                .slick({
+                    centerMode: true,
+                    autoplay: true,
+                    dots: true,
+
+                    slidesToShow: 3,
+                    responsive: [{
+                        breakpoint: 875,
+                        settings: {
+                            dots: false,
+                            arrows: false,
+                            infinite: false,
+                            slidesToShow: 1,
+                            slidesToScroll: 1,
+                        },
+                    }, ],
+                });
+        }
+
+        createSlick();
+
+        //Will not throw error, even if called multiple times.
+        $(window).on("resize", createSlick);
+    </script>
 </body>
 
 </html>

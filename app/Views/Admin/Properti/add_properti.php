@@ -13,9 +13,7 @@
           <div class="col-md-6">
             <div class="form-group">
               <label for="basicInput">Lokasi</label>
-              <input type="text"
-                class="form-control <?= ($validation->hasError('lokasi_properti')) ? 'is-invalid' : ''; ?>"
-                name="lokasi_properti" placeholder="Lokasi Properti" value="<?= old('lokasi_properti') ?>">
+              <input type="text" class="form-control <?= ($validation->hasError('lokasi_properti')) ? 'is-invalid' : ''; ?>" name="lokasi_properti" placeholder="Lokasi Properti" value="<?= old('lokasi_properti') ?>">
               <div class="invalid-feedback">
                 <?= $validation->getError('lokasi_properti'); ?>
               </div>
@@ -24,8 +22,8 @@
               <label for="helpInputTop">Provinsi</label>
               <select class="form-select <?= ($validation->hasError('provinsi')) ? 'is-invalid' : ''; ?>" id="provinsi">
                 <option value="">Pilih Provinsi</option>
-                <?php foreach($provinsi as $p): ?>
-                <option value="<?= $p->province_id; ?>"><?= $p->province; ?></option>
+                <?php foreach ($provinsi as $p) : ?>
+                  <option value="<?= $p->province_id; ?>"><?= $p->province; ?></option>
                 <?php endforeach ?>
               </select>
               <div class="invalid-feedback">
@@ -60,9 +58,8 @@
           <div class="col-md-6">
             <div class="form-group">
               <label for="basicInput">Deskripsi</label>
-              <textarea class="form-control <?= ($validation->hasError('deskripsi_properti')) ? 'is-invalid' : ''; ?>" name="deskripsi_properti" rows="4" placeholder="Deskripsi Properti"
-                style="resize: none;"><?= old('deskripsi_properti') ?></textarea>
-                <div class="invalid-feedback">
+              <textarea class="form-control <?= ($validation->hasError('deskripsi_properti')) ? 'is-invalid' : ''; ?>" name="deskripsi_properti" rows="4" placeholder="Deskripsi Properti" style="resize: none;"><?= old('deskripsi_properti') ?></textarea>
+              <div class="invalid-feedback">
                 <?= $validation->getError('deskripsi_properti'); ?>
               </div>
             </div>
@@ -71,8 +68,7 @@
               <ul class="list-unstyled mb-0">
                 <li class="d-inline-block me-2 mb-1">
                   <div class="form-check">
-                    <input class="form-check-input" type="radio" name="dokumen_kepemilikan" id="dokumen_kepemilikan"
-                      value="SHM">
+                    <input class="form-check-input" type="radio" name="dokumen_kepemilikan" id="dokumen_kepemilikan" value="SHM">
                     <label class="form-check-label" for="dokumen_kepemilikan">
                       SHM
                     </label>
@@ -80,8 +76,7 @@
                 </li>
                 <li class="d-inline-block me-2 mb-1">
                   <div class="form-check">
-                    <input class="form-check-input" type="radio" name="dokumen_kepemilikan" id="dokumen_kepemilikan"
-                      value="SHGB">
+                    <input class="form-check-input" type="radio" name="dokumen_kepemilikan" id="dokumen_kepemilikan" value="SHGB">
                     <label class="form-check-label" for="dokumen_kepemilikan">
                       SHGB
                     </label>
@@ -89,8 +84,7 @@
                 </li>
                 <li class="d-inline-block me-2 mb-1">
                   <div class="form-check">
-                    <input class="form-check-input" type="radio" name="dokumen_kepemilikan" id="dokumen_kepemilikan"
-                      value="AJB">
+                    <input class="form-check-input" type="radio" name="dokumen_kepemilikan" id="dokumen_kepemilikan" value="AJB">
                     <label class="form-check-label" for="dokumen_kepemilikan">
                       AJB
                     </label>
@@ -100,7 +94,7 @@
             </div>
             <div class="form-group">
               <label for="basicInput">Harga</label>
-              <input type="text" class="form-control <?= ($validation->hasError('harga_properti')) ? 'is-invalid' : ''; ?>" name="harga_properti" placeholder="Harga Properti"  value="<?= old('harga_properti') ?>">
+              <input type="text" class="form-control <?= ($validation->hasError('harga_properti')) ? 'is-invalid' : ''; ?>" name="harga_properti" placeholder="Harga Properti" value="<?= old('harga_properti') ?>">
               <div class="invalid-feedback">
                 <?= $validation->getError('harga_properti'); ?>
               </div>
@@ -121,8 +115,8 @@
     </div>
 </section>
 <script>
-  $(document).ready(function () {
-    $("#provinsi").on('change', function () {
+  $(document).ready(function() {
+    $("#provinsi").on('change', function() {
       $("#kabupaten").empty();
       var id_provinsi = $(this).val();
       $.ajax({
@@ -132,7 +126,7 @@
           'id_provinsi': id_provinsi,
         },
         dataType: "json",
-        success: function (data) {
+        success: function(data) {
           console.log(data);
           var results = data["rajaongkir"]["results"];
           for (var i = 0; i < results.length; i++) {

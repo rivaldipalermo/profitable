@@ -8,14 +8,14 @@
 
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="<?= base_url();?>/assets/css/bootstrap.css">
+    <link rel="stylesheet" href="<?= base_url(); ?>/assets/css/bootstrap.css">
 
-    <link rel="stylesheet" href="<?= base_url();?>/assets/vendors/iconly/bold.css">
+    <link rel="stylesheet" href="<?= base_url(); ?>/assets/vendors/iconly/bold.css">
 
-    <link rel="stylesheet" href="<?= base_url();?>/assets/vendors/perfect-scrollbar/perfect-scrollbar.css">
-    <link rel="stylesheet" href="<?= base_url();?>/assets/vendors/bootstrap-icons/bootstrap-icons.css">
-    <link rel="stylesheet" href="<?= base_url();?>/assets/css/app.css">
-    <link rel="shortcut icon" href="<?= base_url();?>/assets/images/favicon.svg" type="image/x-icon">
+    <link rel="stylesheet" href="<?= base_url(); ?>/assets/vendors/perfect-scrollbar/perfect-scrollbar.css">
+    <link rel="stylesheet" href="<?= base_url(); ?>/assets/vendors/bootstrap-icons/bootstrap-icons.css">
+    <link rel="stylesheet" href="<?= base_url(); ?>/assets/css/app.css">
+    <link rel="shortcut icon" href="<?= base_url(); ?>/assets/images/favicon.svg" type="image/x-icon">
     <script src="https://kit.fontawesome.com/8a210de33c.js" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
 </head>
@@ -46,33 +46,39 @@
                             </a>
                         </li>
 
-                        <li class="sidebar-item  <?= ($request->uri->getSegment(2) == 'properti') ? 'active' : '' ?>"">
+                        <li class="sidebar-item  <?= ($request->uri->getSegment(2) == 'properti') ? 'active' : '' ?>">
                             <a href="/admin/properti" class='sidebar-link'>
-                                <i class="bi bi-collection-fill"></i>
+                                <i class="fa fa-home"></i>
                                 <span>Properti</span>
                             </a>
                         </li>
 
-                        <li class="sidebar-item  <?= ($request->uri->getSegment(2) == 'blog') ? 'active' : '' ?>"">
-                            <a href="/admin/blog" class='sidebar-link'>
+                        <li class="sidebar-item  <?= ($request->uri->getSegment(2) == 'investasi') ? 'active' : '' ?>">
+                            <a href="/admin/investasi" class='sidebar-link'>
                                 <i class="bi bi-collection-fill"></i>
-                                <span>Blog</span>
+                                <span>Investasi</span>
                             </a>
                         </li>
                         
-                        <li class="sidebar-item  has-sub">
-                            <a href="#" class='sidebar-link'>
-                                <i class="bi bi-collection-fill"></i>
-                                <span>Data Master</span>
+                        <li class="sidebar-item  <?= ($request->uri->getSegment(2) == 'faq') ? 'active' : '' ?>"">
+                            <a href=" /admin/faq" class='sidebar-link'>
+                            <i class="bi bi-collection-fill"></i>
+                            <span>FAQ</span>
                             </a>
-                            <ul class="submenu ">
-                                <li>
-                                    <a href="extra-component-avatar.html">Avatar</a>
-                                </li>
-                                <li>
-                                    <a href="extra-component-sweetalert.html">Sweet Alert</a>
-                                </li>
-                            </ul>
+                        </li>
+                                                            
+                        <li class="sidebar-item  <?= ($request->uri->getSegment(2) == 'verifikasi_investasi') ? 'active' : '' ?>">
+                            <a href="/admin/verifikasi/verifikasi_investasi" class='sidebar-link'>
+                                <i class="bi bi-collection-fill"></i>
+                                <span>Verifikasi Investasi</span>
+                            </a>
+                        </li>
+
+                        <li class="sidebar-item  <?= ($request->uri->getSegment(2) == 'verifikasi_pencairan') ? 'active' : '' ?>">
+                            <a href="/admin/verifikasi/verifikasi_pencairan" class='sidebar-link'>
+                                <i class="bi bi-collection-fill"></i>
+                                <span>Verifikasi Pencairan</span>
+                            </a>
                         </li>
 
                     </ul>
@@ -88,16 +94,13 @@
                             <i class='bi bi-justify fs-3'></i>
                         </a>
 
-                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                            aria-expanded="false" aria-label="Toggle navigation">
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                             <span class="navbar-toggler-icon"></span>
                         </button>
                         <div class="collapse navbar-collapse" id="navbarSupportedContent">
                             <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                                 <li class="nav-item dropdown me-3">
-                                    <a class="nav-link active dropdown-toggle" href="#" data-bs-toggle="dropdown"
-                                        aria-expanded="false">
+                                    <a class="nav-link active dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">
                                         <i class='bi bi-bell fs-4 text-gray-600'></i>
                                     </a>
                                     <ul class="dropdown-menu dropdown-menu-lg-end" aria-labelledby="dropdownMenuButton">
@@ -112,29 +115,26 @@
                                 <a href="#" data-bs-toggle="dropdown" aria-expanded="false">
                                     <div class="user-menu d-flex">
                                         <div class="user-name text-end me-3">
-                                            <h6 class='mb-0 text-gray-600'>Nama Orang</h6>
+                                            <h6 class='mb-0 text-gray-600'><?= user()->username; ?></h6>
                                             <p class='mb-0 text-sm text-gray-600'>Administrator</p>
                                         </div>
                                         <div class="user-img d-flex align-items-center">
                                             <div class="avatar avatar-md">
-                                                <img src="<?= base_url()?>/assets/images/faces/1.jpg">
+                                                <img src="<?= base_url() ?>/assets/images/faces/1.jpg">
                                             </div>
                                         </div>
                                     </div>
                                 </a>
                                 <ul class="dropdown-menu dropdown-menu-lg-end" aria-labelledby="dropdownMenuButton">
                                     <li>
-                                        <h6 class="dropdown-header">Hello, John!</h6>
+                                        <h6 class="dropdown-header">Hello, <?= user()->username; ?>!</h6>
                                     </li>
                                     <li><a class='dropdown-item' href="#"><i class="icon-mid bi bi-person me-2"></i> My
                                             Profile</a></li>
-                                    <li><a class='dropdown-item' href="#"><i class="icon-mid bi bi-wallet me-2"></i>
-                                            Wallet</a></li>
                                     <li>
                                         <hr class="dropdown-divider">
                                     </li>
-                                    <li><a class='dropdown-item' href="/logout"><i
-                                                class="icon-mid bi bi-box-arrow-left me-2"></i> Logout</a></li>
+                                    <li><a class='dropdown-item' href="/logout"><i class="icon-mid bi bi-box-arrow-left me-2"></i> Logout</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -154,10 +154,10 @@
                 </footer>
             </div>
         </div>
-        <script src="<?= base_url();?>/assets/vendors/perfect-scrollbar/perfect-scrollbar.min.js"></script>
-        <script src="<?= base_url();?>/assets/js/bootstrap.bundle.min.js"></script>
+        <script src="<?= base_url(); ?>/assets/vendors/perfect-scrollbar/perfect-scrollbar.min.js"></script>
+        <script src="<?= base_url(); ?>/assets/js/bootstrap.bundle.min.js"></script>
 
-        <script src="<?= base_url();?>/assets/js/main.js"></script>
+        <script src="<?= base_url(); ?>/assets/js/main.js"></script>
 </body>
 
 </html>

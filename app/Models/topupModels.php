@@ -22,4 +22,9 @@ class TopupModels extends Model
     {
         return $this->table('transaksi')->like('user_id', $keyword);
     }
+
+    public function approval($approve = 'none')
+    {
+        return $this->table('transaksi')->like('approval', $approve);
+    }
 }

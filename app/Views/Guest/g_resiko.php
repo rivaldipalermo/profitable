@@ -169,7 +169,7 @@
             tablinks[i].className = tablinks[i].className.replace(" active", "");
         }
         document.getElementById(riskName).style.display = "block";
-            evt.currentTarget.class   Name += " active";
+            evt.currentTarget.className += " active";
         }
         </script>
 

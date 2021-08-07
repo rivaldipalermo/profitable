@@ -59,6 +59,11 @@ class Biodata extends Migration
 				'null'       => false,
 				'auto_increment' => true,
 			],
+			'user_id' => [
+				'type'           => 'INT',
+				'constraint'     => 11,
+				'null'       => false,
+			],
 			'nbank' => [
 				'type'           => 'VARCHAR',
 				'constraint'     => 100,
