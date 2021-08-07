@@ -81,6 +81,8 @@ $routes->get('/user/u_upload_bukti/(:any)', 'UserController::add_bukti/$1');
 //$routes->get('/user/u_upload_bukti/(:segment)', 'UserController::add_bukti/$1');
 $routes->get('/user/biodata', 'UserController::biodata');
 $routes->get('/user/bukti_topup', 'UserController::buktitopup');
+$routes->get('/user/topup', 'UserController::topup');
+$routes->get('/user/wait', 'UserController::halamantunggu');
 
 //Topup Admin
 $routes->get('/admin/riwayatopup', 'AdminController::riwayatopup');

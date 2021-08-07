@@ -137,46 +137,39 @@
                             </div> -->
 
                             <fieldset class="row mb-3">
-                                <form action="/usercontroller/topupsave" method="POST">
-                                    <?= csrf_field() ?>
-                                    
-                                        <div class="col-md-6">
-                                            <label for="inputuser_id" class="form-label">User ID:</label>
-                                            <input type="text" class="form-control" id="user_id" name="user_id">
-                                        </div>
-
-
-                                        
+                                <form action="/UserController/topupsave" method="POST">
+                                    <?= csrf_field() ?>                                        
                                         <div class="col-md-6">
                                             <label for="inputState" class="form-label">Nominal:</label>
                                             <select id="nominal" class="form-select btn btn-outline-primary" name="nominal">
                                                 <option selected value="">Choose...</option>
-                                                <option value="1002500">1000000</option>
-                                                <option value="1502500">1500000</option>
-                                                <option value="2002500">2000000</option>
-                                                <option value="2502500">2500000</option>
-                                                <option value="3002500">3000000</option>
+                                                <option value="500000">Rp 500.000</option>
+                                                <option value="1000000">Rp 1.000.000</option>
+                                                <option value="1500000">Rp 1.500.000</option>
+                                                <option value="2000000">Rp 2.000.000</option>
+                                                <option value="2500000">Rp 2.500.000</option>
+                                                <option value="3000000">Rp 3.000.000</option>
                                             </select>
-                                            <p class="">Pajak yang berlaku dan dapat memperbesar biaya akhir senilai: Rp.2.500</p>
+                                            <p class="">Biaya Admin : Rp.2.500</p>
                                         </div>
 
                                         <div class="col-md-6">
-                                            <label for="inputState" class="form-label ">Pilih Bank:</label>
+                                            <label for="inputState" class="form-label ">Pilih Metode Pembayaran:</label>
                                             <select id="nama_bank" class="form-select btn btn-outline-primary" name="nama_bank">
                                                 <option selected>Choose...</option>
-                                                <option>Bank BCA</option>
-                                                <option>Bank Mandiri</option>
-                                                <option>Bank BRI</option>
-                                                <option>Bank Niaga</option>
-                                                <option>Bank BNI</option>
+                                                <option value="Bank BCA">Transfer Bank BCA</option>
+                                                <option value="Bank Mandiri">Transfer Bank Mandiri</option>
+                                                <option value="Bank BRI">Transfer Bank BRI</option>
+                                                <option value="Bank Niaga">Transfer Bank Niaga</option>
+                                                <option value="Bank BNI">Transfer Bank BNI</option>
                                             </select>
                                         </div>
 
                                         <div class="col-md-12 mt-4">
                                             <div class="form-check">
-                                                <input class="form-check-input" type="checkbox" id="gridCheck">
+                                                <input required class="form-check-input" type="checkbox" id="gridCheck">
                                                 <label class="form-check-label" for="gridCheck">
-                                                    Apakah Sudah Benar?
+                                                    Saya menyetujui syarat dan ketentuan yang berlaku.
                                                 </label>
                                             </div>
                                         </div>

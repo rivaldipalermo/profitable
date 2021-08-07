@@ -19,11 +19,11 @@
                 <center>
                   <h3 class="mt-4">Menunggu Pembayaran:</h3>
                 </center>
-                <p class="mt-4">OrderID:</p>
-                <b>xxx</b>
+                <p class="mt-4">Metode Pembayaran :</p>
+                <b>Transfer <?= $nama_bank ?></b>
                 <p class="mt-4">Total Pembayaran:</p>
-                <b>Rp.1000</b>
-                <p class="mt-4">Silakan melakuka pembayaran pada nomor rekening dibawah ini</p>
+                <b><?= "Rp " . number_format($nominal, 0, ",", ".");?></b>
+                <p class="mt-4">Silakan melakukan transfer sesuai nominal diatas ke nomor rekening dibawah ini</p>
                 <b>003649375923</b>
                 <div class="card mt-4" style="border: 1px solid rgba(0,0,0,.125) !important;">
                   <div class="card-body">
@@ -45,7 +45,7 @@
                     </p>
 
                     <p class="lead">
-                      5. Jika jumlah tagihan sudah benar,silahkan klik kirim.
+                      5. Jika jumlah tagihan sudah benar, silahkan klik kirim.
                     </p>
 
                     <p class="lead">
@@ -53,7 +53,7 @@
                     </p>
                   </div>
                 </div>
-                <a href="u_riwayat_trans.php" class="btn btn-outline-primary btn-block">Cek Status Pembayaran</a>
+                <a href="u_riwayat_trans" class="btn btn-outline-primary btn-block">Cek Status Pembayaran</a>
               </div>
             </div>
           </div>

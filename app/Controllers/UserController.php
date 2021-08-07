@@ -20,6 +20,7 @@ class UserController extends BaseController
 
 	public function __construct()
 	{
+		$this->session = session();
 		$this->transaksiModel = new TransaksiModel();
 		$this->biodataModel = new BiodataModel();
 		$this->kotaModel = new KotaModel();
@@ -50,22 +51,24 @@ class UserController extends BaseController
 	public function halamantunggu()
 	{
 		$data = [
-			'title' => 'topup'
+			'title' => 'topup',
+			'nama_bank' => $this->session->getFlashdata('nama_bank'),
+			'nominal' => $this->session->getFlashdata('nominal'),
 		];
 		return view('User/HalamanTunggu', $data);
 	}
 	public function topupsave()
 	{
 		
-        $this->Modeltopup->save(
+        $this->transaksiModel->save(
             [
-                'user_id' => $this->request->getVar('user_id'),
-                'nominal' => $this->request->getVar('saldo'),
-				'nama_bank' => $this->request->getVar('jenis_pembayaran'),
-				'bukti_pembayaran' => $this->request->getVar('bukti_pembayaran'),
-				
+                'user_id' => intval(user_id()),
+                'saldo' => $this->request->getVar('nominal'),
+				'jenis_pembayaran' => $this->request->getVar('nama_bank'),
 			]);
-			return redirect()->to('/UserController/halamantunggu');
+		$this->session->setFlashdata('nama_bank' ,$this->request->getVar('nama_bank'));
+		$this->session->setFlashdata('nominal' ,$this->request->getVar('nominal')+2500);
+		return redirect()->to('/user/wait');
 
 	}
 	public function action()

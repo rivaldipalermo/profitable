@@ -80,6 +80,11 @@
     <td style="padding:5px; padding-left: 10px; text-align: right; width: 120px;"></td>
   </tr>
   <tr>
+    <td style="padding:5px; padding-left: 10px; text-align: left; width: 240px;">Biaya Admin</td>
+    <td style="padding:5px; padding-left: 10px; text-align: left; width: 270px;"><?= "Rp " . number_format(2500, 0, ",", ".");?></td>
+    <td style="padding:5px; padding-left: 10px; text-align: right; width: 120px;"></td>
+  </tr>
+  <tr>
     <td style="padding:5px; padding-left: 10px; text-align: left; width: 240px;">Tanggal</td>
     <td style="padding:5px; padding-left: 10px; text-align: left; width: 270px;"><?= $table['created_at'];?></td>
     <td style="padding:5px; padding-left: 10px; text-align: right; width: 120px;"></td>
@@ -100,10 +105,10 @@
   </tbody>
   </table>
     </td>
-    <td style="padding:5px; padding-top: 2px; padding-bottom: 2px; padding-left: 10px; text-align: right; font-size: 14px; color: #435ebe; width: 120px;"><?= "Rp " . number_format($table['saldo'], 0, ",", ".");?><span style="color: black"> *)</span></td>
+    <td style="padding:5px; padding-top: 2px; padding-bottom: 2px; padding-left: 10px; text-align: right; font-size: 14px; color: #435ebe; width: 120px;"><?= "Rp " . number_format($table['saldo']+2500, 0, ",", ".");?><span style="color: black"> *)</span></td>
   </tr>
   <tr>
-    <td colspan="3" style="padding:5px; padding-top: 20px; padding-bottom: 2px; padding-left: 10px; text-align: left; font-size: 14px;"><i>*) Harga tercantum sudah termasuk Pajak Pertambahan Nilai (PPN) sebesar 10%</i></td>
+    <td colspan="3" style="padding:5px; padding-top: 20px; padding-bottom: 2px; padding-left: 10px; text-align: left; font-size: 14px;"><i>*) Harga tercantum sudah termasuk Biaya Administrasi</i></td>
   </tr>
   </tbody>
 </table>
