@@ -57,6 +57,6 @@ class Home extends BaseController
 			'faqBiaya' 		=> $this->FaQModel->getFAQ('biaya'),
 		];
 
-		return view('guest/faq', $data);
+		return view('Guest/faq', $data);
 	}
 }

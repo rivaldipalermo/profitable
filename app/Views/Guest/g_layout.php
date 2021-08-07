@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="<?= base_url(); ?>/assets/css/guest/style.css" />
     <link rel="stylesheet" href="<?= base_url(); ?>/assets/css/guest/responsive.css" />
     <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -54,10 +55,10 @@
                                         <a class="nav-link" href="#">Resiko</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" href="#">Blog</a>
+                                        <a class="nav-link" href="/blog">Blog</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" href="#">Tentang Kami</a>
+                                        <a class="nav-link" href="/tentang-kami">Tentang Kami</a>
                                     </li>
                                 </ul>
                             </li>

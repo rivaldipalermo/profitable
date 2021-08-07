@@ -19,9 +19,7 @@ class Investasi extends Migration
 			  'unsigned' => true,
 			],
 			'imbal_hasil' => [
-				'type' => 'INT',
-				'constraint' => 100,
-				'unsigned' => true,
+				'type' => 'FLOAT'
 			],
 			'slot' => [
 				'type' => 'INT',

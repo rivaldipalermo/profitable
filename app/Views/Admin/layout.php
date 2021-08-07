@@ -46,20 +46,21 @@
                             </a>
                         </li>
 
-                        <li class="sidebar-item  <?= ($request->uri->getSegment(2) == 'properti') ? 'active' : '' ?>"">
-                            <a href=" /admin/properti" class='sidebar-link'>
-                            <i class="bi bi-collection-fill"></i>
-                            <span>Properti</span>
+                        <li class="sidebar-item  <?= ($request->uri->getSegment(2) == 'properti') ? 'active' : '' ?>">
+                            <a href="/admin/properti" class='sidebar-link'>
+                                <i class="fa fa-home"></i>
+                                <span>Properti</span>
                             </a>
                         </li>
 
-                        <li class="sidebar-item  <?= ($request->uri->getSegment(2) == 'blog') ? 'active' : '' ?>"">
-                            <a href=" /admin/blog" class='sidebar-link'>
-                            <i class="bi bi-collection-fill"></i>
-                            <span>Blog</span>
+                        <li class="sidebar-item  <?= ($request->uri->getSegment(2) == 'investasi') ? 'active' : '' ?>">
+                            <a href="/admin/investasi" class='sidebar-link'>
+                                <i class="bi bi-collection-fill"></i>
+                                <span>Investasi</span>
                             </a>
                         </li>
 
+<<<<<<< HEAD
                         <li class="sidebar-item  <?= ($request->uri->getSegment(2) == 'faq') ? 'active' : '' ?>"">
                             <a href=" /admin/faq" class='sidebar-link'>
                             <i class="bi bi-collection-fill"></i>
@@ -69,17 +70,20 @@
 
                         <li class="sidebar-item  has-sub">
                             <a href="#" class='sidebar-link'>
+=======
+                        <li class="sidebar-item  <?= ($request->uri->getSegment(2) == 'verifikasi_investasi') ? 'active' : '' ?>">
+                            <a href="/admin/verifikasi/verifikasi_investasi" class='sidebar-link'>
+>>>>>>> 9dd0d5b2dd7e55ee53602e214068707f396d227b
                                 <i class="bi bi-collection-fill"></i>
-                                <span>Data Master</span>
+                                <span>Verifikasi Investasi</span>
                             </a>
-                            <ul class="submenu ">
-                                <li>
-                                    <a href="extra-component-avatar.html">Avatar</a>
-                                </li>
-                                <li>
-                                    <a href="extra-component-sweetalert.html">Sweet Alert</a>
-                                </li>
-                            </ul>
+                        </li>
+
+                        <li class="sidebar-item  <?= ($request->uri->getSegment(2) == 'verifikasi_pencairan') ? 'active' : '' ?>">
+                            <a href="/admin/verifikasi/verifikasi_pencairan" class='sidebar-link'>
+                                <i class="bi bi-collection-fill"></i>
+                                <span>Verifikasi Pencairan</span>
+                            </a>
                         </li>
 
                     </ul>
@@ -132,8 +136,6 @@
                                     </li>
                                     <li><a class='dropdown-item' href="#"><i class="icon-mid bi bi-person me-2"></i> My
                                             Profile</a></li>
-                                    <li><a class='dropdown-item' href="#"><i class="icon-mid bi bi-wallet me-2"></i>
-                                            Wallet</a></li>
                                     <li>
                                         <hr class="dropdown-divider">
                                     </li>

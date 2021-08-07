@@ -1,4 +1,4 @@
-<?= $this->extend('Guest/layout') ?>
+<?= $this->extend('Guest/g_layout') ?>
 <?= $this->section('content'); ?>
 <div class="page-heading">
    

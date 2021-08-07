@@ -11,7 +11,7 @@
                     <p>Proyek</p>
                 </div>
                 <div class="col-lg-4 text-center">
-                    <h3><?= $danaTerkumpul; ?></h3>
+                    <h3><?php foreach($jumlahDana as $d): echo "Rp " . number_format($d['danaTerkumpul'],0,',','.'); endforeach;?></h3>
                     <p>Dana Terkumpul</p>
                 </div>
                 <div class="col-lg-4 text-center">
@@ -25,6 +25,20 @@
                         berinvestasi pada properti dengan menggunakan teknologi.</p>
                 </div>
             </div>
+            <?php if (session()->getFlashdata('pesan')) : ?>
+            <div class="card-title">
+                <div class="alert alert-success" role="alert">
+                    <?= session()->getFlashdata('pesan'); ?>
+                </div>
+            </div>
+            <?php endif; ?>
+            <?php if (session()->getFlashdata('pesanDanger')) : ?>
+            <div class="card-title">
+                <div class="alert alert-danger" role="alert">
+                    <?= session()->getFlashdata('pesanDanger'); ?>
+                </div>
+            </div>
+            <?php endif; ?>
             <div class="section-title">
                 <span>Proyek Pendanaan</span>
                 <h2>Investasi</h2>
@@ -44,33 +58,26 @@
             <div class="row">
                     <?php foreach($investasi as $row): ?>
                     <div class="col-lg-4 mb-4">
-                    <div class="card" style="height: 650px;">
+                    <div class="card">
                         <img src="<?= base_url()?>/assets/images/properti/<?= $row['foto_properti']; ?>" class="card-img-top" style="height: 200px;">
                         <div class="card-body">
-                            <h5 class="card-title"><?= $row['lokasi_properti']; ?></h5>
-                            <div class="row mb-3">
-                                <div class="col-lg-12">
-                                    <p>Terkumpul : 25%</p>
-                                    <div class="progress" style="margin-top: -10px;">
-                                        <div class="progress-bar" role="progressbar" style="width: 25%;"
-                                            aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">25%</div>
-                                    </div>
-                                </div>
-                            </div>
+                            <div style="height: 50px;"><h5 class="card-title mb-3">Flipping Rumah <?= $row['lokasi_properti']; ?></h5></div>
                             <div class="row row-cols-2">
                                 <div class="col">Imbal Hasil :<br>
                                     <p class="font-weight-bold">
                                         <?= "Rp " . number_format($row['harga_properti'],0,',','.'); ?></p>
                                 </div>
-                                <div class="col">Terkumpul :<br>
+                                
+                                <div class="col">Sisa Slot :<br>
                                     <p class="font-weight-bold">
-                                        <?= "Rp " . number_format($row['harga_properti'],0,',','.'); ?></p>
+                                        <?= $row['slot']; ?> slot</p>
                                 </div>
                             </div>
                             <div class="row row-cols-2">
                                 <div class="col">Durasi Proyek :<br>
                                     <p class="font-weight-bold">12 bulan</p>
                                 </div>
+                                
                                 <div class="col">Target :<br>
                                     <p class="font-weight-bold">
                                         <?= "Rp " . number_format($row['harga_properti'],0,',','.'); ?></p>
@@ -81,13 +88,13 @@
                                     <p class="font-weight-bold">Menengah</p>
                                 </div>
                                 <div class="col">Minimum Investasi :<br>
-                                    <p class="font-weight-bold">1.000.000</p>
+                                    <p class="font-weight-bold"><?= "Rp " . number_format(1000000,0,',','.'); ?></p>
                                 </div>
                             </div>
                         </div>
                         <div class="card-footer">
                             <?php if (logged_in()) : ?>
-                            <a href="/investasi/<?= $row['id_investasi']; ?>" class="btn btn-primary float-right">Investasi</a>
+                            <a href="/pendanaan/<?= $row['id_investasi']; ?>" class="btn btn-primary float-right">Investasi</a>
                             <?php else : ?>
                             <a href="/login" class="btn btn-primary float-right">Investasi</a>
                             <?php endif; ?>
