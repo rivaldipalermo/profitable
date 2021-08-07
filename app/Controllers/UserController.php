@@ -57,7 +57,6 @@ class UserController extends BaseController
             [
                 'nominal' => $this->request->getVar('nominal'),
                 'nama_bank' => $this->request->getVar('nama_bank'),
-                'nomor_kartu' => $this->request->getVar('nomor_kartu')
 			]);
 			return redirect()->to('/UserController/halamantunggu');
 	}

@@ -138,21 +138,23 @@
 
                             <fieldset class="row mb-3">
                                 <form action="/usercontroller/topupsave" method="POST">
-                                <?= csrf_field() ?>
+                                    <?= csrf_field() ?>
                                     <div class="col-md-6">
-                                        <select class="form-select" id="nominal" name="nominal">
-                                            <option selected value="">Nominal:</option>
-                                            <option value="1002500">1002500</option>
-                                            <option value="1502500">1502500</option>
-                                            <option value="2002500">2002500</option>
-                                            <option value="2502500">2502500</option>
-                                            <option value="3002500">3002500</option>
+                                        <label for="inputState" class="form-label">Nominal:</label>
+                                        <select id="nominal" class="form-select btn btn-outline-primary" name="nominal">
+                                            <option selected value="">Choose...</option>
+                                            <option value="1002500">1000000</option>
+                                            <option value="1502500">1500000</option>
+                                            <option value="2002500">2000000</option>
+                                            <option value="2502500">2500000</option>
+                                            <option value="3002500">3000000</option>
                                         </select>
+                                        <p class="">Pajak yang berlaku dan dapat memperbesar biaya akhir senilai: Rp.2.500</p>
                                     </div>
 
                                     <div class="col-md-6">
-                                        <label for="inputState" class="form-label">Pilih Bank:</label>
-                                        <select id="nama_bank" class="form-select" name="nama_bank">
+                                        <label for="inputState" class="form-label ">Pilih Bank:</label>
+                                        <select id="nama_bank" class="form-select btn btn-outline-primary" name="nama_bank">
                                             <option selected>Choose...</option>
                                             <option>Bank BCA</option>
                                             <option>Bank Mandiri</option>
@@ -162,12 +164,7 @@
                                         </select>
                                     </div>
 
-                                    <div class="col-md-6">
-                                        <label for="inputNomor Kartu" class="form-label">Nomor Kartu:</label>
-                                        <input type="text" class="form-control" id="nomor_kartu" placeholder="Masukan Nomor Kartu Anda" name="nomor_kartu">
-                                    </div>
-
-                                    <div class="col-md-12">
+                                    <div class="col-md-12 mt-4">
                                         <div class="form-check">
                                             <input class="form-check-input" type="checkbox" id="gridCheck">
                                             <label class="form-check-label" for="gridCheck">
@@ -175,7 +172,7 @@
                                             </label>
                                         </div>
                                     </div>
-                                    <div class="col-12">
+                                    <div class="col-12 mt-4">
                                         <button type="submit" class="btn btn-primary">Submit</button>
                                     </div>
                                 </form>
