@@ -82,7 +82,7 @@
                         </li>
 
                         <li class="sidebar-item  <?= ($request->uri->getSegment(2) == 'riwayatopup') ? 'active' : '' ?>">
-                            <a href="/AdminController/riwayatopup" class='sidebar-link'>
+                            <a href="/admin/riwayatopup" class='sidebar-link'>
                                 <i class="bi bi-collection-fill"></i>
                                 <span>Verifikasi Top-up</span>
                             </a>

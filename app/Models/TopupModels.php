@@ -6,7 +6,7 @@ use CodeIgniter\Model;
 
 class TopupModels extends Model
 {
-    protected $table = 'transaksi';
+    protected $table = 'Transaksi';
     protected $useTimestamps = false;
     protected $allowedFields = ['user_id', 'saldo', 'jenis_pembayaran', 'bukti_pembayaran'];
 
