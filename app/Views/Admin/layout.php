@@ -59,14 +59,14 @@
                                 <span>Investasi</span>
                             </a>
                         </li>
-                        
+
                         <li class="sidebar-item  <?= ($request->uri->getSegment(2) == 'faq') ? 'active' : '' ?>"">
                             <a href=" /admin/faq" class='sidebar-link'>
                             <i class="bi bi-collection-fill"></i>
                             <span>FAQ</span>
                             </a>
                         </li>
-                                                            
+
                         <li class="sidebar-item  <?= ($request->uri->getSegment(2) == 'verifikasi_investasi') ? 'active' : '' ?>">
                             <a href="/admin/verifikasi/verifikasi_investasi" class='sidebar-link'>
                                 <i class="bi bi-collection-fill"></i>
@@ -80,6 +80,14 @@
                                 <span>Verifikasi Pencairan</span>
                             </a>
                         </li>
+
+                        <li class="sidebar-item  <?= ($request->uri->getSegment(2) == 'riwayatopup') ? 'active' : '' ?>">
+                            <a href="/AdminController/riwayatopup" class='sidebar-link'>
+                                <i class="bi bi-collection-fill"></i>
+                                <span>Verifikasi Top-up</span>
+                            </a>
+                        </li>
+
 
                     </ul>
                 </div>

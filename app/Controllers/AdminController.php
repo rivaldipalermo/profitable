@@ -39,7 +39,7 @@ class AdminController extends BaseController
 		$page_akhir = $this->request->getVar('page_artikel') ? $this->request->getVar('page_artikel') : 1;
 
 		$data = [
-			'title' => 'Top-up History',
+			'title' => 'Verifikasi Top-up',
 			'transaksi' => $user_id->paginate(25, 'artikel'),
 			'pager' => $this->TopupModels->pager,
 			'page_akhir' => $page_akhir
