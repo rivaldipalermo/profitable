@@ -39,7 +39,7 @@ class AdminController extends BaseController
 		$page_akhir = $this->request->getVar('page_artikel') ? $this->request->getVar('page_artikel') : 1;
 
 		$data = [
-			'title' => 'Top-up History',
+			'title' => 'Verifikasi Top-up',
 			'transaksi' => $user_id->paginate(25, 'artikel'),
 			'pager' => $this->TopupModels->pager,
 			'page_akhir' => $page_akhir
@@ -63,7 +63,7 @@ class AdminController extends BaseController
 				'status' => 'rejected'
 			]
 		);
-		return redirect()->to('AdminController/riwayatopup');
+		return redirect()->to('admin/riwayatopup');
 	}
 
 	public function approve($id)
@@ -89,6 +89,6 @@ class AdminController extends BaseController
 				'status' => 'success'
 			]
 		);
-		return redirect()->to('AdminController/riwayatopup');
+		return redirect()->to('admin/riwayatopup');
 	}
 }

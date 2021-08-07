@@ -12,7 +12,7 @@ class Modeltopup extends Model{
 
 	protected $primaryKey = 'id';
 
-	protected $allowedFields = ['nominal','nama_bank','nomor_kartu'];
+	protected $allowedFields = ['nominal','nama_bank'];
 
 	public function gettopup($id=false)
     {
