@@ -174,9 +174,9 @@ class UserController extends BaseController
 		$table = $this->saldoModel->getSaldo($user_id);
 
 		if ($table['is_verified'] == 1) {
-			return redirect()->to('/UserController/topup');
+			return redirect()->to('/user/topup');
 		} else {
-			return redirect()->to('/UserController/biodata');
+			return redirect()->to('/user/biodata');
 		}
 	}
 

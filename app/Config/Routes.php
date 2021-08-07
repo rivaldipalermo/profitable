@@ -83,6 +83,7 @@ $routes->get('/user/biodata', 'UserController::biodata');
 $routes->get('/user/bukti_topup', 'UserController::buktitopup');
 $routes->get('/user/topup', 'UserController::topup');
 $routes->get('/user/wait', 'UserController::halamantunggu');
+$routes->get('/user/validtopup', 'UserController::validtopup');
 
 //Topup Admin
 $routes->get('/admin/riwayatopup', 'AdminController::riwayatopup');
