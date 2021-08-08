@@ -49,10 +49,10 @@
                                         class="ml-2 fas fa-chevron-down d-none d-lg-inline"></i></span></a>
                                 <ul class="dropdown-menu">
                                     <li class="nav-item">
-                                        <a class="nav-link" href="#">FAQ</a>
+                                        <a class="nav-link" href="/faq">FAQ</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" href="#">Resiko</a>
+                                        <a class="nav-link" href="/guest/g_resiko">Resiko</a>
                                     </li>
                                     <li class="nav-item">
                                         <a class="nav-link" href="/blog">Blog</a>

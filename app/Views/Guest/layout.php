@@ -46,7 +46,7 @@
                                         <a class="nav-link" href="/faq">FAQ</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" href="#">Resiko</a>
+                                        <a class="nav-link" href="/Guest/g_resiko">Resiko</a>
                                     </li>
                                     <li class="nav-item">
                                         <a class="nav-link" href="/Home/blog">Blog</a>
