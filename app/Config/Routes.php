@@ -90,6 +90,16 @@ $routes->get('/admin/riwayatopup', 'AdminController::riwayatopup');
 $routes->get('/admin/approve/(:any)', 'AdminController::approve/$1');
 $routes->get('/admin/reject/(:any)', 'AdminController::reject/$1');
 
+//Verifikasi
+$routes->get('/admin/verifikasi_investasi', 'VerifikasiController::verifikasi_investasi');
+
+
+$routes->get('/admin/verifikasi_pencairan', 'VerifikasiController::verifikasi_pencairan');
+$routes->get('/admin/disetujui/(:any)', 'VerifikasiController::disetujui/$1');
+$routes->get('/admin/ditolak/(:any)', 'VerifikasiController::ditolak/$1');
+$routes->get('admin/verifikasi_pencairan', 'VerifikasiController::verifikasi_pencairan');
+
+
 // Resiko
 $routes->get('/user/u_resiko/', 'UserController::resiko');
 $routes->get('/guest/g_resiko/', 'GuestController::resiko');
