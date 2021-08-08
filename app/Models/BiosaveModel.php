@@ -11,13 +11,13 @@ class BiosaveModel extends Model
     protected $allowedFields = ['nama','panggilan','tl','phone','provinsi','kota','alamat','pekerjaan',
                                 'sumber','nbank','cabang','anama','norek','id','user_id','image'];
 
-    public function getBiosave($id=false)
+    public function getBiosave($id = false)
     {
-        if ($id==false){
-                return $this->findAll();
+        if ($id == false) {
+            return $this->findAll();
         }
-        return $this->where(['id'=> $id])->first();
-    }
+        return $this->where(['user_id' => $id])->first();
+    }    
     public function mbBiosave()
     {
         return $this->db->table('users')

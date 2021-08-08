@@ -23,12 +23,22 @@ class Pengaturan extends BaseController
 	{
 		$provinsi = $this->daerahIndonesia('province');
 		$data = [
-			'bio' => $this->biosaveModel->getBiosave(),
 			'mb' => $this->biosaveModel->mbBiosave(),
 			'validation' => \Config\Services::validation(),
 			'provinsi'  =>  json_decode($provinsi)->rajaongkir->results
 		];
 		return view('pengaturan/index',$data);
+	}
+
+	public function isi()
+	{
+		$provinsi = $this->daerahIndonesia('province');
+		$data = [
+			'mb' => $this->biosaveModel->getBiosave(user_id()),
+			'validation' => \Config\Services::validation(),
+			'provinsi'  =>  json_decode($provinsi)->rajaongkir->results
+		];
+		return view('pengaturan/isi',$data);
 	}
 
 	private function daerahIndonesia($method, $id_provinsi = null)
@@ -99,7 +109,8 @@ class Pengaturan extends BaseController
 				'image' => $namagambar
 			]
 		);
-		return redirect()->to('/Pengaturan');    }
+		return redirect()->to('/Pengaturan/isi');    }
+
 
 
 	}

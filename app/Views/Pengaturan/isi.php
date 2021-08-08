@@ -8,7 +8,7 @@
       </div>
         <form action="/Pengaturan/biosave" method="POST" enctype="multipart/form-data" >
       <div class="box8 ml-5 mt-5 float-left">
-              <img src="<?= base_url(); ?>/assets/images/member/12.png" id="imgView" class="card-img-top img-fluid">
+              <img src="<?= base_url(); ?>/assets/images/member/<?= $mb['image']; ?>" id="imgView" class="card-img-top img-fluid">
               <center>
                 <input type="file" id="inputFile" name="image" class="upload-box" aria-describedby="inputGroupFileAddon01">
               </center>
@@ -18,27 +18,27 @@
             <h6></h6>
             <div class="form-group col-md-6">
               <label for="inputname4"><h5>Nama Lengkap</h5></label>
-              <input type="name" class="form-control" id="nama" name="nama" placeholder="Nama Lengkap" value="" 
+              <input type="name" class="form-control" id="nama" name="nama" placeholder="Nama Lengkap" value="<?= $mb['nama']; ?>" 
               oninvalid="alert('Silahkan Masukan Nama Lengkap!');" required>
             </div>
             <div class="form-group col-md-6">
               <label for="inputname4"><h5>Nama Panggilan</h5></label>
-              <input type="name" class="form-control" id="panggilan" name="panggilan" placeholder="Nama Panggilan" value="" 
+              <input type="name" class="form-control" id="panggilan" name="panggilan" placeholder="Nama Panggilan" value="<?= $mb['panggilan']; ?>" 
               oninvalid="alert('Silahkan Masukan Nama Panggilan');" required>
             </div>
             <div class="form-group col-md-6 float-left">
               <label for="inputname4"><h5>Tanggal Lahir </h5></label>
-              <input type="date" class="form-control" id="tl" name="tl" 
+              <input type="date" class="form-control" id="tl" name="tl" value="<?= $mb['tl']; ?>" 
               oninvalid="alert('Silahkan Masukan Tanggal Lahir');" required>
             </div>
             <div class="form-group col-lg-12">
               <label for="inputname4"><h5>Nomor Telepon</h5></label>
-              <input type="name" class="form-control" id="phone" name="phone" placeholder="Nomor Telepon" value="" oninvalid="alert('Silahkan Masukan Nomor Telp');" onkeypress="return hanyaAngka(event)" required>
+              <input type="name" class="form-control" id="phone" name="phone" placeholder="Nomor Telepon" value="<?= $mb['phone']; ?>" oninvalid="alert('Silahkan Masukan Nomor Telp');" onkeypress="return hanyaAngka(event)" required>
             </div>
             <div class="form-group col-md-6">
               <label for="inputname4"><h5>Provinsi</h5></label>
               <select class="form-control" id="provinsi" name="provinsi"  oninvalid="alert('Silahkan Masukan Provinsi');" required>
-                <option value="">Nama Provinsi</option>
+                <option value="<?= $mb['provinsi']; ?>"><?= $mb['provinsi']; ?></option>
                 <?php foreach ($provinsi as $p) : ?>
                   <option value="<?= $p->province_id; ?>"><?= $p->province; ?></option>
                 <?php endforeach ?>
@@ -47,19 +47,19 @@
             <div class="form-group col-md-6">
               <label for="inputname4"><h5>Kota</h5></label>
               <select class="form-control" id="kabupaten" name="kota"oninvalid="alert('Silahkan Masukan Kota');"  required>
-                <option value="">Nama Kota</option>
+                <option value="<?= $mb['kota']; ?>"><?= $mb['kota']; ?></option>
 
               </select>
             </div>
             <div class="form-group col-lg-12">
               <label for="inputname4"><h5>Alamat</h5></label>
-              <textarea class="form-control" id="alamat" rows="3" placeholder="Alamat" name="alamat" oninvalid="alert('Silahkan Masukan Alamat');" required></textarea>
+              <textarea class="form-control" id="alamat" rows="3" placeholder="Alamat" name="alamat" oninvalid="alert('Silahkan Masukan Alamat');" required><?= $mb['alamat']; ?></textarea>
             </div>
 
             <div class="form-group col-md-6">
               <label for="inputname4"><h5>Pekerjaan</h5></label>
               <select class="form-control" id="pekerjaan" name="pekerjaan" oninvalid="alert('Silahkan Masukan Pekerjaan');" required>
-                <option value="" selected disabled>Pekerjaan</option>
+                <option value="<?= $mb['pekerjaan']; ?>" selected disabled><?= $mb['pekerjaan']; ?></option>
                 <option value="Karyawan">Karyawan</option>
                 <option value="Wiraswasta">Wiraswasta</option>
                 <option value="Pelajar">Pelajar</option>
@@ -71,7 +71,7 @@
             <div class="form-group col-md-6">
               <label for="inputname4"><h5>Sumber Dana</h5></label>
               <select class="form-control" id="sumber" name="sumber" oninvalid="alert('Silahkan Masukan Sumber Dana');" required >
-                <option value="" selected disabled>Sumber</option>
+                <option value="<?= $mb['sumber']; ?>" selected disabled><?= $mb['sumber']; ?></option>
                 <option value="Gaji">Gaji</option>
                 <option value="Hasil Usaha">Hasil Usaha</option>
                 <option value="Warisan">Warisan</option>
@@ -81,19 +81,19 @@
             </div>
             <div class="form-group col-md-6">
               <label for="inputname4"><h5>Nama Bank</h5></label>
-              <input type="name" class="form-control" id="nbank" name="nbank" placeholder="Nama Bank"value="" oninvalid="alert('Silahkan Masukan Nama Bank');" required>
+              <input type="name" class="form-control" id="nbank" name="nbank" placeholder="Nama Bank"value="<?= $mb['nbank']; ?>" oninvalid="alert('Silahkan Masukan Nama Bank');" required>
             </div>
             <div class="form-group col-md-6">
               <label for="inputname4"><h5>Cabang</h5></label>
-              <input type="name" class="form-control" id="cabang" name="cabang" placeholder="Cabang" value="" oninvalid="alert('Silahkan Masukan Cabang');" required>
+              <input type="name" class="form-control" id="cabang" name="cabang" placeholder="Cabang" value="<?= $mb['cabang']; ?>" oninvalid="alert('Silahkan Masukan Cabang');" required>
             </div>
             <div class="form-group col-md-6">
               <label for="inputname4"><h5>Atas Nama</h5></label>
-              <input type="name" class="form-control" id="anama" name="anama" placeholder="Atas Nama" value="" oninvalid="alert('Silahkan Masukan Atas Nama');" required>
+              <input type="name" class="form-control" id="anama" name="anama" placeholder="Atas Nama" value="<?= $mb['anama']; ?>" oninvalid="alert('Silahkan Masukan Atas Nama');" required>
             </div>
             <div class="form-group col-md-6">
               <label for="inputname4"><h5>Nomor Rekening</h5></label>
-              <input type="name" class="form-control" id="norek" name="norek" placeholder="Nomor Rekening" value="" oninvalid="alert('Silahkan Masukan Nomor Rekening');" onkeypress="return hanyaAngka(event)" required>
+              <input type="name" class="form-control" id="norek" name="norek" placeholder="Nomor Rekening" value="<?= $mb['norek']; ?>" oninvalid="alert('Silahkan Masukan Nomor Rekening');" onkeypress="return hanyaAngka(event)" required>
             </div>
             <div class="box12" style="position: relative; left: 220px; width: 150px; height: 10px;">
               <center>
