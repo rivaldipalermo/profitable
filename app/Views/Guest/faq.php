@@ -145,42 +145,7 @@
 </div>
 </div><!-- parent row -->
 </div>
-<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
 
-<div id="main-content" class="blog-page">
-  <div class="container">
-    <div class="row clearfix">
-      <div class="col-12 grid-margin grid-margin-md-0">
-
-
-        <div class="card">
-          <div class="header">
-            <h4>Memiliki pertanyaan lain ? <small></small></h4>
-          </div>
-          <div class="body">
-            <div class="comment-form">
-              <form class="row clearfix">
-                <div class="col-sm-6">
-                  <div class="form-group">
-                    <input type="text" class="form-control" placeholder="Your Name">
-                  </div>
-                </div>
-                <div class="col-sm-6">
-                  <div class="form-group">
-                    <input type="text" class="form-control" placeholder="Email Address">
-                  </div>
-                </div>
-                <div class="col-sm-12">
-                  <div class="form-group">
-                    <textarea rows="4" class="form-control no-resize" placeholder="Please type what you want..."></textarea>
-                  </div>
-                  <button type="submit" class="btn btn-block btn-primary">SUBMIT</button>
-                </div>
-              </form>
-            </div>
-          </div>
-        </div>
-      </div>
 
 
 
