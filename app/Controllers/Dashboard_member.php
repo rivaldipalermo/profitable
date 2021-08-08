@@ -3,12 +3,14 @@
 namespace App\Controllers;
 
 use App\Models\SaldoModel;
+use App\Models\TransaksiInvestasiModel;
 
 class Dashboard_member extends BaseController
 {
 	public function __construct()
 	{
 		$this->SaldoModel = new SaldoModel();
+		$this->TransaksiInvestasiModel = new TransaksiInvestasiModel();
 	}
 
 	public function index()
@@ -21,7 +23,10 @@ class Dashboard_member extends BaseController
 
 	public function porto()
 	{
-		return view('member/porto');
+		$data = [
+			'porto' => $this->TransaksiInvestasiModel->getPortofolio(user_id())
+		];
+		return view('member/porto', $data);
 	}
 
 	public function Transaksi()

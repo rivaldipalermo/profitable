@@ -48,8 +48,8 @@
 
                         <li class="sidebar-item  <?= ($request->uri->getSegment(2) == 'properti') ? 'active' : '' ?>">
                             <a href="/admin/properti" class='sidebar-link'>
-                            <i class="fa fa-home"></i>
-                            <span>Properti</span>
+                                <i class="fa fa-home"></i>
+                                <span>Properti</span>
                             </a>
                         </li>
 
@@ -59,6 +59,36 @@
                                 <span>Proyek Investasi</span>
                             </a>
                         </li>
+
+                        <li class="sidebar-item  <?= ($request->uri->getSegment(2) == 'faq') ? 'active' : '' ?>"">
+                            <a href=" /admin/faq" class='sidebar-link'>
+                            <i class="bi bi-collection-fill"></i>
+                            <span>FAQ</span>
+                            </a>
+                        </li>
+
+                        <li class="sidebar-item  <?= ($request->uri->getSegment(2) == 'verifikasi_investasi') ? 'active' : '' ?>">
+                            <a href="/admin/verifikasi_investasi" class='sidebar-link'>
+                                <i class="bi bi-collection-fill"></i>
+                                <span>Verifikasi Investasi</span>
+                            </a>
+                        </li>
+
+                        <li class="sidebar-item  <?= ($request->uri->getSegment(2) == 'verifikasi_pencairan') ? 'active' : '' ?>">
+                            <a href="/admin/verifikasi_pencairan" class='sidebar-link'>
+                                <i class="bi bi-collection-fill"></i>
+                                <span>Verifikasi Pencairan</span>
+                            </a>
+                        </li>
+
+                        <li class="sidebar-item  <?= ($request->uri->getSegment(2) == 'riwayatopup') ? 'active' : '' ?>">
+                            <a href="/AdminController/riwayatopup" class='sidebar-link'>
+                                <i class="bi bi-collection-fill"></i>
+                                <span>Verifikasi Top-up</span>
+                            </a>
+                        </li>
+
+
                     </ul>
                 </div>
                 <button class="sidebar-toggler btn x"><i data-feather="x"></i></button>

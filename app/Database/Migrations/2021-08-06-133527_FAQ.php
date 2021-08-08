@@ -16,10 +16,18 @@ class FAQ extends Migration
 				'auto_increment' 	=> true
 			],
 			'pertanyaan'       => [
-				'type'			=> 'TEXT'
+				'type'				=> 'TEXT'
 			],
 			'jawaban'	=> [
-				'type'			=> 'TEXT'
+				'type'				=> 'TEXT'
+			],
+			'tipe'	=> [
+				'type'				=> 'VARCHAR',
+				'constraint'		=> 20
+			],
+			'kategori'	=> [
+				'type'				=> 'VARCHAR',
+				'constraint'		=> 20
 			],
 			'created_at' => [
 				'type' => 'DATETIME',
@@ -32,11 +40,11 @@ class FAQ extends Migration
 		]);
 		$this->forge->addKey('id', true);
 		// $this->forge->addForeignKey('user_id', 'users', 'id', '', 'CASCADE');
-		$this->forge->createTable('Faq', TRUE);
+		$this->forge->createTable('faq', TRUE);
 	}
 
 	public function down()
 	{
-		$this->forge->dropTable('Faq');
+		$this->forge->dropTable('faq');
 	}
 }

@@ -20,6 +20,7 @@ class UserController extends BaseController
 
 	public function __construct()
 	{
+		$this->session = session();
 		$this->transaksiModel = new TransaksiModel();
 		$this->biodataModel = new BiodataModel();
 		$this->kotaModel = new KotaModel();
@@ -50,21 +51,25 @@ class UserController extends BaseController
 	public function halamantunggu()
 	{
 		$data = [
-			'title' => 'topup'
+			'title' => 'topup',
+			'nama_bank' => $this->session->getFlashdata('nama_bank'),
+			'nominal' => $this->session->getFlashdata('nominal'),
 		];
 		return view('User/HalamanTunggu', $data);
 	}
 	public function topupsave()
 	{
+		
+        $this->transaksiModel->save(
+            [
+                'user_id' => intval(user_id()),
+                'saldo' => $this->request->getVar('nominal'),
+				'jenis_pembayaran' => $this->request->getVar('nama_bank'),
+			]);
+		$this->session->setFlashdata('nama_bank' ,$this->request->getVar('nama_bank'));
+		$this->session->setFlashdata('nominal' ,$this->request->getVar('nominal')+2500);
+		return redirect()->to('/user/wait');
 
-		$this->Modeltopup->save(
-			[
-				'nominal' => $this->request->getVar('nominal'),
-				'nama_bank' => $this->request->getVar('nama_bank'),
-				'nomor_kartu' => $this->request->getVar('nomor_kartu')
-			]
-		);
-		return redirect()->to('/UserController/halamantunggu');
 	}
 	public function action()
 	{
@@ -169,9 +174,9 @@ class UserController extends BaseController
 		$table = $this->saldoModel->getSaldo($user_id);
 
 		if ($table['is_verified'] == 1) {
-			return redirect()->to('/UserController/topup');
+			return redirect()->to('/user/topup');
 		} else {
-			return redirect()->to('/UserController/biodata');
+			return redirect()->to('/user/biodata');
 		}
 	}
 
@@ -235,8 +240,8 @@ class UserController extends BaseController
             ]
         )) {
             
-            //return redirect()->to('/user/u_upload_bukti/' . $this->request->getVar('user_id'))->withInput();
-			return redirect()->to('/User/u_upload_bukti')->withInput();
+            return redirect()->to('/user/u_upload_bukti/' .($id))->withInput();
+			//return redirect()->to('/User/u_upload_bukti')->withInput();
         }
 		
 
@@ -254,9 +259,9 @@ class UserController extends BaseController
 		);
 
         
-		session()->setFlashdata('pesan', 'Data Berhasil ditambah');
+		//session()->setFlashdata('pesan', 'Data Berhasil ditambah');
 
-		$page_akhir = $this->request->getVar('page_artikel') ? $this->request->getVar('page_artikel') : 1;
+		$page_akhir = $this->request->getVar('page_riwayattu') ? $this->request->getVar('page_riwayattu') : 1;
 
 		$data = [
 			'transaksi' => $this->uriwayattModel->paginate(5, 'artikel'), //getRiwayattu(),

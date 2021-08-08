@@ -4,11 +4,11 @@ namespace App\Models;
 
 use CodeIgniter\Model;
 
-class TopupModels extends Model
+class TopupPencairans extends Model
 {
-    protected $table = 'transaksi';
+    protected $table = 'Transaksi_Pencairan';
     protected $useTimestamps = false;
-    protected $allowedFields = ['user_id', 'saldo', 'jenis_pembayaran', 'bukti_pembayaran'];
+    protected $allowedFields = ['user_id', 'saldo'];
 
     public function getRiwayat($id = false)
     {
@@ -20,11 +20,11 @@ class TopupModels extends Model
 
     public function search($keyword = 'none')
     {
-        return $this->table('transaksi')->like('user_id', $keyword);
+        return $this->table('transaksi_pencairan')->like('user_id', $keyword);
     }
 
     public function approval($approve = 'none')
     {
-        return $this->table('transaksi')->like('approval', $approve);
+        return $this->table('transaksi_pencairan')->like('approval', $approve);
     }
 }

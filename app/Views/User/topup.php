@@ -138,47 +138,45 @@
 
                             <fieldset class="row mb-3">
                                 <form action="/UserController/topupsave" method="POST">
-                                <?= csrf_field() ?>
-                                    <div class="col-md-6">
-                                        <select class="form-select" id="nominal" name="nominal">
-                                            <option selected value="">Nominal:</option>
-                                            <option value="1002500">1002500</option>
-                                            <option value="1502500">1502500</option>
-                                            <option value="2002500">2002500</option>
-                                            <option value="2502500">2502500</option>
-                                            <option value="3002500">3002500</option>
-                                        </select>
-                                    </div>
-
-                                    <div class="col-md-6">
-                                        <label for="inputState" class="form-label">Pilih Bank:</label>
-                                        <select id="nama_bank" class="form-select" name="nama_bank">
-                                            <option selected>Choose...</option>
-                                            <option>Bank BCA</option>
-                                            <option>Bank Mandiri</option>
-                                            <option>Bank BRI</option>
-                                            <option>Bank Niaga</option>
-                                            <option>Bank BNI</option>
-                                        </select>
-                                    </div>
-
-                                    <div class="col-md-6">
-                                        <label for="inputNomor Kartu" class="form-label">Nomor Kartu:</label>
-                                        <input type="text" class="form-control" id="nomor_kartu" placeholder="Masukan Nomor Kartu Anda" name="nomor_kartu">
-                                    </div>
-
-                                    <div class="col-md-12">
-                                        <div class="form-check">
-                                            <input class="form-check-input" type="checkbox" id="gridCheck">
-                                            <label class="form-check-label" for="gridCheck">
-                                                Apakah Sudah Benar?
-                                            </label>
+                                    <?= csrf_field() ?>                                        
+                                        <div class="col-md-6">
+                                            <label for="inputState" class="form-label">Nominal:</label>
+                                            <select id="nominal" class="form-select btn btn-outline-primary" name="nominal">
+                                                <option selected value="">Choose...</option>
+                                                <option value="500000">Rp 500.000</option>
+                                                <option value="1000000">Rp 1.000.000</option>
+                                                <option value="1500000">Rp 1.500.000</option>
+                                                <option value="2000000">Rp 2.000.000</option>
+                                                <option value="2500000">Rp 2.500.000</option>
+                                                <option value="3000000">Rp 3.000.000</option>
+                                            </select>
+                                            <p class="">Biaya Admin : Rp.2.500</p>
                                         </div>
-                                    </div>
-                                    <div class="col-12">
-                                        <button type="submit" class="btn btn-primary">Submit</button>
-                                    </div>
-                                </form>
+
+                                        <div class="col-md-6">
+                                            <label for="inputState" class="form-label ">Pilih Metode Pembayaran:</label>
+                                            <select id="nama_bank" class="form-select btn btn-outline-primary" name="nama_bank">
+                                                <option selected>Choose...</option>
+                                                <option value="Bank BCA">Transfer Bank BCA</option>
+                                                <option value="Bank Mandiri">Transfer Bank Mandiri</option>
+                                                <option value="Bank BRI">Transfer Bank BRI</option>
+                                                <option value="Bank Niaga">Transfer Bank Niaga</option>
+                                                <option value="Bank BNI">Transfer Bank BNI</option>
+                                            </select>
+                                        </div>
+
+                                        <div class="col-md-12 mt-4">
+                                            <div class="form-check">
+                                                <input required class="form-check-input" type="checkbox" id="gridCheck">
+                                                <label class="form-check-label" for="gridCheck">
+                                                    Saya menyetujui syarat dan ketentuan yang berlaku.
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="col-12 mt-4">
+                                            <button type="submit" class="btn btn-primary">Submit</button>
+                                        </div>
+                                    </form>
                             </fieldset>
                         </div>
                     </div>

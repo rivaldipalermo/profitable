@@ -17,7 +17,7 @@ class PropertiController extends BaseController
         $this->PropertiModel = new PropertiModel();
     }
 
-	public function index()
+    public function index()
     {
         $currentPage = $this->request->getVar('page_properti') ? $this->request->getVar('page_properti') : 1;
         $search = $this->request->getVar('search');
@@ -56,26 +56,24 @@ class PropertiController extends BaseController
             'validation' => \Config\Services::validation(),
             'provinsi' => json_decode($provinsi)->rajaongkir->results
         ];
-        return view('Admin/Properti/edit_properti',$data);
+        return view('Admin/Properti/edit_properti', $data);
     }
 
     public function getCity()
     {
-        if($this->request->isAJAX())
-        {
+        if ($this->request->isAJAX()) {
             $id_provinsi = $this->request->getGet('id_provinsi');
             $data = $this->daerahIndonesia('city', $id_provinsi);
             return $this->response->setJSON($data);
         }
     }
 
-    private function daerahIndonesia($method, $id_provinsi=null)
+    private function daerahIndonesia($method, $id_provinsi = null)
     {
-        $endPoint = $this->url.$method;
+        $endPoint = $this->url . $method;
 
-        if($id_provinsi!=null)
-        {
-            $endPoint = $endPoint."?province=".$id_provinsi;
+        if ($id_provinsi != null) {
+            $endPoint = $endPoint . "?province=" . $id_provinsi;
         }
 
         $curl = curl_init();
@@ -89,7 +87,7 @@ class PropertiController extends BaseController
             CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
             CURLOPT_CUSTOMREQUEST => "GET",
             CURLOPT_HTTPHEADER => array(
-            "key: ".$this->apiKey
+                "key: " . $this->apiKey
             ),
         ));
 
@@ -103,7 +101,7 @@ class PropertiController extends BaseController
 
     public function storeProperti()
     {
-        if(!$this->validate(
+        if (!$this->validate(
             [
                 'lokasi_properti' => [
                     'rules' => 'required',
@@ -154,7 +152,7 @@ class PropertiController extends BaseController
                     ]
                 ]
             ]
-        )){
+        )) {
             $validation = \Config\Services::validation();
             return redirect()->to('/admin/properti/add')->withInput()->with('validation', $validation);
         }
@@ -182,7 +180,7 @@ class PropertiController extends BaseController
     public function deleteProperti($id)
     {
         $properti = $this->PropertiModel->find($id);
-        unlink('assets/images/properti/'.$properti['foto_properti']);
+        unlink('assets/images/properti/' . $properti['foto_properti']);
         $this->PropertiModel->delete($id);
         session()->setFlashdata('pesan', 'Data berhasil dihapus');
         return redirect()->to('/admin/properti');
@@ -191,7 +189,7 @@ class PropertiController extends BaseController
     public function updateProperti()
     {
         $id = $this->request->getVar('id');
-        if(!$this->validate(
+        if (!$this->validate(
             [
                 'lokasi_properti' => [
                     'rules' => 'required',
@@ -242,18 +240,18 @@ class PropertiController extends BaseController
                     ]
                 ]
             ]
-        )){
+        )) {
             $validation = \Config\Services::validation();
-            return redirect()->to('/admin/properti/edit/'.$id)->withInput()->with('validation', $validation);
+            return redirect()->to('/admin/properti/edit/' . $id)->withInput()->with('validation', $validation);
         }
 
         $filegambar = $this->request->getFile('foto_properti');
-        if($filegambar->getError() == 4) {
+        if ($filegambar->getError() == 4) {
             $namagambar = $this->request->getVar('foto_properti_old');
         } else {
             $namagambar = $filegambar->getRandomName();
             $filegambar->move('assets/images/properti/', $namagambar);
-            unlink('assets/images/properti/'.$this->request->getVar('foto_properti_old'));
+            unlink('assets/images/properti/' . $this->request->getVar('foto_properti_old'));
         }
 
         $data = [
@@ -267,7 +265,7 @@ class PropertiController extends BaseController
             'harga_properti' => $this->request->getVar('harga_properti'),
             'foto_properti' => $namagambar
         ];
-        $this->PropertiModel->update($id,$data);
+        $this->PropertiModel->update($id, $data);
         session()->setFlashdata('pesan', 'Properti Berhasil Diubah');
         return redirect()->to('/admin/properti');
     }

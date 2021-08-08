@@ -19,38 +19,41 @@
                 <center>
                   <h3 class="mt-4">Menunggu Pembayaran:</h3>
                 </center>
-                <p class="mt-4">OrderID:</p>
-                <b>xxx</b>
+                <p class="mt-4">Metode Pembayaran :</p>
+                <b>Transfer <?= $nama_bank ?></b>
                 <p class="mt-4">Total Pembayaran:</p>
-                <b>Rp.1000</b>
+                <b><?= "Rp " . number_format($nominal, 0, ",", ".");?></b>
+                <p class="mt-4">Silakan melakukan transfer sesuai nominal diatas ke nomor rekening dibawah ini</p>
+                <b>003649375923</b>
                 <div class="card mt-4" style="border: 1px solid rgba(0,0,0,.125) !important;">
                   <div class="card-body">
                     <p><abbr title="attribute">Cara Pembayaran:</abbr></p>
                     <p class="lead">
-                      1. Buka aplikasi M-Banking di smartphone kamu
+                      1. Buka aplikasi M-Banking di smartphone kamu.
                     </p>
 
                     <p class="lead">
-                      2. Masuk ke halaman Notifikasi
+                      2. Masuk ke halaman Transfer.
                     </p>
 
                     <p class="lead">
-                      3. Cek Permintaan pengisian saldo
+                      3. Masukan nomor rekening yang dituju.
                     </p>
 
                     <p class="lead">
-                      4. Jika jumlah tagihan sudah benar,silahkan klik bayar
+                      4. Masukan nominal pembayaran.
                     </p>
 
                     <p class="lead">
-                      5. Lalu tunggu pembayaranmu terverifikasi
+                      5. Jika jumlah tagihan sudah benar, silahkan klik kirim.
+                    </p>
+
+                    <p class="lead">
+                      6. Lalu tunggu pembayaranmu terverifikasi.
                     </p>
                   </div>
                 </div>
-                <center>
-                  <p>Pesananmu baru akan diteruskan setelah pembayaran terverifikasi.</p>
-                </center>
-                <button type="button" class="btn btn-outline-success btn-block">Cek Status Pembayaran</button>
+                <a href="u_riwayat_trans" class="btn btn-outline-primary btn-block">Cek Status Pembayaran</a>
               </div>
             </div>
           </div>

@@ -1,12 +1,21 @@
 <?= $this->extend('member/layout') ?>
 <?= $this->section('member'); ?>
 <br>
+<?php if (session()->getFlashdata('pesan')) : ?>
+<div class="container">
+    <div class="card-title">
+        <div class="alert alert-success" role="alert">
+            <?= session()->getFlashdata('pesan'); ?>
+        </div>
+    </div>
+</div>
+<?php endif; ?>
 <div class="box1 mx-5 float-left">
     <h4 class="warna">SALDO WALLET</h4>
     <?php if(!isset($saldo)) : ?>
-        <a href="/user/create_wallet" class="btn btn-primary">Buat E-Wallet</a>
+    <a href="/user/create_wallet" class="btn btn-primary">Buat E-Wallet</a>
     <?php else : ?>
-        <h5 class="warna"><?= "Rp " . number_format($saldo['saldo'],0,',','.'); ?></h5>
+    <h5 class="warna"><?= "Rp " . number_format($saldo['saldo'],0,',','.'); ?></h5>
     <?php endif; ?>
     <div class="feature-tp">
         <?php if(isset($saldo)) : ?>
@@ -14,7 +23,8 @@
         <button type="button" class="btn lt-btn" data-toggle="modal" data-target="#exampleModal">Pencairan</button>
 
         <!-- Modal -->
-        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content center">
                     <div class="modal-header">
@@ -23,21 +33,26 @@
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
-                    <div class="modal-body">
-                        <div class="row row-cols-2">
-                            <div class="col">Saldo Kamu :</div>
-                            <div class="col">Rp </div>
-                            <br><br>
+                    <form action="/user/pencairan" method="post">
+                        <div class="modal-body">
+                            <div class="row row-cols-2">
+                                <?php if(isset($saldo)) : ?>
+                                <div class="col">Saldo Kamu :</div>
+                                <div class="col"><?= "Rp " . number_format($saldo['saldo'],0,',','.'); ?></div>
+                                <?php endif; ?>
+                                <br><br>
+                            </div>
+                            <div class="row row-cols-2">
+                                <div class="col">Total Pencairan :</div>
+                                <div class="col"><input type="number" class="form-control" placeholder="Rp"
+                                        name="saldo"> </div>
+                            </div>
                         </div>
-                        <div class="row row-cols-2">
-                            <div class="col">Total Pencairan :</div>
-                            <div class="col"><input type="text" class="form-control" id="rupiah" placeholder="Rp" onkeypress="return wajibAngka(event)"> </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
+                            <button type="submit" class="btn btn-primary">Cairkan</button>
                         </div>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
-                        <button type="button" class="btn btn-primary">Cairkan</button>
-                    </div>
+                    </form>
                 </div>
             </div>
         </div>
@@ -128,7 +143,7 @@
 
 <script>
     var rupiah = document.getElementById("rupiah");
-    rupiah.addEventListener("keyup", function(e) {
+    rupiah.addEventListener("keyup", function (e) {
         // tambahkan 'Rp.' pada saat form di ketik
         // gunakan fungsi formatRupiah() untuk mengubah angka yang di ketik menjadi format angka
         rupiah.value = formatRupiah(this.value, "Rp. ");
