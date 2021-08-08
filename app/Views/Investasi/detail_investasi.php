@@ -166,7 +166,7 @@
                                 </div>
                                 <div class="col">
                                     <p class="font-weight-bold">
-                                        <?= "Rp " . number_format(1000000,0,',','.'); ?></p>
+                                        <?= "Rp " . number_format($saldo['saldo'],0,',','.'); ?></p>
                                 </div>
                             </div>
                             <div class="row row-cols-2 mb-2">
@@ -178,7 +178,11 @@
                                         readonly="readonly" required><br>
                                 </div>
                             </div>
-                            <button type="submit" class="btn btn-reward w-100">Invest</button>
+                            <?php if($saldo['saldo'] >= 1000000) : ?>
+                                <button type="submit" class="btn btn-reward w-100">Invest</button>
+                            <?php else : ?>
+                                <button type="button" class="btn btn-reward w-100" onclick="alert('Saldo Anda Tidak Mencukupi, silahkan top up terlebih dahulu')">Invest</button>
+                            <?php endif; ?>
                     </form>
                 </div>
             </div>

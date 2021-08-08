@@ -62,6 +62,7 @@ $routes->add('/admin/blog/update/(:segment)', 'AdminBlog::update/$1');
 $routes->delete('/admin/blog/(:num)', 'AdminBlog::delete/$1');
 
 // Topup
+$routes->get('/user/create_wallet', 'UserController::buatWallet');
 $routes->get('/user/invoices/(:any)', 'UserController::getInvoice/$1');
 $routes->get('/user/help/(:any)', 'UserController::getHelp/$1');
 $routes->get('/user/u_riwayat_trans', 'UserController::riwayat_tu');

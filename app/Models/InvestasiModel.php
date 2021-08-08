@@ -8,7 +8,7 @@ class InvestasiModel extends Model
 {
 	protected $table                = 'investasi';
 	protected $primaryKey           = 'id_investasi';
-	protected $allowedFields        = ['id_investasi','id_properti','durasi_proyek','imbal_hasil','slot','target'];
+	protected $allowedFields        = ['id_investasi','id_properti','durasi_proyek','imbal_hasil','slot','sisa_slot','target'];
 
 	// Dates
 	protected $useTimestamps        = true;

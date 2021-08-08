@@ -26,6 +26,11 @@ class Investasi extends Migration
 				'constraint' => 5,
 				'unsigned' => true,
 			],
+			'sisa_slot' => [
+				'type' => 'INT',
+				'constraint' => 5,
+				'unsigned' => true,
+			],
 			'target' => [
 				'type' => 'INT',
 				'constraint' => 100,

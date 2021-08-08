@@ -56,7 +56,7 @@
                         <li class="sidebar-item  <?= ($request->uri->getSegment(2) == 'investasi') ? 'active' : '' ?>">
                             <a href="/admin/investasi" class='sidebar-link'>
                                 <i class="bi bi-collection-fill"></i>
-                                <span>Investasi</span>
+                                <span>Proyek Investasi</span>
                             </a>
                         </li>
                     </ul>

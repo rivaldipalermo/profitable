@@ -5,6 +5,7 @@ namespace App\Controllers;
 use App\Models\InvestasiModel;
 use App\Models\PropertiModel;
 use App\Models\TransaksiModel;
+use App\Models\SaldoModel;
 use App\Models\TransaksiInvestasiModel;
 use Myth\Auth\Models\UserModel;
 
@@ -16,6 +17,7 @@ class PendanaanController extends BaseController
         $this->InvestasiModel = new InvestasiModel() ;
         $this->TransaksiInvestasiModel = new TransaksiInvestasiModel();
         $this->UserModel = new UserModel();
+        $this->SaldoModel = new SaldoModel();
     }
 
     public function pendanaan()
@@ -35,6 +37,7 @@ class PendanaanController extends BaseController
         $data = [
             'title' => 'Proyek Pendanaan',
             'investasi' => $this->InvestasiModel->getInvestasiDetail($id),
+            'saldo' => $this->SaldoModel->getSaldo(user_id()),
             'validation' => \Config\Services::validation()
         ];
         return view('Investasi/detail_investasi', $data);
@@ -76,7 +79,7 @@ class PendanaanController extends BaseController
 
         $investasi = $this->InvestasiModel->where('id_investasi', $idInvestasi)->first();
         $id_investasi = $investasi['id_investasi'];
-        $slot = $investasi['slot'];
+        $slot = $investasi['sisa_slot'];
         
         if($slot >= $slot_dibeli) {
             $data = [
@@ -90,7 +93,7 @@ class PendanaanController extends BaseController
             
             //pengurangan slot
             $prosesInvestasi = [
-                'slot'  => $slot - $slot_dibeli
+                'sisa_slot'  => $slot - $slot_dibeli
             ];
             $this->InvestasiModel->update($id_investasi, $prosesInvestasi);
             session()->setFlashdata('pesan', 'Investasi Flipping anda sedang diverifikasi oleh admin harap menunggu, Salam Profit :)');

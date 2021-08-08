@@ -292,4 +292,18 @@ class UserController extends BaseController
 		];
 		return view('User/u_resiko', $data);
 	}
+
+	public function buatWallet()
+	{
+		$saldo = new SaldoModel();
+		if(!$saldo->where('user_id', user_id())->first()) {
+		$dataSaldo = [
+			'user_id'	=> user_id(),
+			'saldo'		=> 0,
+			'is_verified'	=> 1
+		];
+		$saldo->insert($dataSaldo);
+		return redirect()->to('Dashboard_member/index');
+		}
+	}
 }

@@ -5,7 +5,7 @@
 </div>
 <div class="row">
     <div class="col-md-3">
-        <a href="/admin/investasi/add" class="btn btn-primary">Tambah Investasi</a>
+        <a href="/admin/investasi/add" class="btn btn-primary">Tambah Proyek Investasi</a>
     </div>
     <div class="row">
         <div class="col-md-9">
@@ -45,6 +45,7 @@
                                         <th>Durasi Proyek</th>
                                         <th>Imbah Hasil</th>
                                         <th>Slot</th>
+                                        <th>Sisa Slot</th>
                                         <th width="18%">Target</th>
                                         <th>Aksi</th>
                                     </tr>
@@ -58,6 +59,7 @@
                                         <td><?= $row['durasi_proyek']; ?> bulan</td>
                                         <td><?= $row['imbal_hasil']; ?></td>
                                         <td><?= $row['slot']; ?></td>
+                                        <td><?= $row['sisa_slot']; ?></td>
                                         <td><?= "Rp " . number_format($row['target'],0,',','.'); ?></td>
                                         <td>
                                             <a class="btn btn-danger" href="<?= base_url(); ?>/admin/investasi/delete/<?= $row['id_investasi']; ?>"><i class="fas fa-trash-alt"></i></a>

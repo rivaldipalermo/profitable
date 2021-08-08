@@ -3,8 +3,13 @@
 <br>
 <div class="box1 mx-5 float-left">
     <h4 class="warna">SALDO WALLET</h4>
-    <h5 class="warna">Rp.0</h5>
+    <?php if(!isset($saldo)) : ?>
+        <a href="/user/create_wallet" class="btn btn-primary">Buat E-Wallet</a>
+    <?php else : ?>
+        <h5 class="warna"><?= "Rp " . number_format($saldo['saldo'],0,',','.'); ?></h5>
+    <?php endif; ?>
     <div class="feature-tp">
+        <?php if(isset($saldo)) : ?>
         <a href="about.html" class="btn lt-btn">Top Up</a>
         <button type="button" class="btn lt-btn" data-toggle="modal" data-target="#exampleModal">Pencairan</button>
 
@@ -37,6 +42,7 @@
             </div>
         </div>
         <a href="about.html" class="btn lt-btn">Reinvest</a>
+        <?php endif; ?>
     </div>
 </div>
 <div class="box2 mr-5 float-right">

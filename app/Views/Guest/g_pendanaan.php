@@ -62,6 +62,20 @@
                         <img src="<?= base_url()?>/assets/images/properti/<?= $row['foto_properti']; ?>" class="card-img-top" style="height: 200px;">
                         <div class="card-body">
                             <div style="height: 50px;"><h5 class="card-title mb-3">Flipping Rumah <?= $row['lokasi_properti']; ?></h5></div>
+                            <div class="row mb-3">
+                            <div class="col-lg-12">
+                                <?php 
+                                    $persentase = (($row['slot']-$row['sisa_slot']) / $row['slot'])*100;
+                                    $persentase = number_format((float)$persentase, 2, '.', '');
+                                ?>
+                                <p>Terkumpul : <?= $persentase; ?>%</p>
+                                <div class="progress" style="margin-top: -10px;">
+                                    <div class="progress-bar" role="progressbar" style="width: <?= $persentase; ?>%;"
+                                        aria-valuenow="<?= $persentase; ?>" aria-valuemin="0" aria-valuemax="100">
+                                        <?= $persentase; ?>%</div>
+                                </div>
+                            </div>
+                        </div>
                             <div class="row row-cols-2">
                                 <div class="col">Imbal Hasil :<br>
                                     <p class="font-weight-bold">
@@ -70,7 +84,7 @@
                                 
                                 <div class="col">Sisa Slot :<br>
                                     <p class="font-weight-bold">
-                                        <?= $row['slot']; ?> slot</p>
+                                        <?= $row['sisa_slot']; ?> slot</p>
                                 </div>
                             </div>
                             <div class="row row-cols-2">

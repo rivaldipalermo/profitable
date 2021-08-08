@@ -49,7 +49,7 @@ class InvestasiController extends BaseController
     public function addInvestasi()
     {
         $data = [
-            'title' => 'Tambah Investasi',
+            'title' => 'Tambah Proyek Investasi',
             'properti' => $this->PropertiModel->findAll(),
             'validation' => \Config\Services::validation()
         ];
@@ -89,6 +89,7 @@ class InvestasiController extends BaseController
             'durasi_proyek' => 12,
             'imbal_hasil'   => $this->request->getVar('imbal_hasil'),
             'slot'          => $slot,
+            'sisa_slot'     => $slot,
             'target'        => $properti['harga_properti']
         ];
         $this->InvestasiModel->insert($data);

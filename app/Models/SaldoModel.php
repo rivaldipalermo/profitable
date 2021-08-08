@@ -10,6 +10,7 @@ class SaldoModel extends Model
     protected $useTimestamps = true;
     protected $primaryKey = 'user_id';
     protected $allowedFields = ['user_id', 'saldo', 'is_verified'];
+
     public function getSaldo($id = false)
     {
         if ($id == false) {
@@ -17,7 +18,6 @@ class SaldoModel extends Model
         }
         return $this->where(['user_id' => $id])->first();
     }
-
     
 }
 
