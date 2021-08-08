@@ -63,7 +63,7 @@ class AdminController extends BaseController
 				'status' => 'rejected'
 			]
 		);
-		return redirect()->to('admin/riwayatopup');
+		return redirect()->to('AdminController/riwayatopup');
 	}
 
 	public function approve($id)
@@ -89,6 +89,6 @@ class AdminController extends BaseController
 				'status' => 'success'
 			]
 		);
-		return redirect()->to('admin/riwayatopup');
+		return redirect()->to('AdminController/riwayatopup');
 	}
 }
