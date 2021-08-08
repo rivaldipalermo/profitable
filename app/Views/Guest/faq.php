@@ -268,19 +268,19 @@
       opacity: .7;
       filter: gray;
       -webkit-filter: grayscale(1);
-      -webkit-transition: all .8s ease-in-out
+      -webkit-transition: all .8s ease-in-out;
     }
 
     .single_post .img-post:hover .social_share {
-      display: block
+      display: block;
     }
 
     .single_post .footer {
-      padding: 0 30px 30px 30px
+      padding: 0 30px 30px 30px;
     }
 
     .single_post .footer .actions {
-      display: inline-block
+      display: inline-block;
     }
 
     .single_post .footer .stats {
