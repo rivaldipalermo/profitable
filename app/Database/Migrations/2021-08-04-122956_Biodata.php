@@ -91,7 +91,12 @@ class Biodata extends Migration
 			'updated_at' => [
 				'type' => 'DATETIME',
 				'null' => true,
-			]
+			],
+			'image' => [
+				'type'           => 'VARCHAR',
+				'constraint'     => 100,
+				'null'       => false,
+			],
 		]);
 		$this->forge->addKey('id', true);
 		$this->forge->createTable('biodata', TRUE);

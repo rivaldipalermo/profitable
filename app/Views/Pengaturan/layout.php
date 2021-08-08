@@ -21,6 +21,7 @@
     <link href="<?= base_url(); ?>/home/lib/flaticon/font/flaticon.css" rel="stylesheet">
     <link href="<?= base_url(); ?>/home/lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
     <link href=”<?= base_url(); ?>/home/css/font-awesome.css” rel=”stylesheet”/>
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
 
     <!-- Template Stylesheet -->
     <link href="<?= base_url(); ?>/home/css/style.css" rel="stylesheet">
@@ -37,8 +38,8 @@
 
             <div class="collapse navbar-collapse justify-content-center" id="navbarCollapse">
                 <div class="navbar-nav ml-auto ">
-                    <a href="index.html" class="nav-item nav-link">Proyek Pendanaan</a>  
-                    <a href="about.html" class="nav-item nav-link">Cara Kerja</a>
+                    <a href="/pendanaan" class="nav-item nav-link">Proyek Pendanaan</a>  
+                    <a href="/cara-kerja" class="nav-item nav-link">Cara Kerja</a>
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Lainnya</a>
                         <div class="dropdown-menu">
@@ -55,13 +56,13 @@
                 <div class="navbar-nav ml-auto">
                     <img  src="<?= base_url(); ?>/home/img/12.png" alt="Image" style="width: 40px; height: 40px; border-radius: 50px;">
                     <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Nama User</a>
+                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown"><?= user()->username ?></a>
                         <div class="dropdown-menu">
                             <a href="<?= base_url('Dashboard_member/index'); ?>" class="dropdown-item">Dashboard</a>
                             <a href="<?= base_url('Dashboard_member/porto'); ?>" class="dropdown-item">Portofolio</a>
-                            <a href="<?= base_url('Dashboard_member/transaksi'); ?>" class="dropdown-item">Transaksi</a>
+                            <a href="<?= base_url('user/u_riwayat_trans'); ?>" class="dropdown-item">Transaksi</a>
                             <a href="<?= base_url('pengaturan'); ?>" class="dropdown-item">Profil</a>
-                            <a href="x" class="dropdown-item">Logout</a>
+                            <a href="/logout" class="dropdown-item">Logout</a>
                         </div>
                     </div>
                 </div>

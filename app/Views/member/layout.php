@@ -60,7 +60,7 @@
                         <div class="dropdown-menu">
                             <a href="<?= base_url('Dashboard_member/index'); ?>" class="dropdown-item">Dashboard</a>
                             <a href="<?= base_url('Dashboard_member/porto'); ?>" class="dropdown-item">Portofolio</a>
-                            <a href="<?= base_url('Dashboard_member/transaksi'); ?>" class="dropdown-item">Transaksi</a>
+                            <a href="<?= base_url('user/u_riwayat_trans'); ?>" class="dropdown-item">Transaksi</a>
                             <a href="<?= base_url('Pengaturan'); ?>" class="dropdown-item">Profil</a>
                             <a href="/logout" class="dropdown-item">Logout</a>
                         </div>
@@ -88,6 +88,6 @@
                             <div class="box4 ">
                                 <a class="col-md-9" href="<?= base_url('Dashboard_member/index'); ?>"> Dashboard </a>
                                 <a class="col-md-9" href="<?= base_url('Dashboard_member/porto'); ?>"> Portofolio </a>
-                                <a class="col-md-9" href="<?= base_url('Dashboard_member/transaksi'); ?>"> Transaksi </a>
+                                <a class="col-md-9" href="<?= base_url('user/u_riwayat_trans'); ?>"> Transaksi </a>
                             </div>
                             <?= $this->renderSection('member'); ?>
