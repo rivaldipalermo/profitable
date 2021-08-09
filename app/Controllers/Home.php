@@ -16,6 +16,10 @@ class Home extends BaseController
 	public function __construct()
 	{
 		$this->FaQModel = new FaQModel();
+		$this->TestimoniModel = new TestimoniModel();
+		$this->PropertiModel = new PropertiModel();
+		$this->TransaksiInvestasiModel = new TransaksiInvestasiModel();
+		$this->UserModel = new UserModel();
 	}
 
 	public function index()
