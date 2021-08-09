@@ -120,6 +120,17 @@
                 Memberikan kemudahaan dan aksesibilitas bagi setiap orang untuk bisa berinvestasi pada properti dengan menggunakan teknologi.
             </p>
         </div>
+        
+        <div class="row mb-4">
+            <div class="col-lg-4 text-center">
+                <h3><?= $jumlahProperti; ?></h3>
+                <p>Proyek</p>
+            </div>
+            <div class="col-lg-4 text-center">
+                <h3><?= $jumlahInvestor; ?></h3>
+                <p>Investor Terdaftar</p>
+            </div>
+        </div>
     </div>
 </section>
 
