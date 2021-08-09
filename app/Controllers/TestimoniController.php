@@ -16,7 +16,7 @@ class TestimoniController extends BaseController
 
     public function index()
     {
-        return view('Testimoni/index');
+        return view('member/testimoni');
     }
 
     public function storeTesti()
