@@ -77,7 +77,7 @@ class AdminController extends BaseController
 		$saldobaru = $saldoadd + $saldotrans;
 
 		$this->saldoModel->update(
-			$tra['user_id'];
+			$tra['user_id'],
 			[
 				'saldo' => $saldobaru
 			]
