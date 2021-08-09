@@ -305,7 +305,7 @@ class UserController extends BaseController
 		$dataSaldo = [
 			'user_id'	=> user_id(),
 			'saldo'		=> 0,
-			'is_verified'	=> 1
+			'is_verified'	=> 0
 		];
 		$saldo->insert($dataSaldo);
 		return redirect()->to('Dashboard_member/index');
