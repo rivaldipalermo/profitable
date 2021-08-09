@@ -1,5 +1,35 @@
 <?= $this->extend('Guest/g_layout') ?>
 <?= $this->section('content'); ?>
+<section class="hero-section d-flex align-items-center">
+    <div class="container">
+        <div class="row">
+            <div class="
+              col-lg-6
+              d-flex
+              flex-column
+              justify-content-center
+              pt-4 pt-lg-0
+              order-2 order-lg-1
+            " data-aos="fade-up" data-aos-delay="200">
+                <h1>Sekarang Semua Orang Bisa</h1>
+                <h2>Berinvestasi di Properti</h2>
+                <p>
+                    Dengan teknologi, data dan skema crowdfunding, investasikan dana
+                    kamu di berbagai aset properti mulai dari 1 juta rupiah. Dapatkan
+                    imbal hasil jangka pendek dengan skema flipping dari Profitable
+                </p>
+                <div class="d-lg-flex">
+                    <a href="#about" class="btn-pelajari scrollto">Pelajari Investasi</a>
+                    <a href="/pendanaan" class="btn-mulai scrollto ml-3">Mulai Investasi</a>
+                </div>
+            </div>
+            <div class="col-lg-6 order-1 order-lg-2 hero-img" data-aos="zoom-in" data-aos-delay="200">
+                <img src="<?= base_url() ?>/assets/images/illustration/banner-4.png" class="img-fluid animated" alt="">
+            </div>
+        </div>
+    </div>
+</section>
+
 <section class="services">
     <div class="container">
         <div class="row">

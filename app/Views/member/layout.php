@@ -43,11 +43,10 @@
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Lainnya</a>
                         <div class="dropdown-menu">
-                            <a href="blog.html" class="dropdown-item">FAQ</a>
-                            <a href="single.html" class="dropdown-item">Resiko</a>
-                            <a href="single.html" class="dropdown-item">Blog</a>
-                            <a href="single.html" class="dropdown-item">Cek Harga Rumah</a>
-                            <a href="single.html" class="dropdown-item">Tentang Kami</a>
+                            <a href="/faq" class="dropdown-item">FAQ</a>
+                            <a href="/guest/g_resiko" class="dropdown-item">Resiko</a>
+                            <a href="/blog" class="dropdown-item">Blog</a>
+                            <a href="/tentang-kami" class="dropdown-item">Tentang Kami</a>
                         </div>
                     </div>
                 </div>
@@ -58,10 +57,10 @@
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown"><?= user()->username ?></a>
                         <div class="dropdown-menu">
-                            <a href="<?= base_url('Dashboard_member/index'); ?>" class="dropdown-item">Dashboard</a>
-                            <a href="<?= base_url('Dashboard_member/porto'); ?>" class="dropdown-item">Portofolio</a>
-                            <a href="<?= base_url('user/u_riwayat_trans'); ?>" class="dropdown-item">Transaksi</a>
-                            <a href="<?= base_url('Pengaturan'); ?>" class="dropdown-item">Profil</a>
+                            <a href="/Dashboard_member/index" class="dropdown-item">Dashboard</a>
+                            <a href="/Dashboard_member/porto/" class="dropdown-item">Portofolio</a>
+                            <a href="/user/u_riwayat_trans" class="dropdown-item">Transaksi</a>
+                            <a href="/pengaturan" class="dropdown-item">Profil</a>
                             <a href="/logout" class="dropdown-item">Logout</a>
                         </div>
                     </div>

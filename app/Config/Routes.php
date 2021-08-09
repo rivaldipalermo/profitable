@@ -106,7 +106,6 @@ $routes->get('admin/verifikasi_pencairan', 'VerifikasiController::verifikasi_pen
 
 //Member
 $routes->get('/user/dashboard', 'Dashboard_member::index');
-
 // Resiko
 $routes->get('/user/u_resiko/', 'UserController::resiko');
 $routes->get('/guest/g_resiko/', 'GuestController::resiko');
@@ -114,6 +113,9 @@ $routes->get('/guest/g_resiko/', 'GuestController::resiko');
 // Guest
 $routes->get('/tentang-kami', 'Home::about');
 $routes->get('/blog', 'Home::blog');
+
+// Pengaturan
+$routes->get('/pengaturan', 'Pengaturan::index');
 
 if (file_exists(APPPATH . 'Config/' . ENVIRONMENT . '/Routes.php')) {
 	require APPPATH . 'Config/' . ENVIRONMENT . '/Routes.php';
