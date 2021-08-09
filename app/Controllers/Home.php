@@ -13,7 +13,6 @@ class Home extends BaseController
 	public function __construct()
 	{
 		$this->FaQModel = new FaQModel();
-		$this->TestimoniModel = new TestimoniModel();
 	}
 
 	public function index()
