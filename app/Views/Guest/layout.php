@@ -108,8 +108,7 @@
                             Jl. Dipati Ukur No.112-116, Lebakgede, Kecamatan Coblong, Kota
                             Bandung, Jawa Barat 40132
                         </p>
-                        <p>+62 895-2134-4312</p>
-                        <p>info@profitable.com</p>
+                        <p>profitableapps21@gmail.com</p>
                     </div>
                 </div>
 
