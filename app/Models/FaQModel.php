@@ -9,7 +9,7 @@ class FaQModel extends Model
 {
     protected $table = 'faq';
     protected $useTimestamps = true;
-    protected $allowedFields = ['pertanyaan', 'jawaban', 'tipe', 'created_at', 'updated_at'];
+    protected $allowedFields = ['pertanyaan', 'jawaban', 'tipe', 'kategori', 'created_at', 'updated_at'];
 
     public function viewFAQ()
     {
