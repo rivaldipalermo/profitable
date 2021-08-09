@@ -19,7 +19,7 @@
     <?php endif; ?>
     <div class="feature-tp">
         <?php if(isset($saldo)) : ?>
-        <a href="user/u_riwayat_trans" class="btn lt-btn">Top Up</a>
+        <a href="<?= base_url('user/u_riwayat_trans'); ?>" class="btn lt-btn">Top Up</a>
         <button type="button" class="btn lt-btn" data-toggle="modal" data-target="#exampleModal">Pencairan</button>
 
         <!-- Modal -->
