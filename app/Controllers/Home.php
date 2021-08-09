@@ -2,9 +2,12 @@
 
 namespace App\Controllers;
 
-use CodeIgniter\HTTP\Response;
+use App\Models\InvestasiModel;
+use App\Models\PropertiModel;
+use App\Models\TransaksiInvestasiModel;
 use App\Models\FaQModel;
 use App\Models\TestimoniModel;
+use Myth\Auth\Models\UserModel;
 use CodeIgniter\Validation\Validation as ValidationValidation;
 use Config\Validation;
 
@@ -17,6 +20,12 @@ class Home extends BaseController
 
 	public function index()
 	{
+		$data = [
+			'jumlahProperti' => $this->PropertiModel->countAll(),
+			'jumlahDana' => $this->TransaksiInvestasiModel->danaTerkumpul(),
+			'jumlahInvestor' => $this->UserModel->countAll(),
+			'testimoni' => $this->TestimoniModel->viewTesti(),
+		];
 		return view('Pages/index');
 	}
 
