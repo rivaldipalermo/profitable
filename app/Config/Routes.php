@@ -64,6 +64,7 @@ $routes->get('admin/faq/add', 'FAQController::addFAQ');
 $routes->add('admin/faq/store', 'FAQController::storeFAQ');
 $routes->get('admin/faq/edit/(:any)', 'FAQController::editFAQ/$1');
 $routes->add('admin/faq/update/(:segment)', 'FAQController::updateFAQ/$1');
+$routes->add('admin/faq/delete/(:any)', 'FAQController::deleteFAQ/$1');
 
 // Blog
 $routes->get('/admin/blog/', 'AdminBlog::index');
