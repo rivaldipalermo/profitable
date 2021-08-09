@@ -27,7 +27,7 @@ class Pengaturan extends BaseController
 			'validation' => \Config\Services::validation(),
 			'provinsi'  =>  json_decode($provinsi)->rajaongkir->results
 		];
-		return view('pengaturan/index',$data);
+		return view('Pengaturan/index',$data);
 	}
 
 	public function isi()
@@ -38,7 +38,7 @@ class Pengaturan extends BaseController
 			'validation' => \Config\Services::validation(),
 			'provinsi'  =>  json_decode($provinsi)->rajaongkir->results
 		];
-		return view('pengaturan/isi',$data);
+		return view('Pengaturan/isi',$data);
 	}
 
 	private function daerahIndonesia($method, $id_provinsi = null)
