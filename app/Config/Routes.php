@@ -106,6 +106,8 @@ $routes->get('admin/verifikasi_pencairan', 'VerifikasiController::verifikasi_pen
 
 //Member
 $routes->get('/user/dashboard', 'Dashboard_member::index');
+$routes->get('/user/porto', 'Dashboard_member::porto');
+$routes->get('/user/pengaturan', 'Pengaturan::index');
 
 // Resiko
 $routes->get('/user/u_resiko/', 'UserController::resiko');

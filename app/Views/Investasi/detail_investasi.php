@@ -178,11 +178,13 @@
                                         readonly="readonly" required><br>
                                 </div>
                             </div>
-                            <?php if($saldo['saldo'] >= 1000000) : ?>
+                            <?php if($saldo['saldo'] >= 1000000) { ?>
                                 <button type="submit" class="btn btn-reward w-100">Invest</button>
-                            <?php else : ?>
+                            <?php } else if(!isset($saldo['saldo'])) { ?>  
+                                <a href="<?= base_url(); ?>/user/dashboard" class="btn btn-primary w-100">Buat E-wallet</a>
+                            <?php } else { ?>
                                 <button type="button" class="btn btn-reward w-100" onclick="alert('Saldo Anda Tidak Mencukupi, silahkan top up terlebih dahulu')">Invest</button>
-                            <?php endif; ?>
+                            <?php } ?>
                     </form>
                 </div>
             </div>

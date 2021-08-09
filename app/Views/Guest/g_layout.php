@@ -16,7 +16,8 @@
     <link rel="stylesheet" href="<?= base_url(); ?>/assets/css/guest/style.css" />
     <link rel="stylesheet" href="<?= base_url(); ?>/assets/css/guest/responsive.css" />
     <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -72,38 +73,60 @@
                             <?php endif; ?>
                         </ul>
 
-                        <?php if(logged_in()) : ?>
+                        <?php if(logged_in()) { ?>
+                        <?php if(in_groups('admin')) { ?>
                         <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                             <div class="nav navbar-nav ml-auto">
                                 <div class="nav-item dropdown">
-                                <img class="mr-1" src="http://localhost:8080/home/img/12.png" alt="Image"
-                                    style="width: 40px; height: 40px; border-radius: 50px;">
-                                    <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown"><?= user()->username ?><i class="fa fa-angle-down ml-1" aria-hidden="true"></i></a>
+                                    <img class="mr-1" src="http://localhost:8080/home/img/12.png" alt="Image"
+                                        style="width: 40px; height: 40px; border-radius: 50px;">
+                                    <a href="#" class="nav-link dropdown-toggle"
+                                        data-toggle="dropdown"><?= user()->username ?><i class="fa fa-angle-down ml-1"
+                                            aria-hidden="true"></i></a>
                                     <div class="dropdown-menu">
-                                        <a href="http://localhost:8080/Dashboard_member/index"
+                                        <a href="/admin"
                                             class="dropdown-item">Dashboard</a>
-                                        <a href="http://localhost:8080/Dashboard_member/porto"
-                                            class="dropdown-item">Portofolio</a>
-                                        <a href="http://localhost:8080/user/u_riwayat_trans"
-                                            class="dropdown-item">Transaksi</a>
-                                        <a href="http://localhost:8080/Pengaturan" class="dropdown-item">Profil</a>
                                         <a href="/logout" class="dropdown-item">Logout</a>
                                     </div>
                                 </div>
+                            </div>
+                        </div>
+                        <?php } ?>
+                        <?php if(in_groups('user')) { ?>
+                        <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
+                            <div class="nav navbar-nav ml-auto">
+                                <div class="nav-item dropdown">
+                                    <img class="mr-1" src="http://localhost:8080/home/img/12.png" alt="Image"
+                                        style="width: 40px; height: 40px; border-radius: 50px;">
+                                    <a href="#" class="nav-link dropdown-toggle"
+                                        data-toggle="dropdown"><?= user()->username ?><i class="fa fa-angle-down ml-1"
+                                            aria-hidden="true"></i></a>
+                                    <div class="dropdown-menu">
+                                        <a href="/user/dashboard"
+                                            class="dropdown-item">Dashboard</a>
+                                        <a href="/user/porto"
+                                            class="dropdown-item">Portofolio</a>
+                                        <a href="/user/u_riwayat_trans"
+                                            class="dropdown-item">Transaksi</a>
+                                        <a href="/user/pengaturan" class="dropdown-item">Profil</a>
+                                        <a href="/logout" class="dropdown-item">Logout</a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                        <?php endif; ?>
-
-                        <?php if(!logged_in()) : ?>
-                        <div class="nav-item ml-auto">
-                            <a href="/login" class="d-none d-lg-inline sign_in mr-2">Login</a>
-                            <a href="/register" class="d-none d-lg-inline sign_up">Sign Up</a>
-                        </div>
-                        <?php endif; ?>
+                        <?php } ?>
+                        <?php } ?>
                     </div>
+
+                    <?php if(!logged_in()) : ?>
+                    <div class="nav-item ml-auto">
+                        <a href="/login" class="d-none d-lg-inline sign_in mr-2">Login</a>
+                        <a href="/register" class="d-none d-lg-inline sign_up">Sign Up</a>
+                    </div>
+                    <?php endif; ?>
                 </div>
-            </nav>
+        </div>
+        </nav>
         </div>
     </header>
     <div class="page-content page-home">

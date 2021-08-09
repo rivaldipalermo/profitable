@@ -35,6 +35,7 @@
                         </div>
                     </div>
                 </div>
+                <?php if(in_groups('admin')) : ?>
                 <div class="sidebar-menu">
                     <ul class="menu">
                         <li class='sidebar-title'>Menu</li>
@@ -87,10 +88,41 @@
                                 <span>Verifikasi Top-up</span>
                             </a>
                         </li>
-
-
                     </ul>
                 </div>
+                <?php endif; ?>
+                <?php if(in_groups('user')) : ?>
+                <div class="sidebar-menu">
+                    <ul class="menu">
+                        <li class='sidebar-title'>Menu</li>
+
+                        <li class="sidebar-item <?= ($request->uri->getSegment(1) == 'admin' && $request->uri->getSegment(2) == '') ? 'active' : '' ?>">
+                            <a href="/user/dashboard" class='sidebar-link'>
+                                <i class="bi bi-grid-fill"></i>
+                                <span>Dashboard</span>
+                            </a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a href="/user/porto" class='sidebar-link'>
+                                <i class="bi bi-collection-fill"></i>
+                                <span>Portofolio</span>
+                            </a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a href="/user/u_riwayat_trans" class='sidebar-link'>
+                                <i class="bi bi-collection-fill"></i>
+                                <span>Transaksi</span>
+                            </a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a href="/user/pengaturan" class='sidebar-link'>
+                                <i class="bi bi-collection-fill"></i>
+                                <span>Profil</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <?php endif; ?>
                 <button class="sidebar-toggler btn x"><i data-feather="x"></i></button>
             </div>
         </div>
@@ -119,6 +151,7 @@
                                     </ul>
                                 </li>
                             </ul>
+                            <?php if(in_groups('admin')) { ?>
                             <div class="dropdown">
                                 <a href="#" data-bs-toggle="dropdown" aria-expanded="false">
                                     <div class="user-menu d-flex">
@@ -137,14 +170,45 @@
                                     <li>
                                         <h6 class="dropdown-header">Hello, <?= user()->username; ?>!</h6>
                                     </li>
-                                    <li><a class='dropdown-item' href="#"><i class="icon-mid bi bi-person me-2"></i> My
-                                            Profile</a></li>
+                                        <hr class="dropdown-divider">
+                                    </li>
+                                    <li><a class='dropdown-item' href="/logout"><i class="icon-mid bi bi-box-arrow-left me-2"></i> Logout</a></li>
+                                </ul>
+                            </div>
+                            <?php } ?>
+                            <?php if(in_groups('user')) { ?>
+                            <div class="dropdown">
+                                <a href="#" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <div class="user-menu d-flex">
+                                        <div class="user-name text-end me-3">
+                                            <h6 class='mb-0 text-gray-600'><?= user()->username; ?></h6>
+                                            <p class='mb-0 text-sm text-gray-600'>Member</p>
+                                        </div>
+                                        <div class="user-img d-flex align-items-center">
+                                            <div class="avatar avatar-md">
+                                                <img src="<?= base_url() ?>/assets/images/faces/1.jpg">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                                <ul class="dropdown-menu dropdown-menu-lg-end" aria-labelledby="dropdownMenuButton">
+                                    <li>
+                                        <h6 class="dropdown-header">Hello, <?= user()->username; ?>!</h6>
+                                    </li>
+                                    <li><a class='dropdown-item' href="/user/dashboard"></i> Dashboard</a></li>
+                                    <li>
+                                    <li><a class='dropdown-item' href="/user/porto"></i> Portofolio</a></li>
+                                    <li>
+                                    <li><a class='dropdown-item' href="/user/u_riwayat_trans"></i> Transaksi</a></li>
+                                    <li>
+                                    <li><a class='dropdown-item' href="/user/pengaturan"></i> Profil</a></li>
                                     <li>
                                         <hr class="dropdown-divider">
                                     </li>
                                     <li><a class='dropdown-item' href="/logout"><i class="icon-mid bi bi-box-arrow-left me-2"></i> Logout</a></li>
                                 </ul>
                             </div>
+                            <?php } ?>
                         </div>
                     </div>
                 </nav>

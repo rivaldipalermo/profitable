@@ -144,7 +144,7 @@
 
                     <div class="col-lg-9">
                         <div class="job-list-desc candidates-profile-exp-desc">
-                            <h5 class="f-19 mb-2"><a href="#" class="text-dark">Fachrian Adi</a></h5>
+                            <h5 class="f-19 mb-2"><a href="#" class="text-dark">Rivaldi Palermo</a></h5>
                             <p class="text-muted mb-0 f-16">Chief Executive Officer</p>
                             <p class="text-muted mb-0 f-16">Co-Founder</p>
                             
@@ -165,8 +165,8 @@
 
                     <div class="col-lg-9">
                         <div class="job-list-desc candidates-profile-exp-desc">
-                            <h5 class="f-19 mb-2"><a href="#" class="text-dark">Afif Izzatullah</a></h5>
-                            <p class="text-muted mb-0 f-16">Chief Business</p>
+                            <h5 class="f-19 mb-2"><a href="#" class="text-dark">Rizky Muhammad</a></h5>
+                            <p class="text-muted mb-0 f-16">Chief Technology Office</p>
                             <p class="text-muted mb-0 f-16">Development</p>
                             <p class="text-muted mb-0 f-16">Co-Founder</p>
                             
@@ -189,8 +189,28 @@
 
                     <div class="col-lg-9">
                         <div class="job-list-desc candidates-profile-exp-desc">
-                            <h5 class="f-19 mb-2"><a href="#" class="text-dark">Retno Ambarwati </a></h5>
+                            <h5 class="f-19 mb-2"><a href="#" class="text-dark">Andreas Taufiq Manuhutu</a></h5>
                             <p class="text-muted mb-0 f-16">Head of Business and Risk</p>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="job-detail job-list-box mt-4 p-4">
+                <div class="row">
+                    <div class="col-lg-3">
+                        <div class="company-brand-logo text-center mb-4">
+                            <img src="images/featured-job/img-5.png" alt="" class="img-fluid mx-auto d-block">
+                        </div>
+                    </div>
+
+                    <div class="col-lg-9">
+                        <div class="job-list-desc candidates-profile-exp-desc">
+                            <h5 class="f-19 mb-2"><a href="#" class="text-dark">Mochamad Rasyid Adiragama</a></h5>
+                            <p class="text-muted mb-0 f-16">Division of Business and Risk</p>
                             
                         </div>
                     </div>
@@ -209,8 +229,65 @@
 
                     <div class="col-lg-9">
                         <div class="job-list-desc candidates-profile-exp-desc">
-                            <h5 class="f-19 mb-2"><a href="#" class="text-dark">Galih Windyarto</a></h5>
+                            <h5 class="f-19 mb-2"><a href="#" class="text-dark">Amalia Sani O</a></h5>
                             <p class="text-muted mb-0 f-16">UI/UX Designer</p>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="job-detail job-list-box mt-4 p-4">
+                <div class="row">
+                    <div class="col-lg-3">
+                        <div class="company-brand-logo text-center mb-4">
+                            <img src="images/featured-job/img-7.png" alt="" class="img-fluid mx-auto d-block">
+                        </div>
+                    </div>
+
+                    <div class="col-lg-9">
+                        <div class="job-list-desc candidates-profile-exp-desc">
+                            <h5 class="f-19 mb-2"><a href="#" class="text-dark">Mochammad Arief Fauzan</a></h5>
+                            <p class="text-muted mb-0 f-16">Division Technology</p>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="job-detail job-list-box mt-4 p-4">
+                <div class="row">
+                    <div class="col-lg-3">
+                        <div class="company-brand-logo text-center mb-4">
+                            <img src="images/featured-job/img-7.png" alt="" class="img-fluid mx-auto d-block">
+                        </div>
+                    </div>
+
+                    <div class="col-lg-9">
+                        <div class="job-list-desc candidates-profile-exp-desc">
+                            <h5 class="f-19 mb-2"><a href="#" class="text-dark">Alifya Muhammad N</a></h5>
+                            <p class="text-muted mb-0 f-16">Backend Developer</p>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="job-detail job-list-box mt-4 p-4">
+                <div class="row">
+                    <div class="col-lg-3">
+                        <div class="company-brand-logo text-center mb-4">
+                            <img src="images/featured-job/img-7.png" alt="" class="img-fluid mx-auto d-block">
+                        </div>
+                    </div>
+
+                    <div class="col-lg-9">
+                        <div class="job-list-desc candidates-profile-exp-desc">
+                            <h5 class="f-19 mb-2"><a href="#" class="text-dark">All Member TPEC-1</a></h5>
+                            <p class="text-muted mb-0 f-16">Developer</p>
                             
                         </div>
                     </div>
