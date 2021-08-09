@@ -30,7 +30,7 @@ class Home extends BaseController
 			'jumlahInvestor' => $this->UserModel->countAll(),
 			'testimoni' => $this->TestimoniModel->viewTesti(),
 		];
-		return view('Pages/index');
+		return view('Pages/index', $data);
 	}
 
 	public function caraKerja()
