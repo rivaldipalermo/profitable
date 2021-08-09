@@ -134,29 +134,29 @@
     </div>
 
     <div class="row slider team section-bg">
-        <div class="member d-flex align-items-start">
+        <?php foreach($testimoni as $row): ?>
+            <div class="member d-flex align-items-start">
             <div class=" pic">
-                <img src="<?= base_url() ?>/assets/images/member/member-3.png" class="img-fluid">
+                <img src="<?= base_url() ?>/assets/images/member/member-5.png" class="img-fluid">
             </div>
             <div class="member-info">
-                <h4>Amalia Sani</h4>
+                <h4><?= $row['username']; ?></h4>
                 <span>Mahasiswa</span>
                 <p>
-                    Profitable memudahkan millenial seperti saya untuk berinvestasi di bidang properti secara aman.
+                    <?= $row['testimoni']; ?>
                 </p>
             </div>
-        </div>
-
+            </div>
+        <?php endforeach; ?>
         <div class="member d-flex align-items-start">
             <div class="pic">
                 <img src="<?= base_url() ?>/assets/images/member/member-1.png" class="img-fluid">
             </div>
             <div class="member-info">
-                <h4>Amalia Sani</h4>
-                <span>Mahasiswa</span>
+                <h4>Gavriella</h4>
+                <span>Karyawan</span>
                 <p>
-                    Profitable memudahkan millenial seperti saya untuk berinvestasi di bidang properti secara aman.
-                </p>
+                    Investasi di Profitable terjangkau, prosesnya baik dan jelas. Memantau investasi juga sangat mudah karena diberikan dashboard.</p>
             </div>
         </div>
 
@@ -165,8 +165,8 @@
                 <img src="<?= base_url() ?>/assets/images/member/member-2.png" class="img-fluid">
             </div>
             <div class="member-info">
-                <h4>Amalia Sani</h4>
-                <span>Mahasiswa</span>
+                <h4>Fajri Muhammad</h4>
+                <span>Pelajar</span>
                 <p>
                     Profitable memudahkan millenial seperti saya untuk berinvestasi di bidang properti secara aman.
                 </p>
@@ -175,28 +175,26 @@
 
         <div class="member d-flex align-items-start">
             <div class="pic">
-                <img src="<?= base_url() ?>/assets/images/member/member-2.png" class="img-fluid">
+                <img src="<?= base_url() ?>/assets/images/member/member-3.png" class="img-fluid">
             </div>
             <div class="member-info">
-                <h4>Amalia Sani</h4>
-                <span>Mahasiswa</span>
+                <h4>Berlian Fauzan</h4>
+                <span>Wiraswasta</span>
                 <p>
-                    Profitable memudahkan millenial seperti saya untuk berinvestasi di bidang properti secara aman.
-                </p>
+                    Profitable mengakomodasi keinginan saya untuk berinvestasi di bidang properti dengan cara yang mudah</p>
             </div>
         </div>
 
         <div class="member d-flex align-items-start">
             <div class="pic">
-                <img src="<?= base_url() ?>/assets/images/member/member-2.png" class="img-fluid">
+                <img src="<?= base_url() ?>/assets/images/member/member-4.png" class="img-fluid">
             </div>
             <div class="member-info">
-                <h4>Amalia Sani</h4>
-                <span>Mahasiswa</span>
+                <h4>Naufal Geraldi</h4>
+                <span>Pelajar</span>
                 <div class="line-testimoni"></div>
                 <p>
-                    Profitable memudahkan millenial seperti saya untuk berinvestasi di bidang properti secara aman.
-                </p>
+                   Mudahnya investasi melalui Profitable membuat saya ingin bergabung menjadi member di Profitable</p>
             </div>
         </div>
     </div>
