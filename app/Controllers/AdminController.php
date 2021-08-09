@@ -68,12 +68,13 @@ class AdminController extends BaseController
 
 	public function approve($id)
 	{
-		$user_id = intval(user_id());
-		$table = $this->saldoModel->getSaldo($user_id);
-		$saldoadd = $table['saldo'];
+
 		$tra = $this->transaksiModel->getTransaksi($id);
 		$saldotrans = $tra['saldo'];
-
+		$user_id = $tra['user_id'];
+		$table = $this->saldoModel->getSaldo($user_id);
+		$saldoadd = $table['saldo'];
+		
 		$saldobaru = $saldoadd + $saldotrans;
 
 		$this->saldoModel->update(
