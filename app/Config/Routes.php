@@ -120,6 +120,10 @@ $routes->get('/blog', 'Home::blog');
 // Pengaturan
 $routes->get('/pengaturan', 'Pengaturan::index');
 
+// Testimoni
+$routes->get('/testimoni', 'TestimoniController::index');
+$routes->add('testimoni/storeTesti', 'TestimoniController::storeTesti');
+
 if (file_exists(APPPATH . 'Config/' . ENVIRONMENT . '/Routes.php')) {
 	require APPPATH . 'Config/' . ENVIRONMENT . '/Routes.php';
 }
