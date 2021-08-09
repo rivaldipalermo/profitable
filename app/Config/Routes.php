@@ -117,6 +117,9 @@ $routes->get('/guest/g_resiko/', 'GuestController::resiko');
 $routes->get('/tentang-kami', 'Home::about');
 $routes->get('/blog', 'Home::blog');
 
+// Pengaturan
+$routes->get('/pengaturan', 'Pengaturan::index');
+
 if (file_exists(APPPATH . 'Config/' . ENVIRONMENT . '/Routes.php')) {
 	require APPPATH . 'Config/' . ENVIRONMENT . '/Routes.php';
 }

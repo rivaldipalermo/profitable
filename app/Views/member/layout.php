@@ -57,10 +57,10 @@
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown"><?= user()->username ?></a>
                         <div class="dropdown-menu">
-                            <a href="<?= base_url('Dashboard_member/index'); ?>" class="dropdown-item">Dashboard</a>
-                            <a href="<?= base_url('Dashboard_member/porto'); ?>" class="dropdown-item">Portofolio</a>
-                            <a href="<?= base_url('user/u_riwayat_trans'); ?>" class="dropdown-item">Transaksi</a>
-                            <a href="<?= base_url('Pengaturan'); ?>" class="dropdown-item">Profil</a>
+                            <a href="/Dashboard_member/index" class="dropdown-item">Dashboard</a>
+                            <a href="/Dashboard_member/porto/" class="dropdown-item">Portofolio</a>
+                            <a href="/user/u_riwayat_trans" class="dropdown-item">Transaksi</a>
+                            <a href="/pengaturan" class="dropdown-item">Profil</a>
                             <a href="/logout" class="dropdown-item">Logout</a>
                         </div>
                     </div>

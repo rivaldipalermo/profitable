@@ -4,12 +4,12 @@ namespace App\Controllers;
 
 use CodeIgniter\HTTP\Response;
 use App\Models\FaQModel;
+use App\Models\TestimoniModel;
 use CodeIgniter\Validation\Validation as ValidationValidation;
 use Config\Validation;
 
 class Home extends BaseController
 {
-	protected $FaQModel;
 	public function __construct()
 	{
 		$this->FaQModel = new FaQModel();

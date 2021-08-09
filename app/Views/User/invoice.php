@@ -43,7 +43,7 @@
 <div class="col">
 <div class="d-flex justify-content-between">
   <div class="logo">
-    <a href="/user" style="font-size: 2rem; font-weight: 700;">Profitable</a>
+    <a href="/user/u_riwayat_trans" style="font-size: 2rem; font-weight: 700;">Profitable</a>
   </div>
   <a style="color:#435ebe;text-decoration:none;" href="javascript:window.print()">
     <span style="color:#435ebe;text-decoration:none;font-size:0.83em">

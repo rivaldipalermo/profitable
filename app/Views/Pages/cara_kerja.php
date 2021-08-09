@@ -17,7 +17,7 @@
                 </h2>
                 <div class="d-lg-flex">
                     <a href="#about" class="btn-pelajari scrollto">Pelajari Investasi</a>
-                    <a href="#invest" class="btn-mulai scrollto ml-3">Mulai Investasi</a>
+                    <a href="/pendanaan" class="btn-mulai scrollto ml-3">Mulai Investasi</a>
                 </div>
             </div>
             <div class="col-lg-6 order-1 order-lg-2 hero-img" data-aos="zoom-in" data-aos-delay="200">
